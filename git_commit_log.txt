@@ -1,0 +1,6 @@
+HW03 Git commit log
+Snapshot HEAD: fb147cf3a0d5da92132c0b14c5e17c838bd7a130
+This snapshot includes commits through HEAD above. A later commit that stores
+this file is not included in its own snapshot.
+
+fb147cf3a0d5da92132c0b14c5e17c838bd7a130 | 2026-11-08T16:47:34+07:00 | dai | docs: record HW03 requirements and existing Profile scope
