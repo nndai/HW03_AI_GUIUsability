@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "HW03 - GUI Checklist FR-04 và FR-11",
-    "version": "1.0",
+    "version": "1.1",
     "date": "08/11/2026",
-    "state": "Bản thiết kế chuẩn đề xuất sau AI review; chưa có xác nhận review của sinh viên, chưa thực thi.",
+    "state": "Đã cập nhật theo góp ý cụ thể của người dùng; chưa xác nhận review toàn bộ checklist, chưa thực thi.",
     "platforms": [
       "P1 Chrome/Windows",
       "P2 Firefox/Windows",
@@ -43,9 +43,9 @@
     {
       "id": "GUI-003",
       "ia": "IA-01",
-      "component": "Chữ và tính nhất quán",
-      "steps": "So sánh các nhãn form, input và hàng bảng ở zoom 100%, dùng dữ liệu có dấu.",
-      "expected": "Không mất dấu/ký tự hoặc cắt nét chữ; các nhãn form cùng vai trò có cùng font-family và font-size; heading khác vai trò được phép khác kiểu.",
+      "component": "Chữ và khả năng đọc",
+      "steps": "Xem các nhãn form, input và hàng bảng ở zoom 100%, dùng dữ liệu có dấu.",
+      "expected": "Chữ và nhãn đọc được, không mất dấu/ký tự hoặc cắt nét chữ; phân biệt được tiêu đề với nội dung.",
       "basis": "S13 tr.16; B02",
       "origin": [
         "INV-IA01-03"
@@ -115,7 +115,7 @@
       "ia": "IA-01",
       "component": "Định dạng tổng tiền",
       "steps": "Nạp fixture O; đối chiếu tiền từng đơn 0, 1234567, 123456789 với dữ liệu chuẩn.",
-      "expected": "Mỗi số tiền giữ đúng giá trị, có ký hiệu ₫ và phân cách nghìn; không dùng giá trị mặc định 0 thay cho dữ liệu thiếu.",
+      "expected": "Mỗi số tiền giữ đúng giá trị, có ký hiệu ₫ và phân cách nghìn.",
       "basis": "SRS FR-11,FR-21",
       "origin": [
         "INV-IA01-08"
@@ -212,9 +212,9 @@
     {
       "id": "GUI-015",
       "ia": "IA-02",
-      "component": "Nhãn gắn đúng control",
-      "steps": "Click nhãn Tên/Điện thoại/Địa chỉ; xem accessible name của từng control.",
-      "expected": "Nhãn đưa focus đúng ô tương ứng; control có tên truy cập diễn đạt đúng vai trò qua label/aria-label/aria-labelledby; placeholder không thay nhãn.",
+      "component": "Nhãn và tên truy cập của control",
+      "steps": "Xem nhãn Tên/Điện thoại/Địa chỉ và accessible name của từng control.",
+      "expected": "Nhãn diễn đạt đúng trường; control có tên truy cập đúng vai trò qua label/aria-label/aria-labelledby; placeholder không thay nhãn.",
       "basis": "S13 tr.16,18; B06",
       "origin": [
         "INV-IA02-04"
@@ -283,9 +283,9 @@
     {
       "id": "GUI-020",
       "ia": "IA-02",
-      "component": "Địa chỉ nhiều dòng",
+      "component": "Nội dung địa chỉ",
       "steps": "Giữ tên/phone hợp lệ; nhập địa chỉ V có tiếng Việt, 2 dòng và dấu phẩy; lưu rồi mở lại.",
-      "expected": "Địa chỉ mặc định sau tải lại còn đủ nội dung, thứ tự dòng và dấu; không bị chuyển sang trường khác. Không tự quy định maxLength.",
+      "expected": "Địa chỉ mặc định sau tải lại còn đủ từ, chữ số và dấu; không bị chuyển sang trường khác. Không tự quy định maxLength.",
       "basis": "SRS FR-04; S13 tr.12,20",
       "origin": [
         "INV-IA02-12"
@@ -478,21 +478,6 @@
       "evidence": ""
     },
     {
-      "id": "GUI-034",
-      "ia": "IA-04",
-      "component": "Đang lưu và click lặp",
-      "steps": "Làm chậm PUT hồ sơ 3 giây; gửi dữ liệu hợp lệ rồi click nhanh 3 lần khi còn pending.",
-      "expected": "Có dấu đang xử lý; nút bị khóa hoặc cơ chế tương đương ngăn request trùng khi request đầu chưa xong; kết thúc không có thông báo thành công chồng nhau.",
-      "basis": "S13 tr.13–14; B09",
-      "origin": [
-        "INV-IA04-04",
-        "INV-IA04-05"
-      ],
-      "status": "Chưa chạy",
-      "notes": "",
-      "evidence": ""
-    },
-    {
       "id": "GUI-035",
       "ia": "IA-04",
       "component": "Phản hồi lưu thành công",
@@ -525,7 +510,7 @@
       "ia": "IA-04",
       "component": "Phản hồi lỗi lưu",
       "steps": "Gây PUT trả 500 hoặc mất mạng trong môi trường thử, gửi dữ liệu hợp lệ.",
-      "expected": "Không có thông báo thành công; có lỗi cho biết chưa lưu và hướng thử lại; baseline server không thay đổi; có thể gửi lại sau phục hồi mạng.",
+      "expected": "Không có thông báo thành công; có lỗi cho biết chưa lưu hoặc chưa xác nhận được kết quả và hướng thử lại; có thể gửi lại sau phục hồi mạng.",
       "basis": "S13 tr.11,16; B10",
       "origin": [
         "INV-IA04-08"
@@ -635,14 +620,13 @@
   ],
   "criteria": {
     "B01": "Môi trường layout đề xuất: viewport CSS 390×844, 768×1024, 1366×768; zoom 100% và 200%. Cuộn bảng ngang hợp lệ nếu vẫn tiếp cận đủ nội dung. Đây là phạm vi kiểm thử, không phải số đo trong SRS.",
-    "B02": "Typography đề xuất: nhãn cùng vai trò thống nhất font-family/font-size; không glyph thiếu/cắt. Không tự đặt minimum 14/16 px hoặc tuyên bố đạt WCAG khi chưa có chuẩn đó.",
+    "B02": "Typography đề xuất: chữ và nhãn đọc được, không glyph thiếu/cắt; phân biệt tiêu đề và nội dung. Không yêu cầu font-family/font-size giống tuyệt đối hoặc tự đặt minimum 14/16 px.",
     "B03": "Fixture L để kiểm trình bày: tên 80 ký tự Unicode, email dài 100 ký tự hợp lệ, địa chỉ 300 ký tự. Nạp qua fixture riêng, không coi đây là maxLength hoặc bắt form chấp nhận độ dài chưa được đặc tả.",
     "B04": "Ghi locale và timezone cho mỗi run. Chấp nhận cách trình bày theo locale nếu giá trị ngày đúng và nhất quán; không tự bắt dd/MM/yyyy.",
     "B05": "Focus/readability là review định tính theo slide: có dấu focus thấy được và thao tác tiếp được. Không dùng kết quả này chứng nhận accessibility hoặc tỷ lệ contrast.",
-    "B06": "Liên kết nhãn-control xét theo hành vi focus và accessible name; không bắt duy nhất một cách viết HTML nếu cách khác cho cùng kết quả truy cập.",
+    "B06": "Nhãn và accessible name phải diễn đạt đúng control; chấp nhận label/aria-label/aria-labelledby. Không yêu cầu click nhãn phải chuyển focus.",
     "B07": "Quy ước thao tác GUI: link/nút đúng vai trò, giữ phiên trên điều hướng thường; giỏ 3 loại ×1 để không tranh luận badge đếm dòng hay số lượng. Không yêu cầu Enter trong mọi input submit.",
     "B08": "Khôi phục phiên/loading phân biệt với logged-out/empty/error. Delay 3 giây chỉ để trạng thái đủ quan sát, không là yêu cầu tốc độ phản hồi.",
-    "B09": "Đề xuất chống submit lặp: trong lúc request đầu pending có dấu xử lý và không tạo request trùng do 3 click nhanh. Chấp nhận disable/debounce/cơ chế tương đương; không quy định implementation.",
     "B10": "Đề xuất phục hồi lỗi: message đúng loại lỗi, không báo thành công giả, giữ input và thử lại được. Không bắt cụ thể HTTP error text hoặc nút Retry riêng."
   },
   "deferred": [
@@ -708,8 +692,8 @@
     "INV-IA04-01": "GUI-032",
     "INV-IA04-03": "GUI-032",
     "INV-IA04-02": "GUI-033",
-    "INV-IA04-04": "GUI-034",
-    "INV-IA04-05": "GUI-034",
+    "INV-IA04-04": "Loại theo yêu cầu người dùng (GUI-034)",
+    "INV-IA04-05": "Loại theo yêu cầu người dùng (GUI-034)",
     "INV-IA04-06": "GUI-035",
     "INV-IA04-07": "GUI-036",
     "INV-IA04-08": "GUI-037",

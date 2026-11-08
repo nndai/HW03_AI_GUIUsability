@@ -26,6 +26,8 @@ Các dòng dưới là danh mục artifact do AI lập, **chưa phải verdict c
 
 ## Tổng kết độ chính xác AI
 
+Góp ý trực tiếp tiếp theo của người dùng: bỏ GUI-034 và các điều kiện font tuyệt đối (GUI-003), tiền thiếu (GUI-008), click nhãn phải focus (GUI-015), giữ nguyên newline (GUI-020), server không đổi khi mất mạng (GUI-037). Đã áp dụng vào bản 1.1: còn 43 mục/129 lượt dự kiến, giữ ID. Đây là phản hồi thật từ người dùng; chưa suy ra verdict chung hoặc review toàn bộ các mục còn lại.
+
 Chưa có artifact được sinh viên audit. Không tính tỷ lệ VALID/INVALID/INCOMPLETE khi chưa review. Sau review, điền nhãn thật và đánh dấu phần sửa bằng diff hoặc `<mark>…</mark>`.
 
 ## Kết luận và khai báo

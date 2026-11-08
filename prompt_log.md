@@ -198,4 +198,42 @@ Checklist hợp nhất còn **44 mục có ID `GUI-001`–`GUI-044`**: gộp 4 c
 
 Đã kiểm tra đủ mapping của 52 mục nguồn, không trùng ID và đồng nhất 44 mục giữa các bản. Công thức tổng hợp trong Excel đã được thử với Passed/Failed rồi khôi phục về “Chưa chạy”; bản PDF 8 trang cũng đã được xem lại bố cục. Còn phần sinh viên review tiêu chí và thực thi lấy kết quả thật trước khi hoàn thiện bài nộp.
 
+
+Đã tạo checklist hợp nhất **44 mục `GUI-001`–`GUI-044`**, có thao tác, kỳ vọng, căn cứ, kết quả, Notes và ảnh.
+
+- [Checklist Markdown](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/outputs/HW03-01a1ba88/GUI_Checklist.md)
+- [Review và lý do sửa](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/docs/checklist_review.md): gộp 4 cặp, tách 4 mục chưa đủ căn cứ; mapping đầy đủ 52 mục nháp.
+
+Bản Excel có bảng nhập kết quả ba nền tảng và tổng hợp tự tính.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/outputs/HW03-01a1ba88/GUI_Checklist.xlsx" purpose="output"}
+
+Bản PDF đã kiểm tra bố cục.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/output/pdf/GUI_Checklist.pdf" purpose="output"}
+
+Toàn bộ vẫn **Chưa chạy**; cần bạn review và thực thi trước khi hoàn thiện bài nộp.
+```
+
+## 8
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 18:59:53 (UTC+07:00)
+
+### Prompt
+
+```text
+sửa checklist, bỏ gui34, bỏ yêu cầu font phải giống tuyệt đối ở gui3, xử lý tiền thiếu ở gui8, click nhãn phải focus ở gui15, giữ nguyên xuống dòng ở gui20 và server không đổi khi mất mạng ở gui37
+
+```
+
+### Output
+
+```text
+Mình sẽ bỏ GUI-034 và các điều kiện bạn liệt kê ở GUI-003, 008, 015, 020, 037. Mình giữ nguyên ID các mục còn lại và cập nhật đồng bộ Markdown, Excel, PDF cùng ghi chú sửa đổi.
+
+
+Đã sửa xong: còn **43 mục**, giữ nguyên ID và bỏ GUI-034. Năm điều kiện còn lại đã được bỏ khỏi checklist; riêng GUI-037 đã đổi thông báo mong đợi để cho phép trường hợp “chưa xác nhận được kết quả” khi mất mạng. Markdown, Excel và PDF đã được kiểm tra đồng bộ.
+
 ```

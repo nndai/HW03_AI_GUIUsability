@@ -10,19 +10,26 @@ from PIL import Image, ImageOps, ImageDraw
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'outputs/HW03-01a1ba88'
-PREVIEW=ROOT/'.git/checklist-previews'
+PREVIEW=ROOT/'.git/checklist-previews/v1.1'
 data=json.loads((ROOT/'scripts/checklist_data.json').read_text(encoding='utf-8'))
 items=data['items']
 ids={i['id'] for i in items}
-assert len(ids)==len(items)==44
-assert Counter(i['ia'] for i in items)=={'IA-01':12,'IA-02':10,'IA-03':9,'IA-04':13}
+assert len(ids)==len(items)==43
+assert 'GUI-034' not in ids and 'GUI-035' in ids and 'GUI-044' in ids
+by_id={i['id']:i for i in items}
+assert 'font-family' not in by_id['GUI-003']['expected']
+assert 'thiếu' not in by_id['GUI-008']['expected']
+assert 'focus' not in by_id['GUI-015']['steps']+by_id['GUI-015']['expected']
+assert 'thứ tự dòng' not in by_id['GUI-020']['expected']
+assert 'baseline server' not in by_id['GUI-037']['expected']
+assert Counter(i['ia'] for i in items)=={'IA-01':12,'IA-02':10,'IA-03':9,'IA-04':12}
 inventory=(ROOT/'docs/profile_inventory.md').read_text(encoding='utf-8')
 source_ids=re.findall(r'^\| (INV-IA\d{2}-\d{2}) \|',inventory,re.M)
 assert len(source_ids)==len(set(source_ids))==52
 assert set(source_ids)==set(data['mapping'])
 assert sum(v=='Tách chờ làm rõ' for v in data['mapping'].values())==4
 md=(OUT/'GUI_Checklist.md').read_text(encoding='utf-8')
-assert len(re.findall(r'^\| GUI-\d{3} \|',md,re.M))==44
+assert len(re.findall(r'^\| GUI-\d{3} \|',md,re.M))==43
 assert all(i['steps'] in md and i['expected'] in md and i['basis'] in md for i in items)
 assert all(i['status']=='Chưa chạy' for i in items)
 
@@ -38,14 +45,14 @@ with ZipFile(OUT/'GUI_Checklist.xlsx') as z:
         return texts[int(node.text)] if cell.attrib.get('t')=='s' else node.text
     run_sheet=ET.fromstring(z.read('xl/worksheets/sheet3.xml'))
     cells={c.attrib['r']:c for c in run_sheet.findall('.//m:c',ns)}
-    assert all(value(cells[f'F{r}'])=='Chưa chạy' for r in range(6,138))
-    assert Counter(value(cells[f'C{r}']) for r in range(6,138))=={i:3 for i in ids}
+    assert all(value(cells[f'F{r}'])=='Chưa chạy' for r in range(6,135))
+    assert Counter(value(cells[f'C{r}']) for r in range(6,135))=={i:3 for i in ids}
     assert run_sheet.find('m:dataValidations',ns) is not None
     pane=run_sheet.find('m:sheetViews/m:sheetView/m:pane',ns)
     print('Execution freeze pane:',pane.attrib if pane is not None else None)
     definitions=ET.fromstring(z.read('xl/worksheets/sheet2.xml'))
     spec_cells={c.attrib['r']:c for c in definitions.findall('.//m:c',ns)}
-    assert {value(spec_cells[f'A{r}']) for r in range(6,50)}==ids
+    assert {value(spec_cells[f'A{r}']) for r in range(6,49)}==ids
 
 pdf=PdfReader(ROOT/'output/pdf/GUI_Checklist.pdf')
 pdf_text='\n'.join(page.extract_text() for page in pdf.pages)
@@ -66,4 +73,4 @@ for number,page in enumerate(pages,1):
 contact=Image.new('RGB',(1440,525*((len(thumbs)+1)//2)),'white')
 for n,tile in enumerate(thumbs):contact.paste(tile,((n%2)*720,(n//2)*525))
 contact.save(PREVIEW/'pdf-contact.png')
-print(f'Validated 44 definitions, all 52 source mappings, 132 unexecuted runs, and {len(pdf.pages)} PDF pages.')
+print(f'Validated 43 definitions, all 52 source mappings, 129 unexecuted runs, and {len(pdf.pages)} PDF pages.')

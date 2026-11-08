@@ -1,6 +1,6 @@
 # HW03 — GUI & Usability
 
-Trạng thái ngày 08/11/2026: đã khảo sát sơ bộ Profile, giữ 52 mục nháp có ID nguồn, rà kỹ thuật và hợp nhất thành checklist thiết kế 44 mục. Bản chuẩn đề xuất có Markdown, Excel và PDF, chờ sinh viên review. Chưa thực thi checklist chính thức hoặc tổ chức phiên usability.
+Trạng thái ngày 08/11/2026: đã khảo sát sơ bộ Profile, giữ 52 mục nháp có ID nguồn, rà kỹ thuật và hợp nhất thành checklist thiết kế 43 mục. Đã bỏ GUI-034 và chỉnh năm expected theo góp ý người dùng, giữ ID còn lại. Bản chuẩn đề xuất có Markdown, Excel và PDF, chờ sinh viên review. Chưa thực thi checklist chính thức hoặc tổ chức phiên usability.
 
 ## Phạm vi theo hướng dẫn đã có
 
@@ -13,7 +13,7 @@ Trạng thái ngày 08/11/2026: đã khảo sát sơ bộ Profile, giữ 52 mụ
 
 - [Yêu cầu và đầu ra cần nộp](docs/requirements.md)
 - [Thành phần, trạng thái và 52 nội dung kiểm tra FR-04/FR-11 theo IA](docs/profile_inventory.md)
-- [Checklist chuẩn đề xuất: 44 mục có ID, thao tác, expected và căn cứ](outputs/HW03-01a1ba88/GUI_Checklist.md)
+- [Checklist chuẩn đề xuất: 43 mục có ID, thao tác, expected và căn cứ](outputs/HW03-01a1ba88/GUI_Checklist.md)
 - [Excel checklist, bảng thực thi ba nền tảng và test summary](outputs/HW03-01a1ba88/GUI_Checklist.xlsx)
 - [Bản PDF của checklist](output/pdf/GUI_Checklist.pdf)
 - [Review trùng/căn cứ/kỳ vọng và mapping 52 mục nháp](docs/checklist_review.md)
@@ -27,7 +27,7 @@ Trạng thái ngày 08/11/2026: đã khảo sát sơ bộ Profile, giữ 52 mụ
 | Chỉ số trong repo này | Kết quả |
 | --- | ---: |
 | Màn hình / flow đã kiểm thử | 0 / 0 |
-| Checklist thiết kế đề xuất / đã thực thi | 44 / 0 |
+| Checklist thiết kế đề xuất / đã thực thi | 43 / 0 |
 | Passed / Failed | 0 / 0 |
 | Bug đã xác minh và báo cáo | 0 |
 | Phiên usability chính thức | 0 / 7 |

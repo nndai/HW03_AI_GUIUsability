@@ -67,7 +67,7 @@ while index<len(lines):
 def footer(canvas,doc):
     canvas.setFont('ArialVN',8)
     canvas.setFillColor(colors.HexColor('#526574'))
-    canvas.drawString(32,17,'HW03 - FR-04 / FR-11 | Checklist thiết kế v1.0 | Chưa thực thi')
+    canvas.drawString(32,17,'HW03 - FR-04 / FR-11 | Checklist thiết kế v1.1 | Chưa thực thi')
     canvas.drawRightString(landscape(A4)[0]-32,17,f'Trang {doc.page}')
 
 doc=SimpleDocTemplate(str(OUT),pagesize=landscape(A4),leftMargin=32,rightMargin=32,topMargin=27,bottomMargin=32,
