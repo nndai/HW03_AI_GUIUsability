@@ -1,6 +1,6 @@
 # Quy tắc làm việc HW03
 
-- Chỉ biên tập nội dung đề bài yêu cầu. Báo cáo chính duy nhất là report.md; có đủ 41 mục GUI-001–GUI-041, IA-01/02/03/04 = 11/10/9/11. Workbook chính thức GUI_Checklist.xlsx ở thư mục gốc.
+- Chỉ biên tập nội dung đề bài yêu cầu. Báo cáo chính duy nhất là report.md; có 42 mục GUI-001–GUI-042, IA-01/02/03/04 = 11/11/9/11. GUI-042 do người dùng phát hiện AI bỏ sót, kiểm hiển thị an toàn họ tên chứa HTML theo SEC-04 + FR-04. Workbook chính thức GUI_Checklist.xlsx ở thư mục gốc.
 - Giữ cấu trúc phẳng; không tạo thư mục con, docs hoặc phụ lục thành file riêng. AI Audit bắt buộc nằm trong report.md. README.md chỉ chứa danh mục file, summary và tự chấm theo đề.
 - Không tự commit. Không tạo PDF hoặc ZIP cho đến khi người dùng yêu cầu nộp. Không xuất Git log trong lúc còn làm bài nếu chưa được yêu cầu.
 - Giữ nguyên prompt/output tại prompt_log.md với số thứ tự, tool, thời gian prompt giờ Việt Nam. Chạy .git/hw3-tools/export_chat_log.py mỗi lượt và bật --follow nếu cần ghi câu trả lời cuối; không ghi system/developer/suy luận nội bộ.

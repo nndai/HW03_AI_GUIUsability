@@ -14,15 +14,15 @@
 
 ### 2.1. Thiết kế và review
 
-Checklist gồm 41 mục, đủ bốn khía cạnh giao diện. Kỳ vọng dựa trên SRS FR-04, FR-11, FR-21–24 và slide S13. Điện thoại áp dụng EP/BVA với độ dài 9/10/11/12; các trạng thái đăng nhập, lưu và tải đơn áp dụng kiểm tra chuyển trạng thái.
+Checklist gồm 42 mục, đủ bốn khía cạnh giao diện. Kỳ vọng dựa trên SRS FR-04, FR-11, FR-21–24, SEC-04 và slide S13. Điện thoại áp dụng EP/BVA với độ dài 9/10/11/12; các trạng thái đăng nhập, lưu và tải đơn áp dụng kiểm tra chuyển trạng thái.
 
 | IA | Khía cạnh | Số mục |
 | --- | --- | ---: |
 | IA-01 | Tiêu chuẩn giao diện chung | 11 |
-| IA-02 | Form | 10 |
+| IA-02 | Form | 11 |
 | IA-03 | Điều hướng | 9 |
 | IA-04 | Phản hồi / trạng thái | 11 |
-| Tổng | | 41 |
+| Tổng | | 42 |
 
 Các nội dung AI đề xuất đã được rà và điều chỉnh như sau:
 
@@ -34,7 +34,13 @@ Các nội dung AI đề xuất đã được rà và điều chỉnh như sau:
 | Server không đổi khi mất mạng | Chỉ kiểm phản hồi lỗi hoặc chưa xác nhận kết quả | Mất mạng có thể xảy ra sau khi server đã xử lý |
 | Chống submit lặp, nội dung dài/zoom, giữ input khi lỗi | Loại khỏi danh sách đã chọn | Theo quyết định thu hẹp của người dùng |
 
-Chưa ghi nhận mục do sinh viên tự bổ sung kèm lý do AI bỏ sót.
+#### Mục người dùng bổ sung do AI bỏ sót
+
+| Mục bổ sung | Nguồn đề xuất | Căn cứ | Lý do AI bỏ sót |
+| --- | --- | --- | --- |
+| GUI-042 - Hiển thị an toàn họ tên chứa HTML | Người dùng phát hiện và yêu cầu bổ sung; AI đối chiếu và biên tập thao tác/expected | FR-04 cho phép cập nhật họ tên; SEC-04 yêu cầu escape dữ liệu người dùng khi hiển thị, không đưa trực tiếp vào innerHTML | Bản nháp và checklist 41 mục chưa ánh xạ SEC-04 vào luồng nhập họ tên → hiển thị. Các mục về tên chỉ kiểm Unicode, giá trị cập nhật và persistence, chưa có lớp dữ liệu chứa HTML hoặc kiểm điểm hiển thị Header. Đây là thiếu sót coverage của AI. |
+
+Đối chiếu xác nhận GUI-042 chưa có trong bản nháp 52 mục và checklist 41 mục trước bổ sung; không trùng GUI-016 hoặc GUI-034. `frontend-web/src/App.jsx:27` đang đưa `user.name` vào `dangerouslySetInnerHTML`, nên cần kiểm cả lời chào Header bên cạnh ô họ tên. Đây là căn cứ chọn mục kiểm tra, chưa phải kết quả thực thi.
 
 ### 2.2. Dữ liệu và quy ước kiểm tra
 
@@ -45,6 +51,7 @@ Chưa ghi nhận mục do sinh viên tự bổ sung kèm lý do AI bỏ sót.
 | P | 091234567, 0912345678, 09123456789, 091234567890; chỉ 10–11 chữ số đầu 0 hợp lệ |
 | V | Nguyễn Văn Mẫu; 0912345678; địa chỉ tiếng Việt có hai dòng và dấu phẩy |
 | O | Đơn đủ pending/confirmed/shipping/delivered/canceled; tiền 0, 1234567, 123456789; ngày có phần ngày lớn hơn 12 |
+| H1, H2 | Họ tên thử: `Nguyễn <b>Minh</b>` và `<em>An & Bình</em>`; dùng trên tài khoản thử A, các trường khác hợp lệ theo FR-04 |
 | Chậm/lỗi | Delay GET 3 giây, API 500 hoặc mất mạng trong môi trường thử |
 
 - **B01:** Môi trường layout đề xuất: viewport CSS 390×844, 768×1024, 1366×768; zoom 100%. Cuộn bảng ngang hợp lệ nếu vẫn tiếp cận đủ nội dung. Đây là phạm vi kiểm thử, không phải số đo trong SRS.
@@ -103,6 +110,7 @@ Tất cả mục hiện Chưa chạy. Kết quả từng nền tảng nhập t�
 | GUI-039 | IA-04 | Lỗi tải lịch sử và phục hồi | Làm GET my-orders trả 500, rồi phục hồi API và reload/thử lại. | Khi lỗi có thông báo không tải được đơn, không đồng nhất với chưa có đơn; sau phục hồi có thể lấy và hiển thị dữ liệu thật. Không bắt buộc phải có nút Retry riêng. | S13 tr.11,16,20; B08 | Chưa chạy |  |  |
 | GUI-040 | IA-04 | Chuyển tài khoản và cô lập dữ liệu | A và B có profile/đơn khác nhau; xem A, logout, login B, mở Profile rồi Back/Forward. | Chỉ profile và đơn của tài khoản hiện tại xuất hiện; không giữ flash/cache dữ liệu riêng A trong phiên B; mọi hàng khớp fixture theo chủ sở hữu. | SRS FR-04,FR-11; S13 tr.14 | Chưa chạy |  |  |
 | GUI-041 | IA-04 | Trạng thái đơn thay đổi bên ngoài | Ghi baseline một đơn pending; đổi fixture riêng thành confirmed, không bấm Hủy đơn; mở lại/reload Profile. | Cùng mã đơn hiển thị nhãn/màu trạng thái confirmed mới; không làm thay đổi đơn khác. Không bắt buộc realtime/polling khi chưa reload. | SRS FR-11; S13 tr.12,14,20 | Chưa chạy |  |  |
+| GUI-042 | IA-02 | Hiển thị an toàn họ tên chứa HTML | Với tài khoản thử A và các trường khác hợp lệ theo FR-04, lần lượt nhập H1/H2 vào Họ tên rồi bấm Cập nhật; kiểm ô họ tên và lời chào Header, mở lại trang và tải lại; đối chiếu văn bản/DOM, sau đó khôi phục tên ban đầu. | Mọi vị trí hiển thị họ tên đã nhập (ô Họ tên, lời chào Header) hiển thị chuỗi như văn bản, escape đúng cách; không tạo phần tử HTML hoặc định dạng đậm/nghiêng từ tên. Sau mở lại/tải lại vẫn hiển thị an toàn. | SRS SEC-04, FR-04 | Chưa chạy |  |  |
 
 ### 2.4. Kết quả thực thi
 
@@ -141,9 +149,9 @@ Chưa có dữ liệu để tính điểm SUS, tổng hợp pain point, xếp se
 
 | Nền tảng dự kiến | Số mục | Đã chạy | Passed | Failed |
 | --- | ---: | ---: | ---: | ---: |
-| Chrome / Windows | 41 | 0 | 0 | 0 |
-| Firefox / Windows | 41 | 0 | 0 | 0 |
-| Safari / macOS hoặc Android Chrome | 41 | 0 | 0 | 0 |
+| Chrome / Windows | 42 | 0 | 0 | 0 |
+| Firefox / Windows | 42 | 0 | 0 | 0 |
+| Safari / macOS hoặc Android Chrome | 42 | 0 | 0 | 0 |
 
 Chưa có lần chạy và ảnh đa nền tảng đáp ứng yêu cầu đề.
 
@@ -163,7 +171,7 @@ I use AI tools for the following tasks,
 - Tạo nháp, rà trùng và biên tập checklist theo góp ý người dùng.
 - Tạo tài liệu và ghi nhật ký prompt/output.
 
-Công cụ: OpenAI Codex. Prompt/output nguyên văn, tên công cụ và thời gian từng tương tác nằm trong prompt_log.md. Người dùng quyết định các mục cần sửa/bỏ và chốt 41 mục; AI thực hiện chỉnh sửa file. Chưa có verdict đầy đủ hoặc phần sinh viên tự bổ sung được xác nhận.
+Công cụ: OpenAI Codex. Prompt/output nguyên văn, tên công cụ và thời gian từng tương tác nằm trong prompt_log.md. Người dùng quyết định các mục cần sửa/bỏ và bổ sung ý tưởng GUI-042 về họ tên chứa HTML; AI đối chiếu SRS/code và biên tập mục kiểm tra. Chưa có verdict audit đầy đủ.
 
 ## Phụ lục A - AI Audit Report
 
@@ -173,12 +181,13 @@ Công cụ: OpenAI Codex. Prompt/output nguyên văn, tên công cụ và thời
 | Khảo sát FR-04/FR-11; Codex; timestamp tại prompt_log.md | Bản nháp 52 mục | Chưa điền | SRS FR-04/11/21–24, S13 | AI rà trùng và căn cứ; người dùng tiếp tục góp ý |
 | Gộp checklist và thêm ID; Codex; timestamp tại prompt_log.md | Checklist hợp nhất | Chưa điền | Đối chiếu kỳ vọng, loại phần trùng và không có căn cứ | Gộp phone hợp lệ/biên; bỏ các điều kiện font, tiền thiếu, label-focus, newline và server không đổi khi mất mạng |
 | Chốt 41 mục, đổi ID và dọn tài liệu; Codex; timestamp tại prompt_log.md | GUI-001–GUI-041 và workbook | Chưa điền | Phạm vi đã chọn; bốn IA 11/10/9/11 | Loại các mục người dùng chỉ định, đánh ID liên tục; giữ 41 mục hiện tại |
+| `thêm vào report phần checklist ai bỏ sót kiểm tra hiển thị an toàn họ tên chứa html dựa sec-04 và fr-04, check xem cái tôi yêu cầu là đúng là thứ bạn bỏ sót không, nếu có thì thêm vào báo cáo đầy đủ theo đúng yêu cầu đề bào`; OpenAI Codex; 08/11/2026 23:55:05 (UTC+07:00) | GUI-042, dữ liệu H1/H2 và phần giải thích AI bỏ sót tại mục 2.1/2.3 | Chưa điền | FR-04, SEC-04; bản nháp cũ thiếu kiểm HTML; App.jsx:27 dùng dangerouslySetInnerHTML với user.name | Người dùng phát hiện mục thiếu; AI xác minh và bổ sung. GUI-042 Chưa chạy |
 
 Chưa có verdict để tổng hợp tỷ lệ VALID/INVALID/INCOMPLETE. Kết luận audit 80–150 chữ và khai báo/chữ ký theo biểu mẫu chưa hoàn thiện.
 
 ## Tài liệu tham chiếu
 
 - Đề HW03 - GUI & Usability, §5–6, §9–12, §14–15.
-- SRS EShop: FR-04, FR-11, FR-21–24.
+- SRS EShop: FR-04, FR-11, FR-21–24, SEC-04.
 - Slide S13 GUI Testing & Usability Testing: trang 8, 11–22.
 - AI Templates: AI-01, AI-02, AI-03 và AI-05.

@@ -2,7 +2,7 @@
 
 | Tệp | Nội dung |
 | --- | --- |
-| [report.md](report.md) | Báo cáo chính, checklist 41 mục và AI Audit |
+| [report.md](report.md) | Báo cáo chính, checklist 42 mục và AI Audit |
 | [GUI_Checklist.xlsx](GUI_Checklist.xlsx) | Checklist, thực thi theo nền tảng và test summary |
 | [prompt_log.md](prompt_log.md) | Prompt/output nguyên văn, tool và thời gian |
 
@@ -12,7 +12,7 @@
 | --- | ---: |
 | Màn hình / flow trong phạm vi | 1 / 1 |
 | Màn hình / flow đã kiểm thử chính thức | 0 / 0 |
-| Checklist thiết kế / đã chạy | 41 / 0 |
+| Checklist thiết kế / đã chạy | 42 / 0 |
 | Passed / Failed | 0 / 0 |
 | Bug report chính thức | 0 |
 | Participant đã tham gia | 0 / 7 |

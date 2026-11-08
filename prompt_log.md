@@ -325,3 +325,39 @@ Hồ sơ đã phẳng, loại tài liệu phụ và PDF khỏi thư mục làm b
 
 :codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" purpose="output"}
 ```
+
+## 11
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 23:55:05 (UTC+07:00)
+
+### Prompt
+
+```text
+thêm vào report phần checklist ai bỏ sót kiểm tra hiển thị an toàn họ tên chứa html dựa sec-04 và fr-04, check xem cái tôi yêu cầu là đúng là thứ bạn bỏ sót không, nếu có thì thêm vào báo cáo đầy đủ theo đúng yêu cầu đề bào
+
+```
+
+### Output
+
+```text
+Mình sẽ đối chiếu SEC-04, FR-04, code hiển thị họ tên và checklist 41 mục để xác nhận có bỏ sót việc này không. Nếu đúng, mình sẽ bổ sung mục kiểm tra và phần giải thích AI bỏ sót theo yêu cầu đề, rồi cập nhật Excel; không commit hoặc tạo PDF.
+
+
+Đúng, đây là mục mình đã bỏ sót. Checklist cũ có kiểm tên tiếng Việt và dữ liệu sau khi lưu, nhưng chưa kiểm việc họ tên chứa HTML được hiển thị an toàn. SEC-04 nêu rõ yêu cầu escape dữ liệu nhập khi hiển thị; FR-04 xác định họ tên là trường người dùng được cập nhật. Code Header cũng đang đưa `user.name` vào `dangerouslySetInnerHTML`.
+
+Mình sẽ thêm GUI-042, ghi nhận đây là bổ sung do bạn phát hiện và giải thích nguyên nhân thiếu coverage. Mục mới vẫn là “Chưa chạy”, vì việc đọc code chưa thay thế thực thi GUI.
+
+
+Đã thêm GUI-042 vào báo cáo với căn cứ SEC-04/FR-04, dữ liệu HTML thử, thao tác và kết quả mong đợi. Phần review đã ghi rõ bạn phát hiện mục thiếu; nguyên nhân là bản AI trước chưa ánh xạ SEC-04 vào luồng họ tên từ form đến Header. Excel hiện có **42 mục, 126 lượt dự kiến**; nội dung và kết quả của 41 mục cũ được giữ nguyên.
+
+
+Đúng, đây là mục mình đã bỏ sót. SEC-04 yêu cầu hiển thị dữ liệu nhập an toàn; FR-04 áp dụng cho trường họ tên.
+
+Đã bổ sung **GUI-042** vào [report.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md), gồm dữ liệu HTML thử, thao tác, expected, căn cứ, lý do AI bỏ sót và ghi nhận **bạn là người phát hiện**.
+
+Checklist hiện có **42 mục**. Mục mới vẫn **Chưa chạy**. Không commit, không tạo PDF.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" purpose="output"}
+```
