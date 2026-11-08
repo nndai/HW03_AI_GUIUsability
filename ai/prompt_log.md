@@ -1,81 +1,56 @@
-# Prompt log — HW03
+# Prompt log
 
-Công cụ: OpenAI Codex. Thời gian: Asia/Saigon, UTC+07:00; lấy từ timestamp gốc.
+## 1
 
-Nội dung prompt và phản hồi bên dưới được giữ nguyên văn. Chỉ gồm các chat đã nhập rõ ràng; không dựng lại chat trước. File AI tạo được lưu trong Git và dẫn tại ai_audit.md.
+Tool: OpenAI Codex
 
+Thời gian: 08/11/2026 16:43:35 (UTC+07:00)
 
-## Tương tác 001
-
-
-### Prompt — người dùng
-
-Thời gian: 2026-11-08T16:43:35.571000+07:00 · Tool: OpenAI Codex · Session: 01a1ba88-d3b5-7770-83a8-ae00e4d89c7b · Dòng nguồn: 17
+### Prompt
 
 ```text
 bạn hãy đọc folder bài tập, hiểu nó bài tập, tạo git cho thư mục work, và log lại tất cả nội dung prompt trong chat ra file theo đúng yêu cầu
 
 ```
 
-
-### Output — AI
-
-Thời gian: 2026-11-08T16:43:39.080000+07:00 · Tool: OpenAI Codex · Session: 01a1ba88-d3b5-7770-83a8-ae00e4d89c7b · Dòng nguồn: 20
+### Output
 
 ```text
 Mình sẽ đọc đề và các yêu cầu trong thư mục, xác định thư mục `work`, rồi khởi tạo Git và ghi lại prompt trong chat theo định dạng đề yêu cầu.
 
-```
 
-
-### Output — AI
-
-Thời gian: 2026-11-08T16:44:01.296000+07:00 · Tool: OpenAI Codex · Session: 01a1ba88-d3b5-7770-83a8-ae00e4d89c7b · Dòng nguồn: 41
-
-```text
 Đề yêu cầu lưu cả prompt nguyên văn, đầu ra AI, tên công cụ và thời gian; mẫu audit còn có phần sinh viên đánh giá và sửa đầu ra. Thư mục `work` hiện trống và chưa có Git. Hướng dẫn sẵn có chọn phạm vi Hồ sơ cá nhân và Lịch sử đơn hàng, nên mình sẽ ghi nhận phạm vi này và thiết lập log để tiếp tục dùng trong các bước sau.
 
-```
 
-
-### Output — AI
-
-Thời gian: 2026-11-08T16:47:34.294000+07:00 · Tool: OpenAI Codex · Session: 01a1ba88-d3b5-7770-83a8-ae00e4d89c7b · Dòng nguồn: 78
-
-```text
 Mình đã tạo bản tóm tắt yêu cầu, khung audit chờ bạn review và công cụ lưu nguyên văn hội thoại từ bản ghi của chat này, với giờ Việt Nam. Mình đang kiểm tra log và tạo các commit khởi tạo. Log sẽ tiếp tục ghi cả câu trả lời cuối; các chat cũ chưa có dữ liệu gốc sẽ được ghi rõ là chưa nhập.
 
+
+Đã hoàn tất:
+
+- Đọc đề, quy định và hướng dẫn; ghi nhận phạm vi **FR-04 + FR-11 tại `/profile`**.
+- Khởi tạo Git trong thư mục `work`, nhánh `main`, có **2 commit** và file lịch sử.
+- Lưu [prompt và phản hồi AI nguyên văn](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/ai/prompt_log.md), kèm công cụ và giờ Việt Nam; đã kiểm tra khớp bản ghi gốc.
+- Tạo [khung AI Audit](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/ai/ai_audit.md) chờ bạn review.
+
+Đã bật ghi tiếp chat tự động, tự dừng sau 30 phút không có tin nhắn. Git hiện ở máy, chưa nối GitHub vì chưa có địa chỉ repo.
 ```
 
+## 2
 
-## Ngữ cảnh tự động từ ứng dụng
+Tool: OpenAI Codex
 
-Các mục này không phải prompt người dùng tự soạn.
+Thời gian: 08/11/2026 16:57:54 (UTC+07:00)
 
-
-Thời gian: 2026-11-08T16:43:35.415000+07:00 · Session: 01a1ba88-d3b5-7770-83a8-ae00e4d89c7b
+### Prompt
 
 ```text
-<environment_context>
-  <cwd>C:\Users\daila\Desktop\HW3</cwd>
-  <shell>powershell</shell>
-  <current_date>2026-11-08</current_date>
-  <timezone>Asia/Saigon</timezone>
-  <filesystem><workspace_roots><root>C:\Users\daila\Desktop\HW3</root><root>C:\Users\daila\.codex\visualizations\2026\11\08\01a1ba88-d3b5-7770-83a8-ae00e4d89c7b</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
-</environment_context>
+log prompt chỉ cần đánh số, tool, thời gian lúc prompt, prompt nguyên văn, và output nguyên văn, format đơn giản, ko cần id, session, md có style đơn giản
+
 ```
 
-
-Thời gian: 2026-11-08T16:43:35.533000+07:00 · Session: 01a1ba88-d3b5-7770-83a8-ae00e4d89c7b
-
-```text
-<external_codex_apps_open_page>{"page_id":null}</external_codex_apps_open_page>
-```
-
-
-Thời gian: 2026-11-08T16:43:35.561000+07:00 · Session: 01a1ba88-d3b5-7770-83a8-ae00e4d89c7b
+### Output
 
 ```text
-<external_codex_apps_selected_page_part_1_of_1>Companion Page snapshot part 1 of 1:
-{"page_id":null,"document_view":null}</external_codex_apps_selected_page_part_1_of_1>
+Mình sẽ đổi log sang Markdown đơn giản, mỗi lượt chỉ có số thứ tự, tool, thời gian gửi prompt, prompt nguyên văn và output nguyên văn; đồng thời sửa bộ ghi tự động để giữ đúng định dạng này.
+
 ```

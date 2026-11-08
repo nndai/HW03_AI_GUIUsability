@@ -1,8 +1,10 @@
 # Nhật ký AI
 
-`prompt_log.md` là bản đọc được; `messages.jsonl` giữ nguyên văn từng tin nhắn user/assistant đã xuất, role, timestamp UTC và giờ Việt Nam. Timestamp lấy trực tiếp từ bản ghi phiên, không gán giờ ước đoán cho prompt.
+`prompt_log.md` dùng Markdown đơn giản: mỗi lượt có số thứ tự, Tool, thời gian gửi prompt (giờ Việt Nam), Prompt nguyên văn và Output nguyên văn. Các phản hồi công khai của AI được gom vào một phần Output theo đúng thứ tự, không sửa câu chữ. Không có ID, session, dòng nguồn hoặc thời gian riêng cho từng phản hồi trong Markdown.
 
-Log lấy mọi tin nhắn văn bản user và phản hồi công khai assistant trong **đúng chat đã chọn**. Các tin nhắn ngữ cảnh tự động của ứng dụng được giữ ở phần riêng. Không xuất system/developer, suy luận nội bộ, lệnh công cụ hoặc toàn bộ dữ liệu trả về từ công cụ; các file AI tạo được giữ bằng Git và dẫn trong audit. Không quét/xuất chat khác. Chưa nhập lịch sử từ chat cũ đã tạo hướng dẫn/chuyển PDF; cần dữ liệu gốc để bổ sung trung thực.
+`messages.jsonl` là dữ liệu kỹ thuật phục vụ đồng bộ, giữ nguyên văn từng tin nhắn đã xuất. Timestamp lấy trực tiếp từ bản ghi phiên, không gán giờ ước đoán cho prompt.
+
+Log lấy mọi prompt văn bản người dùng và phản hồi công khai assistant trong **đúng chat đã chọn**. Ngữ cảnh tự động của ứng dụng không hiển thị trong Markdown. Không xuất system/developer, suy luận nội bộ, lệnh công cụ hoặc toàn bộ dữ liệu trả về từ công cụ; các file AI tạo được giữ bằng Git và dẫn trong audit. Không quét/xuất chat khác. Chưa nhập lịch sử từ chat cũ đã tạo hướng dẫn/chuyển PDF; cần dữ liệu gốc để bổ sung trung thực.
 
 Đồng bộ thủ công từ thư mục work:
 

@@ -74,24 +74,21 @@ def sync(source):
     records = [r for r in previous if r["session_id"] != session_id] + current
     records.sort(key=lambda r: (r["timestamp_utc"], r["session_id"], r["source_line"]))
     write_changed(raw_path, "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in records))
-    output = ["# Prompt log — HW03\n",
-              "Công cụ: OpenAI Codex. Thời gian: Asia/Saigon, UTC+07:00; lấy từ timestamp gốc.\n",
-              "Nội dung prompt và phản hồi bên dưới được giữ nguyên văn. Chỉ gồm các chat đã nhập rõ ràng; không dựng lại chat trước. File AI tạo được lưu trong Git và dẫn tại ai_audit.md.\n"]
-    interactions = 0
+    interactions = []
     for r in records:
         if r["kind"] == "app_context":
             continue
         if r["role"] == "user":
-            interactions += 1
-            output.append(f"\n## Tương tác {interactions:03d}\n")
-        label = "Prompt — người dùng" if r["role"] == "user" else "Output — AI"
-        output.append(f"\n### {label}\n\nThời gian: {r['timestamp_vn']} · Tool: {r['tool']} · Session: {r['session_id']} · Dòng nguồn: {r['source_line']}\n\n" + fenced(r["text"]) + "\n")
-        if r["non_text_content_types"]:
-            output.append("\nCó đính kèm phi văn bản; cần giữ file gốc riêng: " + ", ".join(r["non_text_content_types"]) + "\n")
-    output.append("\n## Ngữ cảnh tự động từ ứng dụng\n\nCác mục này không phải prompt người dùng tự soạn.\n")
-    for r in records:
-        if r["kind"] == "app_context":
-            output.append(f"\nThời gian: {r['timestamp_vn']} · Session: {r['session_id']}\n\n" + fenced(r["text"]) + "\n")
+            interactions.append({"prompt": r, "outputs": []})
+        elif interactions:
+            interactions[-1]["outputs"].append(r["text"])
+    output = ["# Prompt log\n"]
+    for number, interaction in enumerate(interactions, 1):
+        prompt = interaction["prompt"]
+        stamp = datetime.fromisoformat(prompt["timestamp_vn"]).strftime("%d/%m/%Y %H:%M:%S")
+        output.append(f"## {number}\n\nTool: {prompt['tool']}\n\nThời gian: {stamp} (UTC+07:00)\n\n"
+                      "### Prompt\n\n" + fenced(prompt["text"]) + "\n\n"
+                      "### Output\n\n" + fenced("\n\n".join(interaction["outputs"])) + "\n")
     rendered = "\n".join(output)
     write_changed(AI / "prompt_log.md", rendered)
     return rendered
