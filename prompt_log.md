@@ -132,4 +132,70 @@ Mình đã xem được form hồ sơ, lịch sử trống và bảng có đủ 
 
 Bản phân tích đã có **52 nội dung**: IA-01 gồm 12, IA-02 gồm 14, IA-03 gồm 10 và IA-04 gồm 16. Mỗi mục có căn cứ và trạng thái cần tạo để kiểm tra. Mình cũng đã lưu hai ảnh khảo sát thật: lịch sử trống và bảng đủ năm trạng thái. Phần chụp thông báo validation bị công cụ trình duyệt timeout, nên mình ghi rõ giới hạn này trong tài liệu.
 
+
+Đã đọc code, SRS liên quan, đối chiếu slide và xem giao diện thực tế. Danh sách chi tiết nằm trong [profile_inventory.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/docs/profile_inventory.md).
+
+| Nhóm | Nội dung chính | Số mục |
+|---|---|---:|
+| IA-01 | Bố cục, chữ, màu, heading, ngày/tiền, badge trạng thái | 12 |
+| IA-02 | Email chỉ đọc, họ tên, điện thoại, địa chỉ, validation, submit | 14 |
+| IA-03 | Navbar, đường vào hồ sơ, đăng xuất, Tab, keyboard, Back/Forward | 10 |
+| IA-04 | Đăng nhập, loading, lưu thành công/lỗi, persistence, lịch sử trống/có đơn/lỗi tải | 16 |
+
+Tài liệu có bảng thành phần, ma trận trạng thái và căn cứ từng mục; phân biệt yêu cầu SRS với tiêu chí bổ sung từ slide. **52 mục này là danh mục cần kiểm tra, chưa gán Passed/Failed.**
+
+Đã cập nhật prompt log và commit; chưa xuất Git commit log theo yêu cầu.
+
+![Trang hồ sơ và năm trạng thái đơn hàng bằng dữ liệu thử](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/evidence/survey/profile-orders.jpg)
+```
+
+## 6
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 17:27:04 (UTC+07:00)
+
+### Prompt
+
+```text
+profile_inventory.md
+
+```
+
+### Output
+
+```text
+Mình sẽ mở lại tài liệu `profile_inventory.md`.
+
+
+[📄 profile_inventory.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/docs/profile_inventory.md)
+```
+
+## 7
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 17:52:02 (UTC+07:00)
+
+### Prompt
+
+```text
+thêm id, gộp bốn nhóm thành checklist, tìm mục trùng, thiếu căn cứ hoặc kỳ vọng chưa rõ thì đề xuất sửa và ghi lý do, tạo file riêng làm file chuẩn để nộp theo yêu cầu
+
+```
+
+### Output
+
+```text
+Mình sẽ gộp bốn nhóm thành một checklist có ID, rà các mục trùng hoặc thiếu căn cứ/kỳ vọng rõ ràng, rồi tạo file chuẩn riêng. Các đề xuất sửa và lý do sẽ được ghi trong tài liệu review để giữ lại dấu vết từ bản nháp.
+
+
+Mình thấy các chỗ chồng lặp chính ở kiểm tra điện thoại hợp lệ/biên, submit bằng Enter và phản hồi khi đang lưu/bấm lặp. Một số mục như trường trống, dữ liệu chưa lưu hoặc phản hồi API bất thường chưa có kỳ vọng đủ rõ trong SRS. Mình sẽ tách chúng ra để chờ làm rõ, đồng thời ghi rõ tiêu chí bổ sung từ slide là đề xuất của bài. Bộ checklist sẽ có bản Markdown, Excel và PDF; chưa mục nào được đánh dấu Passed/Failed.
+
+
+Checklist hợp nhất còn **44 mục có ID `GUI-001`–`GUI-044`**: gộp 4 cặp và tách 4 mục chưa đủ kỳ vọng để chờ làm rõ. File review có mapping đầy đủ từ cả 52 mục nháp sang bản mới, kèm lý do từng thay đổi. Bản Excel đã có chỗ nhập kết quả theo ba nền tảng và bảng tổng hợp tự tính; hiện toàn bộ vẫn là “Chưa chạy”.
+
+
+Đã kiểm tra đủ mapping của 52 mục nguồn, không trùng ID và đồng nhất 44 mục giữa các bản. Công thức tổng hợp trong Excel đã được thử với Passed/Failed rồi khôi phục về “Chưa chạy”; bản PDF 8 trang cũng đã được xem lại bố cục. Còn phần sinh viên review tiêu chí và thực thi lấy kết quả thật trước khi hoàn thiện bài nộp.
+
 ```
