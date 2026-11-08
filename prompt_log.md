@@ -236,4 +236,41 @@ Mình sẽ bỏ GUI-034 và các điều kiện bạn liệt kê ở GUI-003, 00
 
 Đã sửa xong: còn **43 mục**, giữ nguyên ID và bỏ GUI-034. Năm điều kiện còn lại đã được bỏ khỏi checklist; riêng GUI-037 đã đổi thông báo mong đợi để cho phép trường hợp “chưa xác nhận được kết quả” khi mất mạng. Markdown, Excel và PDF đã được kiểm tra đồng bộ.
 
+
+Đã bỏ GUI-034 và năm điều kiện bạn nêu, giữ nguyên ID còn lại. Checklist v1.1 còn **43 mục**, đã cập nhật ghi chú review và commit.
+
+[Checklist Markdown đã sửa](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/outputs/HW03-01a1ba88/GUI_Checklist.md)
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/outputs/HW03-01a1ba88/GUI_Checklist.xlsx" purpose="output"}
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/output/pdf/GUI_Checklist.pdf" purpose="output"}
+```
+
+## 9
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 19:59:19 (UTC+07:00)
+
+### Prompt
+
+```text
+bỏ gui-004 và gui-038, giữ 41 mục còn lại và điều chỉnh lại id, bỏ các mục chờ làm rõ khỏi checklist chính thức, bỏ các file tạm, giữ file nộp cuối cùng và có cấu trục chuẩn yêu cầu báo cáo
+
+```
+
+### Output
+
+```text
+Mình sẽ bỏ GUI-004 và GUI-038, đánh lại ID liên tục cho 41 mục còn lại, rồi dọn thư mục theo cấu trúc hồ sơ nộp bài. Mình sẽ giữ lịch sử prompt/review cần cho AI Audit, đưa các mục chờ làm rõ ra khỏi checklist chính thức và không ghi các phần chưa thực hiện thành kết quả hoàn tất.
+
+
+Sau khi bỏ hai mục, checklist còn đúng **41 mục**, phân bổ IA-01/02/03/04 là **11/10/9/11**, với ID mới từ `GUI-001` đến `GUI-041`. Mình sẽ gom ba bản checklist vào `checklist/`, giữ lịch sử sửa đổi trong phụ lục AI Audit và tạo báo cáo chính theo các phần của đề. Mã tạo file, bản xem thử và bản cũ sẽ được dọn khỏi cây hồ sơ nộp.
+
+
+Đã cập nhật đủ 41 ID liên tục và 123 lượt dự kiến, đồng thời kiểm tra nội dung 41 mục được giữ lại không đổi ngoài các tham chiếu ID. Báo cáo chính đã có các phần Task 1, bug report, usability, đa nền tảng, skill và AI Audit. Mình đang kiểm tra bản PDF và dọn các bản cũ; phần chưa có dữ liệu thật vẫn được ghi rõ là chưa thực hiện.
+
+
+Cây hồ sơ nộp đã gọn lại: báo cáo chính, `checklist/`, phụ lục AI, prompt log và ảnh khảo sát thật. Các thư mục cũ đã được tách khỏi cây này. Bản Markdown, Excel và PDF đều đã được kiểm tra; checklist chính thức chỉ có 41 mục, còn lịch sử các mục bị loại nằm riêng trong phụ lục để phục vụ audit.
+
 ```

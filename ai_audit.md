@@ -1,35 +1,40 @@
-# AI Audit Report — bản khởi tạo, chờ sinh viên review
+# AI Audit Report - HW03
 
 I use AI tools for the following tasks,
 
-- Đọc yêu cầu HW03 và thiết lập quản lý phiên bản.
-- Xuất prompt/phản hồi nguyên văn từ bản ghi chat hiện tại, kèm timestamp.
+Đọc yêu cầu/SRS/slide, khảo sát trang, thiết kế/sửa checklist, tạo tài liệu, ghi log và tổ chức hồ sơ. Chưa khai execution/usability chính thức là đã hoàn thành.
 
-| Thông tin | Giá trị |
+## 1. Thông tin
+
+| Mục | Giá trị |
 | --- | --- |
 | Họ tên / MSSV / lớp | Chưa cung cấp |
-| Bài tập | HW03-AI — GUI & Usability |
+| Bài tập | HW03-AI - GUI & Usability |
 | Ngày | 08/11/2026, Asia/Saigon (UTC+07:00) |
-| Công cụ | OpenAI Codex; không suy đoán phiên bản model |
-| Transcript gốc đã xuất | [prompt_log.md](prompt_log.md) |
+| Công cụ | OpenAI Codex; không suy đoán model |
+| Nhật ký nguyên văn | prompt_log.md có số, tool, timestamp, prompt/output |
+| Artifact hiện tại | Bao_cao; checklist/GUI_Checklist; phu_luc/AI_Review, theo các định dạng đi kèm |
 
-## Audit theo AI-02
+## 2. Audit năm cột AI-02
 
-Các dòng dưới là danh mục artifact do AI lập, **chưa phải verdict của sinh viên**. Prompt và phản hồi hội thoại được dẫn nguyên văn qua log; đầu ra dạng file là chính các file trong Git, không thay bằng lời tóm tắt.
+Prompt/output hội thoại nguyên văn tại prompt_log.md. Bản nháp và lịch sử quyết định giữ trong AI Review. Verdict và bản sửa của sinh viên chưa tự xác nhận thay.
 
-| (1) Prompt + công cụ | (2) Output AI | (3) Verdict | (4) Lý do có nguồn | (5) Bản SV sửa |
+| (1) Prompt + công cụ | (2) Output AI | (3) Verdict SV | (4) Lý do / căn cứ | (5) Góp ý thực / bản SV sửa |
 | --- | --- | --- | --- | --- |
-| Mục 1 trong prompt_log.md; OpenAI Codex; timestamp tại log | README.md, docs/requirements.md | Chờ SV review | Đối chiếu HW03 §§5–6, 9–12, 14–15 và policy; SV điền nhận xét thực tế | Chưa có bản SV sửa |
-| Cùng mục 1 | scripts/export_chat_log.py, scripts/export_git_log.py, prompt_log.md, git_commit_log.txt, AGENTS.md | Chờ SV review | Đối chiếu HW03 §9/§12, AI-02 §2–3, AI-03 §2.3, AI-05 §2; SV kiểm tra độ đầy đủ/nguyên văn | Chưa có bản SV sửa |
-| Mục 5 trong prompt_log.md; OpenAI Codex; thời gian gửi prompt tại log | docs/profile_inventory.md: thành phần, ma trận trạng thái, 52 nội dung IA-01–04; scripts/survey-vite.mjs và scripts/seed_survey_data.py hỗ trợ môi trường khảo sát | Chờ SV review | Đối chiếu SRS FR-04/11/21–24 và slide S13 trang 11–22; kiểm nhãn yêu cầu/bổ sung, scope và các giới hạn execution | Chưa có bản SV sửa |
-| Prompt “thêm id, gộp bốn nhóm thành checklist…” trong prompt_log.md; OpenAI Codex; thời gian gốc tại log | outputs/HW03-01a1ba88/GUI_Checklist.md và .xlsx; output/pdf/GUI_Checklist.pdf; docs/checklist_review.md; thêm ID nguồn vào inventory | Chờ SV review | AI tự rà kỹ thuật: 4 cặp được gộp, 4 mục thiếu oracle được tách; còn 44 mục. Mapping đủ 52 nguồn. Expected phân biệt SRS, slide và B01–B10 đề xuất; chưa tính đây là phần SV tự bổ sung/đã review | Chưa có bản SV sửa |
+| Đọc folder, Git và log; OpenAI Codex; timestamp tại log | Tóm tắt yêu cầu, repo, nhật ký | Chưa điền | HW03 §9/12/14, AI-02/03/05 | Người dùng yêu cầu log đơn giản, bỏ ai/.local, xuất Git log cuối bài; AI đã thực hiện |
+| Xem Profile FR-04/11 và phân IA; OpenAI Codex; timestamp tại log | Nháp 52 mục, thành phần/trạng thái, hai ảnh khảo sát | Chưa điền | SRS FR-04/11/21–24, S13 trang 8/11–22 | Chưa có verdict; không coi khảo sát là execution chính thức |
+| Gộp, thêm ID, rà trùng/căn cứ/expected; OpenAI Codex; timestamp tại log | 44 mục bản 1.0 và review kỹ thuật | Chưa điền | Gộp 4 cặp, tách 4 mục thiếu oracle; SRS khác quy ước bổ sung | Người dùng tiếp tục chỉ rõ các điều kiện cần bỏ; AI tự sửa không tính SV bổ sung |
+| Góp ý GUI-003/008/015/020/034/037 theo ID cũ; OpenAI Codex; timestamp tại log | 43 mục bản 1.1 | Chưa điền | Bỏ font tuyệt đối, tiền thiếu, label-click focus, newline, server không đổi khi mất mạng | Góp ý thật đã áp dụng; không suy ra chữ ký/verdict chung |
+| Bỏ GUI-004/038, chốt 41 mục, đổi ID và dọn hồ sơ; OpenAI Codex; timestamp tại log | GUI-001–GUI-041 bản 2.0 và cấu trúc báo cáo | Chưa điền | Bốn IA 11/10/9/11; 123 lượt dự kiến; mục loại không vào Execution | Người dùng quyết định bỏ hai mục/giữ 41; AI đổi ID, lưu mapping và tạo file |
 
-## Tổng kết độ chính xác AI
+## 3. Phân chia đóng góp và giới hạn
 
-Góp ý trực tiếp tiếp theo của người dùng: bỏ GUI-034 và các điều kiện font tuyệt đối (GUI-003), tiền thiếu (GUI-008), click nhãn phải focus (GUI-015), giữ nguyên newline (GUI-020), server không đổi khi mất mạng (GUI-037). Đã áp dụng vào bản 1.1: còn 43 mục/129 lượt dự kiến, giữ ID. Đây là phản hồi thật từ người dùng; chưa suy ra verdict chung hoặc review toàn bộ các mục còn lại.
+AI tạo nháp, tự rà kỹ thuật, biên tập file. Người dùng chốt format/cấu trúc, bỏ/sửa điều kiện và giữ 41 mục. Chưa có mục do sinh viên tự bổ sung hoặc verdict VALID/INVALID/INCOMPLETE được ghi nhận.
 
-Chưa có artifact được sinh viên audit. Không tính tỷ lệ VALID/INVALID/INCOMPLETE khi chưa review. Sau review, điền nhãn thật và đánh dấu phần sửa bằng diff hoặc `<mark>…</mark>`.
+Khảo sát SUT dùng dữ liệu thử có khai báo; không tạo participant/contact/recording/ảnh đa nền tảng hoặc Passed/Failed giả. Chưa nháp bug report, theo AI-01 §11.
 
-## Kết luận và khai báo
+## 4. Tổng kết độ chính xác và kết luận
 
-Kết luận 80–150 chữ theo AI-02: chờ sinh viên viết sau audit. AI Critique 200–300 words theo HW03: chưa thực hiện. Disclosure/Mandatory Disclosure và chữ ký: chờ xác nhận phần AI/người đóng góp; không tự ký hoặc tuyên bố đã review.
+Chưa tính tỷ lệ VALID/INVALID/INCOMPLETE khi chưa có verdict sinh viên. Kết luận 80–150 chữ theo AI-02 cần hoàn thiện sau audit; ghi chú này không thay kết luận.
+
+AI Critique 200–300 words, AI Use Disclosure, Mandatory Disclosure và chữ ký chưa hoàn thiện, được ghi rõ trong Bao_cao.md. Không tự ký hoặc tuyên bố đã review toàn bộ bài.
