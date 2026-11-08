@@ -85,75 +85,75 @@ Mỗi nội dung có một IA chính để tránh đếm trùng. Một bộ dữ
 
 ### IA-01 — General UI standards: 12 nội dung
 
-| STT | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
+| ID nguồn | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
 | --- | --- | --- | --- |
-| 01 | Khung trang và hai vùng | Căn lề, khoảng cách, độ rộng form/bảng; không đè chồng hoặc bị footer che | Slide 16 |
-| 02 | Viewport hẹp/rộng | Form và lịch sử thích ứng; bảng không làm mất cột hoặc thao tác không thể tiếp cận | Slide 21–22; cần chốt kích thước |
-| 03 | Chữ trên form/bảng | Cỡ chữ, kiểu chữ, độ đậm và nhãn dễ đọc, nhất quán | Slide 16 |
-| 04 | Nội dung dài/zoom | Tên, email, địa chỉ dài và zoom vẫn đọc/thao tác được; không che nút/cột | Slide 16, 22; bổ sung cách đo |
-| 05 | Toàn trang | Tiếng Việt nhất quán và đúng dấu, kể cả nhãn/thông báo/state | SRS FR-21 |
-| 06 | Tiêu đề trang | Đúng một h1 mô tả nội dung; hai phần có hierarchy phù hợp | SRS FR-21 |
-| 07 | Nút hành động | “Cập nhật” dùng màu tích cực xanh; thao tác nguy hiểm đang hiển thị dùng màu phù hợp | SRS FR-21 |
-| 08 | Tổng tiền | Có ₫, phân cách nghìn; không rớt chữ số hoặc sai giá trị khi trình bày | SRS FR-11, FR-21 |
-| 09 | Ngày đặt | Giá trị đúng dữ liệu, cách trình bày nhất quán và không gây hiểu nhầm ngày/tháng | FR-11; Slide 12, 16; SRS chưa chốt locale |
-| 10 | Badge trạng thái | Đủ 5 nhãn tiếng Việt và màu phân biệt; không chỉ có màu mà thiếu chữ | SRS FR-11 |
-| 11 | Input/label/nút/badge | Tương phản và focus nhìn thấy được ở trạng thái thường/disabled/focus | Slide 8, 16; bổ sung tiêu chí accessibility cụ thể |
-| 12 | Header bảng và dữ liệu | Tên cột dễ hiểu, cell thẳng hàng; phân biệt heading với dữ liệu, giá trị đúng cột | FR-11; Slide 12, 16 |
+| INV-IA01-01 | Khung trang và hai vùng | Căn lề, khoảng cách, độ rộng form/bảng; không đè chồng hoặc bị footer che | Slide 16 |
+| INV-IA01-02 | Viewport hẹp/rộng | Form và lịch sử thích ứng; bảng không làm mất cột hoặc thao tác không thể tiếp cận | Slide 21–22; cần chốt kích thước |
+| INV-IA01-03 | Chữ trên form/bảng | Cỡ chữ, kiểu chữ, độ đậm và nhãn dễ đọc, nhất quán | Slide 16 |
+| INV-IA01-04 | Nội dung dài/zoom | Tên, email, địa chỉ dài và zoom vẫn đọc/thao tác được; không che nút/cột | Slide 16, 22; bổ sung cách đo |
+| INV-IA01-05 | Toàn trang | Tiếng Việt nhất quán và đúng dấu, kể cả nhãn/thông báo/state | SRS FR-21 |
+| INV-IA01-06 | Tiêu đề trang | Đúng một h1 mô tả nội dung; hai phần có hierarchy phù hợp | SRS FR-21 |
+| INV-IA01-07 | Nút hành động | “Cập nhật” dùng màu tích cực xanh; thao tác nguy hiểm đang hiển thị dùng màu phù hợp | SRS FR-21 |
+| INV-IA01-08 | Tổng tiền | Có ₫, phân cách nghìn; không rớt chữ số hoặc sai giá trị khi trình bày | SRS FR-11, FR-21 |
+| INV-IA01-09 | Ngày đặt | Giá trị đúng dữ liệu, cách trình bày nhất quán và không gây hiểu nhầm ngày/tháng | FR-11; Slide 12, 16; SRS chưa chốt locale |
+| INV-IA01-10 | Badge trạng thái | Đủ 5 nhãn tiếng Việt và màu phân biệt; không chỉ có màu mà thiếu chữ | SRS FR-11 |
+| INV-IA01-11 | Input/label/nút/badge | Tương phản và focus nhìn thấy được ở trạng thái thường/disabled/focus | Slide 8, 16; bổ sung tiêu chí accessibility cụ thể |
+| INV-IA01-12 | Header bảng và dữ liệu | Tên cột dễ hiểu, cell thẳng hàng; phân biệt heading với dữ liệu, giá trị đúng cột | FR-11; Slide 12, 16 |
 
 ### IA-02 — Forms: 14 nội dung
 
-| STT | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
+| ID nguồn | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
 | --- | --- | --- | --- |
-| 01 | Prefill form | Tên/email/phone/address lấy đúng tài khoản và đúng trường | FR-04; Slide 11–12 |
-| 02 | Email chỉ đọc | Không sửa được qua GUI hoặc thao tác bàn phím; giá trị nhận diện vẫn đọc được | FR-04 |
-| 03 | Kiểu email | Đối chiếu type=email theo quy định chung, kể cả khi field disabled | FR-22; không coi đây là test nhập email |
-| 04 | Nhãn và control | Nhãn gắn đúng ô để click/đọc bằng công nghệ hỗ trợ; không dùng placeholder thay nhãn | Slide 16, 18; bổ sung accessibility |
-| 05 | Trường bắt buộc | Mọi trường thực sự bắt buộc có *; xác định rõ required trước khi chọn dữ liệu | FR-22; required tên hiện từ code |
-| 06 | Họ tên rỗng/khoảng trắng | Xác minh quy tắc tên, required và thông báo; không coi chuỗi toàn khoảng trắng là tên hợp lệ chỉ do HTML chấp nhận | Slide 11, 19; SRS chưa quy định chi tiết |
-| 07 | Họ tên có dấu/dài | Nhập và giữ nguyên Unicode; kiểm trình bày và lưu; không tự đặt giới hạn tối đa từ SRS | FR-04; Slide 16, 19 |
-| 08 | Điện thoại hợp lệ | Chấp nhận chuỗi số đầu 0 dài 10 và 11; giữ số 0 đầu | FR-04; EP/BVA slide 19 |
-| 09 | Biên độ dài điện thoại | Bộ 9/10/11/12 chữ số, cùng bắt đầu 0; đối chiếu ranh giới hợp lệ 10–11 | FR-04; BVA slide 19 |
-| 10 | Ký tự/đầu số điện thoại | Không phải đầu 0, chữ, dấu +/gạch, khoảng trắng; làm rõ trim trước khi kết luận; không lấy regex code làm oracle | FR-04; EP slide 19 |
-| 11 | Phone/address trống | Xác định optional/required với SRS/TA; kiểm không có dữ liệu ban đầu và khi xóa nội dung cũ | FR-04 chưa quy định bắt buộc; Slide 11 |
-| 12 | Địa chỉ textarea | Unicode, nhiều dòng, địa chỉ dài, copy/paste; lưu đúng trường và không mất phần sau | FR-04; Slide 12, 16 |
-| 13 | Submit/Enter | Chuột và Enter gửi đúng thay đổi, không đổi email/role; quan sát actual request khi execution | FR-04; Slide 18–19 |
-| 14 | Cách sửa lỗi nhập | Message rõ trường/quy tắc, nằm trên submit theo SRS; có thể quay lại sửa và gửi lại | FR-22; Slide 16, 18 |
+| INV-IA02-01 | Prefill form | Tên/email/phone/address lấy đúng tài khoản và đúng trường | FR-04; Slide 11–12 |
+| INV-IA02-02 | Email chỉ đọc | Không sửa được qua GUI hoặc thao tác bàn phím; giá trị nhận diện vẫn đọc được | FR-04 |
+| INV-IA02-03 | Kiểu email | Đối chiếu type=email theo quy định chung, kể cả khi field disabled | FR-22; không coi đây là test nhập email |
+| INV-IA02-04 | Nhãn và control | Nhãn gắn đúng ô để click/đọc bằng công nghệ hỗ trợ; không dùng placeholder thay nhãn | Slide 16, 18; bổ sung accessibility |
+| INV-IA02-05 | Trường bắt buộc | Mọi trường thực sự bắt buộc có *; xác định rõ required trước khi chọn dữ liệu | FR-22; required tên hiện từ code |
+| INV-IA02-06 | Họ tên rỗng/khoảng trắng | Xác minh quy tắc tên, required và thông báo; không coi chuỗi toàn khoảng trắng là tên hợp lệ chỉ do HTML chấp nhận | Slide 11, 19; SRS chưa quy định chi tiết |
+| INV-IA02-07 | Họ tên có dấu/dài | Nhập và giữ nguyên Unicode; kiểm trình bày và lưu; không tự đặt giới hạn tối đa từ SRS | FR-04; Slide 16, 19 |
+| INV-IA02-08 | Điện thoại hợp lệ | Chấp nhận chuỗi số đầu 0 dài 10 và 11; giữ số 0 đầu | FR-04; EP/BVA slide 19 |
+| INV-IA02-09 | Biên độ dài điện thoại | Bộ 9/10/11/12 chữ số, cùng bắt đầu 0; đối chiếu ranh giới hợp lệ 10–11 | FR-04; BVA slide 19 |
+| INV-IA02-10 | Ký tự/đầu số điện thoại | Không phải đầu 0, chữ, dấu +/gạch, khoảng trắng; làm rõ trim trước khi kết luận; không lấy regex code làm oracle | FR-04; EP slide 19 |
+| INV-IA02-11 | Phone/address trống | Xác định optional/required với SRS/TA; kiểm không có dữ liệu ban đầu và khi xóa nội dung cũ | FR-04 chưa quy định bắt buộc; Slide 11 |
+| INV-IA02-12 | Địa chỉ textarea | Unicode, nhiều dòng, địa chỉ dài, copy/paste; lưu đúng trường và không mất phần sau | FR-04; Slide 12, 16 |
+| INV-IA02-13 | Submit/Enter | Chuột và Enter gửi đúng thay đổi, không đổi email/role; quan sát actual request khi execution | FR-04; Slide 18–19 |
+| INV-IA02-14 | Cách sửa lỗi nhập | Message rõ trường/quy tắc, nằm trên submit theo SRS; có thể quay lại sửa và gửi lại | FR-22; Slide 16, 18 |
 
 ### IA-03 — Navigation: 10 nội dung
 
-| STT | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
+| ID nguồn | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
 | --- | --- | --- | --- |
-| 01 | Đường vào Profile | Người đã login tìm/mở được trang qua link tên trên navbar | FR-04; Slide 17 |
-| 02 | Navbar active | Phân biệt Profile đang chọn với các trang khác; không chỉ cùng màu ở mọi route | FR-23 |
-| 03 | Logo EShop | Quay về trang chủ đúng route và phiên được giữ | Slide 17–18 |
-| 04 | Giỏ hàng trên header | Link đúng đích, badge đúng số lượng khi có dữ liệu; chỉ kiểm thành phần dùng chung | FR-23 |
-| 05 | Đăng xuất | Nhãn “Đăng xuất”, thao tác thoát và đường đi tiếp dễ hiểu | FR-23; trạng thái bảo vệ sau thoát ở IA-04 |
-| 06 | URL trực tiếp/reload | `/profile` truy cập được khi phiên hợp lệ, route không lỗi trắng/404 | FR-04; Slide 17 |
-| 07 | Tab/Shift+Tab | Trên xuống dưới/trái sang phải; email disabled được skip; có thể đến mọi control tương tác | FR-21; Slide 18 |
-| 08 | Keyboard link/nút | Enter kích hoạt đúng link/nút; textarea xuống dòng theo vai trò, không mắc kẹt focus | Slide 18 |
-| 09 | Back/Forward | Trở lại Profile sau điều hướng vẫn đúng route/tài khoản và không gây nhầm dữ liệu cũ | Slide 17–18, 20 |
-| 10 | Rời form chưa lưu | Khảo sát hành vi mất/giữ dữ liệu và dấu hiệu giúp người dùng biết chưa lưu | Slide 13–14; bổ sung, SRS không bắt dialog xác nhận |
+| INV-IA03-01 | Đường vào Profile | Người đã login tìm/mở được trang qua link tên trên navbar | FR-04; Slide 17 |
+| INV-IA03-02 | Navbar active | Phân biệt Profile đang chọn với các trang khác; không chỉ cùng màu ở mọi route | FR-23 |
+| INV-IA03-03 | Logo EShop | Quay về trang chủ đúng route và phiên được giữ | Slide 17–18 |
+| INV-IA03-04 | Giỏ hàng trên header | Link đúng đích, badge đúng số lượng khi có dữ liệu; chỉ kiểm thành phần dùng chung | FR-23 |
+| INV-IA03-05 | Đăng xuất | Nhãn “Đăng xuất”, thao tác thoát và đường đi tiếp dễ hiểu | FR-23; trạng thái bảo vệ sau thoát ở IA-04 |
+| INV-IA03-06 | URL trực tiếp/reload | `/profile` truy cập được khi phiên hợp lệ, route không lỗi trắng/404 | FR-04; Slide 17 |
+| INV-IA03-07 | Tab/Shift+Tab | Trên xuống dưới/trái sang phải; email disabled được skip; có thể đến mọi control tương tác | FR-21; Slide 18 |
+| INV-IA03-08 | Keyboard link/nút | Enter kích hoạt đúng link/nút; textarea xuống dòng theo vai trò, không mắc kẹt focus | Slide 18 |
+| INV-IA03-09 | Back/Forward | Trở lại Profile sau điều hướng vẫn đúng route/tài khoản và không gây nhầm dữ liệu cũ | Slide 17–18, 20 |
+| INV-IA03-10 | Rời form chưa lưu | Khảo sát hành vi mất/giữ dữ liệu và dấu hiệu giúp người dùng biết chưa lưu | Slide 13–14; bổ sung, SRS không bắt dialog xác nhận |
 
 ### IA-04 — Feedback / state: 16 nội dung
 
-| STT | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
+| ID nguồn | Thành phần / trạng thái | Nội dung cần kiểm tra | Căn cứ |
 | --- | --- | --- | --- |
-| 01 | Chưa login | Lời nhắc rõ và không hiển thị dữ liệu hồ sơ/đơn riêng | FR-04, FR-11 |
-| 02 | Đang khôi phục phiên | Không khiến người đã login hiểu nhầm đã mất phiên trong lúc chờ user API | Slide 13–14; bổ sung |
-| 03 | Phiên hết hạn | Không tiếp tục hiển thị thành công hoặc dữ liệu riêng như thể phiên còn hợp lệ; có cách đăng nhập lại | FR-04, FR-11; Slide 11 |
-| 04 | Đang lưu form | Có dấu hiệu đang xử lý trong điều kiện chậm, có thể biết thao tác đã được nhận | Slide 13–14; bổ sung |
-| 05 | Submit liên tiếp | Hành vi bấm nhanh/lặp không tạo kết quả khó hiểu hoặc thông báo chồng nhau | Slide 13–14; bổ sung |
-| 06 | Lưu thành công | Thông báo sau phản hồi API thành công, nội dung đủ rõ để người dùng biết đã lưu | FR-04; Slide 16, 20 |
-| 07 | Dữ liệu sau lưu | Form/header và dữ liệu khi rời rồi mở lại/reload khớp giá trị đã lưu | FR-04; Slide 12, 14, 20 |
-| 08 | Lưu thất bại | Không báo thành công; lỗi hữu ích và có thể thử lại | Slide 11, 16 |
-| 09 | Giữ input khi lỗi | Không mất dữ liệu người vừa nhập sau validation/API failure | Slide 11, 14; bổ sung |
-| 10 | Đóng alert/focus | Sau đóng thông báo vẫn biết cần sửa ở đâu, tiếp tục bằng keyboard được | Slide 13, 18; bổ sung |
-| 11 | Đang tải lịch sử | Loading không bị diễn đạt như “không có đơn” trước khi request kết thúc | Slide 13–14; bổ sung |
-| 12 | Empty thật | Có message thân thiện và icon/hình minh họa khi API trả rỗng | FR-24 |
-| 13 | Lỗi tải lịch sử | Phân biệt lỗi tải với empty; có phản hồi giúp phục hồi/thử lại | Slide 11, 16; bổ sung |
-| 14 | Đúng chủ sở hữu | Không trộn đơn hoặc hồ sơ khi đổi phiên/tài khoản; dữ liệu của phiên cũ được xử lý đúng | FR-04, FR-11; Slide 14 |
-| 15 | Trạng thái đơn cập nhật | Hiển thị trạng thái hiện tại khi mở lại/tải lại và đúng dòng đơn | FR-11; Slide 12, 14, 20 |
-| 16 | Dữ liệu bất thường/API chậm | Không trắng trang, không biến lỗi thành dữ liệu “đúng”; phản hồi hữu ích khi ngày/status/tổng thiếu hoặc response về chậm | Slide 11–14, 20; robustness bổ sung |
+| INV-IA04-01 | Chưa login | Lời nhắc rõ và không hiển thị dữ liệu hồ sơ/đơn riêng | FR-04, FR-11 |
+| INV-IA04-02 | Đang khôi phục phiên | Không khiến người đã login hiểu nhầm đã mất phiên trong lúc chờ user API | Slide 13–14; bổ sung |
+| INV-IA04-03 | Phiên hết hạn | Không tiếp tục hiển thị thành công hoặc dữ liệu riêng như thể phiên còn hợp lệ; có cách đăng nhập lại | FR-04, FR-11; Slide 11 |
+| INV-IA04-04 | Đang lưu form | Có dấu hiệu đang xử lý trong điều kiện chậm, có thể biết thao tác đã được nhận | Slide 13–14; bổ sung |
+| INV-IA04-05 | Submit liên tiếp | Hành vi bấm nhanh/lặp không tạo kết quả khó hiểu hoặc thông báo chồng nhau | Slide 13–14; bổ sung |
+| INV-IA04-06 | Lưu thành công | Thông báo sau phản hồi API thành công, nội dung đủ rõ để người dùng biết đã lưu | FR-04; Slide 16, 20 |
+| INV-IA04-07 | Dữ liệu sau lưu | Form/header và dữ liệu khi rời rồi mở lại/reload khớp giá trị đã lưu | FR-04; Slide 12, 14, 20 |
+| INV-IA04-08 | Lưu thất bại | Không báo thành công; lỗi hữu ích và có thể thử lại | Slide 11, 16 |
+| INV-IA04-09 | Giữ input khi lỗi | Không mất dữ liệu người vừa nhập sau validation/API failure | Slide 11, 14; bổ sung |
+| INV-IA04-10 | Đóng alert/focus | Sau đóng thông báo vẫn biết cần sửa ở đâu, tiếp tục bằng keyboard được | Slide 13, 18; bổ sung |
+| INV-IA04-11 | Đang tải lịch sử | Loading không bị diễn đạt như “không có đơn” trước khi request kết thúc | Slide 13–14; bổ sung |
+| INV-IA04-12 | Empty thật | Có message thân thiện và icon/hình minh họa khi API trả rỗng | FR-24 |
+| INV-IA04-13 | Lỗi tải lịch sử | Phân biệt lỗi tải với empty; có phản hồi giúp phục hồi/thử lại | Slide 11, 16; bổ sung |
+| INV-IA04-14 | Đúng chủ sở hữu | Không trộn đơn hoặc hồ sơ khi đổi phiên/tài khoản; dữ liệu của phiên cũ được xử lý đúng | FR-04, FR-11; Slide 14 |
+| INV-IA04-15 | Trạng thái đơn cập nhật | Hiển thị trạng thái hiện tại khi mở lại/tải lại và đúng dòng đơn | FR-11; Slide 12, 14, 20 |
+| INV-IA04-16 | Dữ liệu bất thường/API chậm | Không trắng trang, không biến lỗi thành dữ liệu “đúng”; phản hồi hữu ích khi ngày/status/tổng thiếu hoặc response về chậm | Slide 11–14, 20; robustness bổ sung |
 
 Tổng: **12 + 14 + 10 + 16 = 52 nội dung phân tích**. Đây là bản AI đề xuất trước human review; số checklist chính thức chỉ chốt sau khi loại trùng, chốt oracle, thêm bước thao tác và review của sinh viên. Chưa tính là 52 test đã chạy.
 
