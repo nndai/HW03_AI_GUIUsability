@@ -21,6 +21,7 @@ Các dòng dưới là danh mục artifact do AI lập, **chưa phải verdict c
 | --- | --- | --- | --- | --- |
 | Mục 1 trong prompt_log.md; OpenAI Codex; timestamp tại log | README.md, docs/requirements.md | Chờ SV review | Đối chiếu HW03 §§5–6, 9–12, 14–15 và policy; SV điền nhận xét thực tế | Chưa có bản SV sửa |
 | Cùng mục 1 | scripts/export_chat_log.py, scripts/export_git_log.py, prompt_log.md, git_commit_log.txt, AGENTS.md | Chờ SV review | Đối chiếu HW03 §9/§12, AI-02 §2–3, AI-03 §2.3, AI-05 §2; SV kiểm tra độ đầy đủ/nguyên văn | Chưa có bản SV sửa |
+| Mục 5 trong prompt_log.md; OpenAI Codex; thời gian gửi prompt tại log | docs/profile_inventory.md: thành phần, ma trận trạng thái, 52 nội dung IA-01–04; scripts/survey-vite.mjs và scripts/seed_survey_data.py hỗ trợ môi trường khảo sát | Chờ SV review | Đối chiếu SRS FR-04/11/21–24 và slide S13 trang 11–22; kiểm nhãn yêu cầu/bổ sung, scope và các giới hạn execution | Chưa có bản SV sửa |
 
 ## Tổng kết độ chính xác AI
 

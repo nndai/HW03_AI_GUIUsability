@@ -1,6 +1,6 @@
 # HW03 — GUI & Usability
 
-Trạng thái ngày 08/11/2026: đã đọc yêu cầu, thiết lập repo Git và nhật ký AI. Chưa thực thi checklist hoặc tổ chức phiên usability trong repo này.
+Trạng thái ngày 08/11/2026: đã thiết lập repo/nhật ký AI và khảo sát sơ bộ trang Profile với lịch sử trống/có dữ liệu. Đã lập 52 nội dung cần kiểm tra theo IA-01–04, chờ review thành checklist. Chưa thực thi checklist chính thức hoặc tổ chức phiên usability trong repo này.
 
 ## Phạm vi theo hướng dẫn đã có
 
@@ -12,6 +12,7 @@ Trạng thái ngày 08/11/2026: đã đọc yêu cầu, thiết lập repo Git v
 ## Tài liệu
 
 - [Yêu cầu và đầu ra cần nộp](docs/requirements.md)
+- [Thành phần, trạng thái và 52 nội dung kiểm tra FR-04/FR-11 theo IA](docs/profile_inventory.md)
 - [Prompt và phản hồi AI nguyên văn](prompt_log.md)
 - [Khung AI Audit — chờ sinh viên review](ai_audit.md)
 - [Cách đồng bộ nhật ký](docs/chat_logging.md)

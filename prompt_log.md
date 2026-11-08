@@ -93,4 +93,43 @@ git commit log để cuối xuất sau
 ```text
 Mình sẽ để cuối bài mới xuất `git_commit_log.txt`, bỏ bản log tạm hiện tại và vẫn commit từng bước như yêu cầu của đề.
 
+
+Đã chỉnh xong:
+
+- Log chỉ có số thứ tự, tool, thời gian prompt, prompt và output nguyên văn.
+- Bỏ thư mục `ai`, `.local`; đưa [prompt_log.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/prompt_log.md) ra thư mục `work`.
+- Vẫn commit từng bước, **cuối bài mới xuất Git commit log**.
+```
+
+## 5
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 17:05:19 (UTC+07:00)
+
+### Prompt
+
+```text
+ok, xem trang hồ sơ và lịch sử đơn hàng trên web, fr-04 và fr-11, đọc code, srs liên quan, liệt kê các thành phần và trạng thái cần kiểm tra, bạn có thể chạy sut, dùng computer use để check giao điện chuẩn hơn, đối chiếu srs và slide, chia các nội dung cần kiểm tra vào ia-01 đến ia-04
+
+
+```
+
+### Output
+
+```text
+Mình sẽ đọc SRS và code của FR-04, FR-11, mở trang web để đối chiếu giao diện thực tế, rồi lập danh sách thành phần và trạng thái cần kiểm tra theo IA-01 đến IA-04, bám theo slide.
+
+
+SRS xác định ba trường được sửa là họ tên, số điện thoại và địa chỉ; email chỉ đọc. Lịch sử đơn phải hiển thị đúng đơn của tài khoản, với mã, ngày, tổng tiền và trạng thái tiếng Việt có màu phân biệt. Mình đã chạy SUT với database thử riêng và thấy trang yêu cầu đăng nhập; tiếp theo sẽ xem form và bảng đơn để phân biệt phần đã có trên giao diện với trạng thái còn cần chuẩn bị dữ liệu để kiểm tra.
+
+
+Cổng API mặc định `3000` đang bị Windows từ chối, nên mình sẽ chuyển bản chạy khảo sát sang cổng khác và đổi địa chỉ kết nối trong bản sao chạy thử, giữ nguyên logic SUT. Danh sách sẽ ghi rõ căn cứ từ SRS hay slide; những mục như breadcrumb, dark mode hoặc RTL sẽ không được coi là yêu cầu bắt buộc nếu chưa có căn cứ áp dụng.
+
+
+Mình đã xem được form hồ sơ, lịch sử trống và bảng có đủ năm trạng thái đơn bằng dữ liệu thử. Danh sách kiểm tra sẽ bao gồm email chỉ đọc, ba trường được sửa, nút cập nhật, các cột đơn hàng, nhãn/màu trạng thái, cùng các trạng thái chờ xử lý, thành công và lỗi. Mình cũng sẽ tách yêu cầu SRS khỏi các tiêu chí bổ sung từ slide như focus, phục hồi sau lỗi, đồng bộ sau tải lại và bố cục màn hình hẹp.
+
+
+Bản phân tích đã có **52 nội dung**: IA-01 gồm 12, IA-02 gồm 14, IA-03 gồm 10 và IA-04 gồm 16. Mỗi mục có căn cứ và trạng thái cần tạo để kiểm tra. Mình cũng đã lưu hai ảnh khảo sát thật: lịch sử trống và bảng đủ năm trạng thái. Phần chụp thông báo validation bị công cụ trình duyệt timeout, nên mình ghi rõ giới hạn này trong tài liệu.
+
 ```
