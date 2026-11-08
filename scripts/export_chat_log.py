@@ -8,8 +8,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCAL = ROOT / ".local"
-AI = ROOT / "ai"
+STATE = ROOT / ".git" / "chat-log"
 VN = timezone(timedelta(hours=7))
 
 
@@ -68,7 +67,7 @@ def fenced(text):
 
 def sync(source):
     session_id, current = read_messages(source)
-    raw_path = AI / "messages.jsonl"
+    raw_path = STATE / "messages.jsonl"
     previous = [json.loads(line) for line in raw_path.read_text(encoding="utf-8").splitlines()] if raw_path.exists() else []
     # Keep other explicitly imported sessions; replace this session with its actual source.
     records = [r for r in previous if r["session_id"] != session_id] + current
@@ -90,7 +89,7 @@ def sync(source):
                       "### Prompt\n\n" + fenced(prompt["text"]) + "\n\n"
                       "### Output\n\n" + fenced("\n\n".join(interaction["outputs"])) + "\n")
     rendered = "\n".join(output)
-    write_changed(AI / "prompt_log.md", rendered)
+    write_changed(ROOT / "prompt_log.md", rendered)
     return rendered
 
 
@@ -100,9 +99,8 @@ def main():
     parser.add_argument("--follow", action="store_true")
     parser.add_argument("--idle-seconds", type=int, default=1800)
     args = parser.parse_args()
-    LOCAL.mkdir(exist_ok=True)
-    AI.mkdir(exist_ok=True)
-    config = LOCAL / "chat_log.json"
+    STATE.mkdir(parents=True, exist_ok=True)
+    config = STATE / "chat_log.json"
     if args.session:
         source = args.session.resolve(strict=True)
         config.write_text(json.dumps({"session": str(source)}, ensure_ascii=False), encoding="utf-8")
@@ -117,7 +115,7 @@ def main():
         sync(source)
         print("Exported chat messages.")
         return
-    pid_file = LOCAL / "chat_logger.pid"
+    pid_file = STATE / "chat_logger.pid"
     # Exclusive lock prevents concurrent exporters in this repo.
     try:
         pid_file.open("x", encoding="utf-8").write(str(os.getpid()))
@@ -126,7 +124,7 @@ def main():
     try:
         last = None
         changed = time.monotonic()
-        while not (LOCAL / "stop-chat-log").exists():
+        while not (STATE / "stop-chat-log").exists():
             rendered = sync(source)
             if rendered != last:
                 last = rendered

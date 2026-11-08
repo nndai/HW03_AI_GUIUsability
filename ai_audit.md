@@ -11,7 +11,7 @@ I use AI tools for the following tasks,
 | Bài tập | HW03-AI — GUI & Usability |
 | Ngày | 08/11/2026, Asia/Saigon (UTC+07:00) |
 | Công cụ | OpenAI Codex; không suy đoán phiên bản model |
-| Transcript gốc đã xuất | [prompt_log.md](prompt_log.md), [messages.jsonl](messages.jsonl) |
+| Transcript gốc đã xuất | [prompt_log.md](prompt_log.md) |
 
 ## Audit theo AI-02
 
@@ -19,8 +19,8 @@ Các dòng dưới là danh mục artifact do AI lập, **chưa phải verdict c
 
 | (1) Prompt + công cụ | (2) Output AI | (3) Verdict | (4) Lý do có nguồn | (5) Bản SV sửa |
 | --- | --- | --- | --- | --- |
-| Tương tác 001 trong prompt_log.md; OpenAI Codex; timestamp tại log | README.md, docs/requirements.md | Chờ SV review | Đối chiếu HW03 §§5–6, 9–12, 14–15 và policy; SV điền nhận xét thực tế | Chưa có bản SV sửa |
-| Cùng tương tác 001 | scripts/export_chat_log.py, scripts/export_git_log.py, ai/prompt_log.md, ai/messages.jsonl, git_commit_log.txt, AGENTS.md | Chờ SV review | Đối chiếu HW03 §9/§12, AI-02 §2–3, AI-03 §2.3, AI-05 §2; SV kiểm tra độ đầy đủ/nguyên văn | Chưa có bản SV sửa |
+| Mục 1 trong prompt_log.md; OpenAI Codex; timestamp tại log | README.md, docs/requirements.md | Chờ SV review | Đối chiếu HW03 §§5–6, 9–12, 14–15 và policy; SV điền nhận xét thực tế | Chưa có bản SV sửa |
+| Cùng mục 1 | scripts/export_chat_log.py, scripts/export_git_log.py, prompt_log.md, git_commit_log.txt, AGENTS.md | Chờ SV review | Đối chiếu HW03 §9/§12, AI-02 §2–3, AI-03 §2.3, AI-05 §2; SV kiểm tra độ đầy đủ/nguyên văn | Chưa có bản SV sửa |
 
 ## Tổng kết độ chính xác AI
 

@@ -12,10 +12,10 @@ Trạng thái ngày 08/11/2026: đã đọc yêu cầu, thiết lập repo Git v
 ## Tài liệu
 
 - [Yêu cầu và đầu ra cần nộp](docs/requirements.md)
-- [Prompt và phản hồi AI nguyên văn](ai/prompt_log.md)
-- [Khung AI Audit — chờ sinh viên review](ai/ai_audit.md)
-- [Cách đồng bộ nhật ký](ai/README.md)
-- [Lịch sử commit dạng text](git_commit_log.txt)
+- [Prompt và phản hồi AI nguyên văn](prompt_log.md)
+- [Khung AI Audit — chờ sinh viên review](ai_audit.md)
+- [Cách đồng bộ nhật ký](docs/chat_logging.md)
+- Lịch sử commit dạng text: sẽ xuất `git_commit_log.txt` khi hoàn thiện bài.
 
 ## Test summary hiện tại
 

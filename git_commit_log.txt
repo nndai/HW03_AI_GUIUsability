@@ -1,7 +1,0 @@
-HW03 Git commit log
-Snapshot HEAD: 12f5a4d5802d2819b375a8debd73affabfec8ef3
-This snapshot includes commits through HEAD above. A later commit that stores
-this file is not included in its own snapshot.
-
-12f5a4d5802d2819b375a8debd73affabfec8ef3 | 2026-11-08T16:47:55+07:00 | dai | chore: add verbatim timestamped chat logging and AI audit scaffold
-fb147cf3a0d5da92132c0b14c5e17c838bd7a130 | 2026-11-08T16:47:34+07:00 | dai | docs: record HW03 requirements and existing Profile scope

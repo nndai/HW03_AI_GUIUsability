@@ -54,3 +54,43 @@ log prompt chỉ cần đánh số, tool, thời gian lúc prompt, prompt nguyê
 Mình sẽ đổi log sang Markdown đơn giản, mỗi lượt chỉ có số thứ tự, tool, thời gian gửi prompt, prompt nguyên văn và output nguyên văn; đồng thời sửa bộ ghi tự động để giữ đúng định dạng này.
 
 ```
+
+## 3
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 16:59:10 (UTC+07:00)
+
+### Prompt
+
+```text
+bỏ thử mục ai, .local luôn
+
+```
+
+### Output
+
+```text
+Mình sẽ bỏ hai thư mục `ai` và `.local`, đưa `prompt_log.md` và `ai_audit.md` ra ngay thư mục `work`, rồi cập nhật bộ ghi tự động theo vị trí mới.
+
+```
+
+## 4
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 17:00:09 (UTC+07:00)
+
+### Prompt
+
+```text
+git commit log để cuối xuất sau
+
+```
+
+### Output
+
+```text
+Mình sẽ để cuối bài mới xuất `git_commit_log.txt`, bỏ bản log tạm hiện tại và vẫn commit từng bước như yêu cầu của đề.
+
+```
