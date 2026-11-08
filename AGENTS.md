@@ -1,12 +1,9 @@
 # Quy tắc làm việc HW03
 
-- Đọc README.md và Bao_cao.md. Checklist chính thức duy nhất là checklist/GUI_Checklist.md và Excel/PDF cùng thư mục, bản 2.0, 41 mục liên tục GUI-001–GUI-041; IA-01/02/03/04 = 11/10/9/11.
-- ID đã đổi theo yêu cầu người dùng; tra mapping bản 1.1 → 2.0 tại phu_luc/AI_Review.md. Không dùng ID cũ để ghi execution. Không đưa mục bị loại/chưa đủ căn cứ trở lại checklist.
-- Scope FR-04 + FR-11 trên /profile, một trang. SUT tại ../eshop-sut. Không sửa nghiệp vụ hoặc reset database để ép Passed.
-- Prompt/output công khai lưu nguyên văn tại prompt_log.md, chỉ số/tool/thời gian prompt giờ Việt Nam/prompt/output. Không thêm session/ID kỹ thuật/ngữ cảnh tự động/suy luận nội bộ.
-- Mỗi lượt chạy `python .git/hw3-tools/export_chat_log.py`; để ghi cả câu trả lời cuối, bật --follow nếu chưa có logger. Logger tự dừng sau 30 phút không có tin nhắn; state tại .git/chat-log, tool tại .git/hw3-tools. Không tạo lại ai/.local/scripts/output/outputs/docs trong cây nộp.
-- Công cụ tạo file lưu nội bộ trong .git/hw3-tools. Khi sửa cập nhật đồng bộ MD/XLSX/PDF và báo cáo; không ghi đè kết quả người dùng đã nhập. Preview ở .git và dọn sau kiểm tra.
-- Chưa chạy không gán Passed/Failed; bị blocker ghi Chưa chạy + Notes. Không tạo participant/feedback/recording/ảnh giả.
-- Bug report do sinh viên viết 100%; AI không nháp theo AI-01 §11. Không tự điền verdict/chữ ký hay coi AI tự sửa là SV bổ sung.
-- Commit từng bước thực. Cuối bài hoặc khi người dùng yêu cầu mới xuất git_commit_log.txt bằng .git/hw3-tools/export_git_log.py; không xuất sau từng commit.
-- Giữ rõ phần chưa có bằng chứng trong README/Bao_cao, không đoán MSSV/họ tên/email/deadline, không đóng ZIP như bài hoàn tất khi chưa có dữ liệu thật. Loại AGENTS.md và .git khỏi ZIP.
+- Chỉ biên tập nội dung đề bài yêu cầu. Báo cáo chính duy nhất là report.md; có đủ 41 mục GUI-001–GUI-041, IA-01/02/03/04 = 11/10/9/11. Workbook chính thức GUI_Checklist.xlsx ở thư mục gốc.
+- Giữ cấu trúc phẳng; không tạo thư mục con, docs hoặc phụ lục thành file riêng. AI Audit bắt buộc nằm trong report.md. README.md chỉ chứa danh mục file, summary và tự chấm theo đề.
+- Không tự commit. Không tạo PDF hoặc ZIP cho đến khi người dùng yêu cầu nộp. Không xuất Git log trong lúc còn làm bài nếu chưa được yêu cầu.
+- Giữ nguyên prompt/output tại prompt_log.md với số thứ tự, tool, thời gian prompt giờ Việt Nam. Chạy .git/hw3-tools/export_chat_log.py mỗi lượt và bật --follow nếu cần ghi câu trả lời cuối; không ghi system/developer/suy luận nội bộ.
+- Không thêm lời nhắc quy trình, lịch sử biên tập, mapping ID cũ, bản nháp hoặc nội dung không bắt buộc vào báo cáo. Không tạo dữ liệu/participant/ảnh test hoặc Passed/Failed giả; phần chưa thực hiện chỉ ghi trạng thái ngắn.
+- Bug report do sinh viên tự viết theo AI-01 §11. Không tự điền verdict/chữ ký hoặc coi AI tự sửa là SV bổ sung. Không sửa SUT để ép Passed.
+- Khi cập nhật, giữ nội dung report.md và GUI_Checklist.xlsx đồng nhất; không ghi đè actual/kết quả người dùng đã điền. Không chạy các script dựng lại cấu trúc/PDF cũ. Công cụ nội bộ nằm trong .git, không thuộc hồ sơ nộp.

@@ -273,4 +273,55 @@ Sau khi bỏ hai mục, checklist còn đúng **41 mục**, phân bổ IA-01/02/
 
 Cây hồ sơ nộp đã gọn lại: báo cáo chính, `checklist/`, phụ lục AI, prompt log và ảnh khảo sát thật. Các thư mục cũ đã được tách khỏi cây này. Bản Markdown, Excel và PDF đều đã được kiểm tra; checklist chính thức chỉ có 41 mục, còn lịch sử các mục bị loại nằm riêng trong phụ lục để phục vụ audit.
 
+
+Đã hoàn tất:
+
+- Còn **41 mục**, đánh ID liên tục `GUI-001`–`GUI-041`.
+- Các mục chờ làm rõ đã tách khỏi checklist chính thức.
+- Đã dọn cây hồ sơ, tổ chức báo cáo theo đề và commit.
+
+Mở [báo cáo chính](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/Bao_cao.md) hoặc [checklist chính thức](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/checklist/GUI_Checklist.md). Các phần chưa có dữ liệu thật vẫn ghi rõ chưa thực hiện.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/checklist/GUI_Checklist.xlsx" purpose="output"}
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/checklist/GUI_Checklist.pdf" purpose="output"}
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/Bao_cao.pdf" purpose="output"}
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/README.pdf" purpose="output"}
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/ai_audit.pdf" purpose="output"}
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/phu_luc/AI_Review.pdf" purpose="output"}
+```
+
+## 10
+
+Tool: OpenAI Codex
+
+Thời gian: 08/11/2026 22:51:25 (UTC+07:00)
+
+### Prompt
+
+```text
+đưa nội dung cần thiết vào báo cáo chính report.md, các phụ lục, docs không cần thiết hãy xóa đi, không tạo folder con, chỉ nội dung nào yêu cầu đề bài có thì mới làm, ko tự commit, không gen pdf, pdf chỉ tạo khi nộp. báo cáo cần clean, ko chứa các nội dung không yêu cầu
+
+```
+
+### Output
+
+```text
+Mình sẽ gom nội dung cần theo đề vào `report.md`, bỏ các phụ lục và tài liệu dư, dọn về một thư mục phẳng. Từ bước này mình sẽ không tự commit hoặc tạo PDF; các phần chưa thực hiện sẽ chỉ ghi trạng thái ngắn gọn, không thêm nội dung ngoài yêu cầu.
+
+
+Mình đã đưa đủ 41 mục checklist, phần review cần thiết và AI Audit bắt buộc vào `report.md`. Bản nháp, lịch sử đổi ID và ghi chú quy trình sẽ không còn trong hồ sơ chính. Mình giữ riêng Excel checklist và prompt log theo yêu cầu đề; README chỉ còn danh mục file, summary và bảng tự chấm.
+
+
+Đã gom nội dung cần thiết vào [report.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md), gồm 41 mục checklist và AI Audit bắt buộc.
+
+Hồ sơ đã phẳng, loại tài liệu phụ và PDF khỏi thư mục làm bài. README và prompt log được giữ theo yêu cầu đề.
+
+**Không commit. Không tạo PDF; chỉ tạo khi nộp.**
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" purpose="output"}
 ```

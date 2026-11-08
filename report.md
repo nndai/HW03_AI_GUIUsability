@@ -1,42 +1,64 @@
-# HW03 - GUI Checklist FR-04 và FR-11
+# HW03 - GUI & Usability
 
-Phiên bản 2.0 - ngày 08/11/2026. Có 41 mục chính thức, ID liên tục GUI-001 đến GUI-041. Chưa thực thi.
+## 1. Thông tin và phạm vi
 
-## 1. Phạm vi và cách ghi kết quả
-
-Một trang /profile gồm hồ sơ FR-04, lịch sử đơn FR-11 và thành phần navbar liên quan. Không kiểm thao tác hủy đơn FR-10 hoặc checkout.
-
-- IA-01: 11 mục; IA-02: 10 mục; IA-03: 9 mục; IA-04: 11 mục.
-- Mọi mục đều có thao tác, dữ liệu, kết quả mong đợi và căn cứ. SRS là yêu cầu hệ thống; S13 là slide môn học; B01–B08 là quy ước kiểm tra của bài, không tự coi là điều khoản SRS.
-- Chưa chạy thì để Chưa chạy. Chỉ ghi Passed khi mọi biến thể bắt buộc đã chạy và đạt; có biến thể lỗi thì Failed, nêu biến thể và actual trong Notes. Bị chặn bởi bước trước thì giữ Chưa chạy và ghi blocker.
-- Failed phải có Notes và ảnh thật; bug report do sinh viên tự viết. Ảnh/Issue dùng đường dẫn trong gói nộp và ID/link GitHub tương ứng; không bắt chụp ảnh Passed.
-- Chạy cùng 41 mục trên ít nhất 3 nền tảng. Workbook có 123 lượt dự kiến ở Execution, không tính thành 123 mục thiết kế khác nhau. Chốt browser/OS/device/version và lưu từng run riêng.
-- Bảng Markdown là mẫu một run. Kết quả theo môi trường nhập tại Execution; sau kiểm thử cập nhật báo cáo và PDF từ dữ liệu thực.
-
-## 2. Thông tin run
-
-| Trường | Giá trị |
+| Nội dung | Thông tin |
 | --- | --- |
-| Họ tên / MSSV / email sinh viên | Chưa cung cấp |
-| Người thực thi / ngày giờ | Chưa thực hiện |
-| Browser / version / OS / device | Chưa điền |
-| URL frontend / backend | Ghi đúng môi trường thực tế; khảo sát trước dùng localhost:5175 / localhost:13000 |
-| SUT commit | 85af3ba875c88283615e22cb108f13e2fccaf0e9; ghi thêm thay đổi cục bộ và port của run |
-| Viewport / zoom / locale / timezone | Chưa điền |
-| Baseline / fixture | Chưa chuẩn bị cho lần chạy chính thức |
+| Họ tên / MSSV / lớp / email sinh viên | Chưa cung cấp |
+| Mã bài tập | HW03-AI |
+| SUT | EShop |
+| Màn hình | /profile - hồ sơ cá nhân FR-04 và lịch sử đơn hàng FR-11 |
+| Flow usability | Đã đăng nhập → mở hồ sơ → cập nhật thông tin liên hệ/địa chỉ → lưu → mở lại để kiểm tra |
 
-## 3. Dữ liệu kiểm tra
+## 2. Task 1 - GUI checklist
 
-| Fixture | Nội dung |
+### 2.1. Thiết kế và review
+
+Checklist gồm 41 mục, đủ bốn khía cạnh giao diện. Kỳ vọng dựa trên SRS FR-04, FR-11, FR-21–24 và slide S13. Điện thoại áp dụng EP/BVA với độ dài 9/10/11/12; các trạng thái đăng nhập, lưu và tải đơn áp dụng kiểm tra chuyển trạng thái.
+
+| IA | Khía cạnh | Số mục |
+| --- | --- | ---: |
+| IA-01 | Tiêu chuẩn giao diện chung | 11 |
+| IA-02 | Form | 10 |
+| IA-03 | Điều hướng | 9 |
+| IA-04 | Phản hồi / trạng thái | 11 |
+| Tổng | | 41 |
+
+Các nội dung AI đề xuất đã được rà và điều chỉnh như sau:
+
+| Nội dung rà soát | Điều chỉnh | Lý do |
+| --- | --- | --- |
+| Điện thoại hợp lệ và biên độ dài | Gộp thành một bộ 9/10/11/12 chữ số | Tránh lặp các trường hợp hợp lệ trong nhiều mục |
+| Font phải khớp tuyệt đối | Giữ kiểm tra khả năng đọc và chữ không mất/cắt | SRS không quy định font-family/font-size phải giống tuyệt đối |
+| Tiền thiếu, click nhãn phải focus, giữ nguyên xuống dòng | Bỏ các điều kiện này | Chưa có căn cứ kỳ vọng cụ thể trong SRS |
+| Server không đổi khi mất mạng | Chỉ kiểm phản hồi lỗi hoặc chưa xác nhận kết quả | Mất mạng có thể xảy ra sau khi server đã xử lý |
+| Chống submit lặp, nội dung dài/zoom, giữ input khi lỗi | Loại khỏi danh sách đã chọn | Theo quyết định thu hẹp của người dùng |
+
+Chưa ghi nhận mục do sinh viên tự bổ sung kèm lý do AI bỏ sót.
+
+### 2.2. Dữ liệu và quy ước kiểm tra
+
+| Ký hiệu | Dữ liệu |
 | --- | --- |
-| A, B | Hai tài khoản thử có profile, email, role và đơn khác nhau; biết trước giá trị chuẩn; dùng thông tin giả |
-| A0 | Tài khoản không có đơn; GET danh sách thành công trả [] |
-| P | 091234567 / 0912345678 / 09123456789 / 091234567890; chỉ 10–11 chữ số đầu 0 hợp lệ |
-| V | Nguyễn Văn Mẫu; phone 0912345678; địa chỉ 123 Đường Thử Nghiệm, Phường Mẫu / Thành phố Thử Nghiệm, nhập hai dòng để quan sát nội dung |
-| O | Đơn đủ 5 status; tiền 0, 1234567, 123456789; ngày có ngày lớn hơn 12; có đơn của B không được thấy khi A login |
-| Chậm/lỗi | Delay GET 3 giây, API 500 hoặc network offline trong môi trường thử riêng; ghi cách tạo và khôi phục |
+| A, B | Hai tài khoản thử có hồ sơ và đơn khác nhau; biết trước dữ liệu chuẩn |
+| A0 | Tài khoản không có đơn |
+| P | 091234567, 0912345678, 09123456789, 091234567890; chỉ 10–11 chữ số đầu 0 hợp lệ |
+| V | Nguyễn Văn Mẫu; 0912345678; địa chỉ tiếng Việt có hai dòng và dấu phẩy |
+| O | Đơn đủ pending/confirmed/shipping/delivered/canceled; tiền 0, 1234567, 123456789; ngày có phần ngày lớn hơn 12 |
+| Chậm/lỗi | Delay GET 3 giây, API 500 hoặc mất mạng trong môi trường thử |
 
-## 4. Checklist chính thức
+- **B01:** Môi trường layout đề xuất: viewport CSS 390×844, 768×1024, 1366×768; zoom 100%. Cuộn bảng ngang hợp lệ nếu vẫn tiếp cận đủ nội dung. Đây là phạm vi kiểm thử, không phải số đo trong SRS.
+- **B02:** Typography đề xuất: chữ và nhãn đọc được, không glyph thiếu/cắt; phân biệt tiêu đề và nội dung. Không yêu cầu font-family/font-size giống tuyệt đối hoặc tự đặt minimum 14/16 px.
+- **B03:** Ghi locale và timezone cho mỗi run. Chấp nhận cách trình bày theo locale nếu giá trị ngày đúng và nhất quán; không tự bắt dd/MM/yyyy.
+- **B04:** Focus/readability là review định tính theo slide: có dấu focus thấy được và thao tác tiếp được. Không dùng kết quả này chứng nhận accessibility hoặc tỷ lệ contrast.
+- **B05:** Nhãn và accessible name phải diễn đạt đúng control; chấp nhận label/aria-label/aria-labelledby. Không yêu cầu click nhãn phải chuyển focus.
+- **B06:** Quy ước thao tác GUI: link/nút đúng vai trò, giữ phiên trên điều hướng thường; giỏ 3 loại ×1 để không tranh luận badge đếm dòng hay số lượng. Không yêu cầu Enter trong mọi input submit.
+- **B07:** Khôi phục phiên/loading phân biệt với logged-out/empty/error. Delay 3 giây chỉ để trạng thái đủ quan sát, không là yêu cầu tốc độ phản hồi.
+- **B08:** Đề xuất phục hồi lỗi: message đúng loại lỗi, không báo thành công giả, thử lại được. Không bắt cụ thể HTTP error text hoặc nút Retry riêng.
+
+### 2.3. Checklist chính thức
+
+Tất cả mục hiện Chưa chạy. Kết quả từng nền tảng nhập tại GUI_Checklist.xlsx; mỗi Failed cần Notes và ảnh lỗi. Mục bị chặn chưa thực hiện vẫn ghi Chưa chạy và nêu lý do.
 
 | ID | IA | Thành phần / trạng thái | Thao tác và dữ liệu | Kết quả mong đợi | Căn cứ | Kết quả | Notes | Ảnh / Issue |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -82,34 +104,81 @@ Một trang /profile gồm hồ sơ FR-04, lịch sử đơn FR-11 và thành ph
 | GUI-040 | IA-04 | Chuyển tài khoản và cô lập dữ liệu | A và B có profile/đơn khác nhau; xem A, logout, login B, mở Profile rồi Back/Forward. | Chỉ profile và đơn của tài khoản hiện tại xuất hiện; không giữ flash/cache dữ liệu riêng A trong phiên B; mọi hàng khớp fixture theo chủ sở hữu. | SRS FR-04,FR-11; S13 tr.14 | Chưa chạy |  |  |
 | GUI-041 | IA-04 | Trạng thái đơn thay đổi bên ngoài | Ghi baseline một đơn pending; đổi fixture riêng thành confirmed, không bấm Hủy đơn; mở lại/reload Profile. | Cùng mã đơn hiển thị nhãn/màu trạng thái confirmed mới; không làm thay đổi đơn khác. Không bắt buộc realtime/polling khi chưa reload. | SRS FR-11; S13 tr.12,14,20 | Chưa chạy |  |  |
 
-## 5. Quy ước kiểm tra
+### 2.4. Kết quả thực thi
 
-- **B01:** Môi trường layout đề xuất: viewport CSS 390×844, 768×1024, 1366×768; zoom 100%. Cuộn bảng ngang hợp lệ nếu vẫn tiếp cận đủ nội dung. Đây là phạm vi kiểm thử, không phải số đo trong SRS.
-- **B02:** Typography đề xuất: chữ và nhãn đọc được, không glyph thiếu/cắt; phân biệt tiêu đề và nội dung. Không yêu cầu font-family/font-size giống tuyệt đối hoặc tự đặt minimum 14/16 px.
-- **B03:** Ghi locale và timezone cho mỗi run. Chấp nhận cách trình bày theo locale nếu giá trị ngày đúng và nhất quán; không tự bắt dd/MM/yyyy.
-- **B04:** Focus/readability là review định tính theo slide: có dấu focus thấy được và thao tác tiếp được. Không dùng kết quả này chứng nhận accessibility hoặc tỷ lệ contrast.
-- **B05:** Nhãn và accessible name phải diễn đạt đúng control; chấp nhận label/aria-label/aria-labelledby. Không yêu cầu click nhãn phải chuyển focus.
-- **B06:** Quy ước thao tác GUI: link/nút đúng vai trò, giữ phiên trên điều hướng thường; giỏ 3 loại ×1 để không tranh luận badge đếm dòng hay số lượng. Không yêu cầu Enter trong mọi input submit.
-- **B07:** Khôi phục phiên/loading phân biệt với logged-out/empty/error. Delay 3 giây chỉ để trạng thái đủ quan sát, không là yêu cầu tốc độ phản hồi.
-- **B08:** Đề xuất phục hồi lỗi: message đúng loại lỗi, không báo thành công giả, thử lại được. Không bắt cụ thể HTTP error text hoặc nút Retry riêng.
+Chưa thực thi checklist chính thức: 0 lượt đã chạy, 0 Passed, 0 Failed. Chưa có ảnh lỗi chính thức.
 
-## 6. Căn cứ
+### 2.5. Bug report
 
-- SRS EShop, README.md: FR-04 dòng 62–68; FR-11 dòng 164–168; FR-21 dòng 242–248; FR-22 dòng 250–256; FR-23 dòng 258–263; FR-24 dòng 265–270. Bản đọc ngày 08/11/2026. Code nhận diện control/trạng thái, không thay SRS làm expected.
-- Slide S13 GUI Testing & Usability Testing: trang 8, 11–14, 16–22; số trang theo PDF. Áp dụng checklist, navigation, EP/BVA, state transition và synchronization.
-- HW03 §6 Task 1/3, §14: hơn 40 mục, đủ bốn IA, Passed/Failed, Notes/ảnh Failed, thực thi trên ít nhất 3 nền tảng; Excel và báo cáo Markdown/PDF.
-- Chỉ 41 hàng tại mục 4 thuộc checklist chính thức. Bản nháp, mục bị loại và bảng đổi ID được lưu riêng trong phu_luc/AI_Review.md để audit, không tham gia execution hoặc mẫu số thống kê.
+Chưa có bug report chính thức hoặc GitHub Issue được ghi nhận.
 
-## 7. Test summary
+## 3. Task 2 - Usability evaluation
 
-| IA | Thiết kế | Lượt dự kiến | Đã chạy | Passed | Failed |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| IA-01 | 11 | 33 | 0 | 0 | 0 |
-| IA-02 | 10 | 30 | 0 | 0 | 0 |
-| IA-03 | 9 | 27 | 0 | 0 | 0 |
-| IA-04 | 11 | 33 | 0 | 0 | 0 |
-| Tổng | 41 | 123 | 0 | 0 | 0 |
+### 3.1. Mục tiêu và scenario
 
-## 8. AI và thay đổi phiên bản
+Mục tiêu: đánh giá khả năng tìm hồ sơ, cập nhật thông tin, hiểu phản hồi và xác minh đã lưu.
 
-AI tạo bản nháp và biên tập theo góp ý của người dùng. Bản 2.0 bỏ hai mục GUI-004/GUI-038 của bản 1.1 và đánh lại ID; giữ nội dung 41 mục còn lại, chỉ sửa tham chiếu ID tương ứng. Quyết định này chưa thay thế kết quả thực thi hoặc verdict audit từng artifact. Prompt/output nguyên văn trong prompt_log.md; quá trình review và mapping trong phụ lục AI Review.
+Scenario: “Bạn vừa thay đổi thông tin liên hệ và chuyển nơi ở. Hãy cập nhật tài khoản bằng thông tin thử nghiệm được cung cấp để chuẩn bị cho lần mua hàng tiếp theo, sau đó kiểm tra thông tin đã được lưu đúng.”
+
+### 3.2. Công cụ đánh giá
+
+Dự kiến dùng SUS sau task và câu hỏi mở:
+
+- Độ rõ ràng: Phần nào khiến bạn khó hiểu khi thực hiện nhiệm vụ?
+- Phục hồi lỗi: Khi gặp lỗi, bạn hiểu cần làm gì tiếp theo?
+- Tốc độ: Bước nào khiến bạn phải chờ hoặc mất nhiều công nhất?
+- Độ tin cậy: Điều gì giúp bạn tin hoặc nghi ngờ thông tin đã được lưu?
+
+### 3.3. Pilot và bảy phiên chính thức
+
+Chưa thực hiện pilot. Chưa có danh sách participant, thông tin liên hệ xác minh, ghi chú quan sát, câu trả lời thang đo hoặc recording; số phiên chính thức là 0/7.
+
+### 3.4. Phân tích và phát hiện
+
+Chưa có dữ liệu để tính điểm SUS, tổng hợp pain point, xếp severity hoặc báo cáo bug từ usability.
+
+## 4. Task 3 - Cross-browser / cross-platform
+
+| Nền tảng dự kiến | Số mục | Đã chạy | Passed | Failed |
+| --- | ---: | ---: | ---: | ---: |
+| Chrome / Windows | 41 | 0 | 0 | 0 |
+| Firefox / Windows | 41 | 0 | 0 | 0 |
+| Safari / macOS hoặc Android Chrome | 41 | 0 | 0 | 0 |
+
+Chưa có lần chạy và ảnh đa nền tảng đáp ứng yêu cầu đề.
+
+## 5. Agent Skills và demo
+
+Chưa thực hiện; chưa có link demo.
+
+## 6. AI Critique
+
+Chưa hoàn thiện đoạn critique 200–300 words.
+
+## 7. Khai báo sử dụng AI
+
+I use AI tools for the following tasks,
+
+- Đọc yêu cầu, SRS và slide; khảo sát thành phần/trạng thái của trang Profile.
+- Tạo nháp, rà trùng và biên tập checklist theo góp ý người dùng.
+- Tạo tài liệu và ghi nhật ký prompt/output.
+
+Công cụ: OpenAI Codex. Prompt/output nguyên văn, tên công cụ và thời gian từng tương tác nằm trong prompt_log.md. Người dùng quyết định các mục cần sửa/bỏ và chốt 41 mục; AI thực hiện chỉnh sửa file. Chưa có verdict đầy đủ hoặc phần sinh viên tự bổ sung được xác nhận.
+
+## Phụ lục A - AI Audit Report
+
+| Prompt / công cụ / thời gian | Output AI | Verdict | Lý do / căn cứ review | Chỉnh sửa thực tế |
+| --- | --- | --- | --- | --- |
+| Đọc bài và thiết lập log; Codex; timestamp tại prompt_log.md | Tổng hợp yêu cầu và log | Chưa điền | HW03 §9 và AI Templates | Người dùng yêu cầu log đơn giản và chỉ xuất Git log cuối bài |
+| Khảo sát FR-04/FR-11; Codex; timestamp tại prompt_log.md | Bản nháp 52 mục | Chưa điền | SRS FR-04/11/21–24, S13 | AI rà trùng và căn cứ; người dùng tiếp tục góp ý |
+| Gộp checklist và thêm ID; Codex; timestamp tại prompt_log.md | Checklist hợp nhất | Chưa điền | Đối chiếu kỳ vọng, loại phần trùng và không có căn cứ | Gộp phone hợp lệ/biên; bỏ các điều kiện font, tiền thiếu, label-focus, newline và server không đổi khi mất mạng |
+| Chốt 41 mục, đổi ID và dọn tài liệu; Codex; timestamp tại prompt_log.md | GUI-001–GUI-041 và workbook | Chưa điền | Phạm vi đã chọn; bốn IA 11/10/9/11 | Loại các mục người dùng chỉ định, đánh ID liên tục; giữ 41 mục hiện tại |
+
+Chưa có verdict để tổng hợp tỷ lệ VALID/INVALID/INCOMPLETE. Kết luận audit 80–150 chữ và khai báo/chữ ký theo biểu mẫu chưa hoàn thiện.
+
+## Tài liệu tham chiếu
+
+- Đề HW03 - GUI & Usability, §5–6, §9–12, §14–15.
+- SRS EShop: FR-04, FR-11, FR-21–24.
+- Slide S13 GUI Testing & Usability Testing: trang 8, 11–22.
+- AI Templates: AI-01, AI-02, AI-03 và AI-05.
