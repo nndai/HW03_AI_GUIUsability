@@ -535,3 +535,45 @@ Tôi sẽ kiểm tra thư mục `screenshot` và cập nhật các đường d�
 
 :codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
 ```
+
+## 17
+
+Tool: OpenAI Codex
+
+Thời gian: 09/11/2026 23:02:48 (UTC+07:00)
+
+### Prompt
+
+```text
+đọc checklist và kết quả chrome hiện có, lập kế hoạch task 3 trên chrome windows, firefox windows và chrome android, giữ nguyên kết quả chrome, cấu hình và chạy cùng checklist trên firefox, failed có notes và ảnh, có thể sửa lại cấu trúc của screenshots
+
+```
+
+### Output
+
+```text
+Tôi sẽ đọc checklist và kết quả Chrome đã chốt, lập kế hoạch Task 3 cho Chrome/Windows, Firefox/Windows và Chrome/Android. Sau đó tôi sẽ cấu hình và chạy checklist trên Firefox, lưu Notes và ảnh cho các mục Failed; kết quả Chrome sẽ được giữ nguyên.
+
+
+Tôi sẽ dùng nguyên 42 mục và cách chốt kết quả hiện có: GUI-016/019/020 là Failed nếu dữ liệu hợp lệ bị chặn cập nhật; GUI-033/034/035 là Blocked nếu chưa tới nhánh cần kiểm. Firefox dùng bộ tài khoản P2 và thư mục ảnh riêng, không ghi đè dữ liệu hay ảnh Chrome. Chrome/Android sẽ được lên kế hoạch cho thiết bị thật hoặc cloud, không tính giả lập viewport trên Windows là Android.
+
+
+Firefox đã chạy qua các ca cập nhật, điều hướng và trạng thái phiên. Tôi đang rà riêng phần bàn phím: khi Tab đi ra thanh công cụ trình duyệt, Firefox vẫn có thể trả về control cuối qua `activeElement`. Tôi sẽ kiểm lại GUI-010/028 từ một điểm focus xác định để tránh nhầm hành vi trình duyệt với lỗi SUT, và giữ cả bằng chứng lần đầu.
+
+
+Firefox đã hoàn tất đủ 42 ca. Sau khi xem ảnh và kiểm lại phần bàn phím, kết quả là **20 Passed, 19 Failed, 3 Blocked**. Tôi đã khôi phục database gốc và xác nhận actual cùng 23 ảnh Chrome không đổi. Tiếp theo tôi sẽ đưa kết quả Firefox vào report/Excel, kèm Notes và ảnh riêng cho từng mục Failed.
+
+
+Kết quả Firefox đã được ghi riêng với **19 mục Failed đều có Notes và ảnh**; GUI-033/034/035 vẫn Blocked vì chưa có PUT để tới nhánh cần kiểm. Kế hoạch Chrome/Android đã vào phần Task 3. Tôi đang kiểm tra lần cuối việc bảo toàn 42 mục, toàn bộ ô kết quả P1 và các liên kết ảnh trước khi chốt.
+
+
+Đã lập [kế hoạch và cập nhật kết quả Task 3](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md):
+
+- **Chrome Windows:** giữ nguyên kết quả và 23 ảnh.
+- **Firefox Windows:** đã chạy đủ 42 mục — **20 Passed, 19 Failed, 3 Blocked**; Failed có Notes và 23 ảnh riêng.
+- **Chrome Android:** đã có kế hoạch, chưa chạy.
+
+Đã đồng bộ report, Excel và README. Không sửa SUT, đã khôi phục database gốc, không commit. Bằng chứng danh tính/metadata để nộp Task 3 vẫn cần hoàn thiện.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```

@@ -151,13 +151,81 @@ Chưa có dữ liệu để tính điểm SUS, tổng hợp pain point, xếp se
 
 ## 4. Task 3 - Cross-browser / cross-platform
 
-| Nền tảng dự kiến | Số mục | Có kết luận Passed/Failed | Passed | Failed |
-| --- | ---: | ---: | ---: | ---: |
-| Chrome / Windows | 42 | 39 | 20 | 19 |
-| Firefox / Windows | 42 | 0 | 0 | 0 |
-| Safari / macOS hoặc Android Chrome | 42 | 0 | 0 | 0 |
+### 4.1. Kế hoạch chung
 
-Đã thử 42 ca cục bộ trên Chrome, 39 mục có kết luận Passed/Failed và 3 mục Blocked. Firefox và Safari/Android Chrome chưa chạy. Ảnh Chrome hiện chưa đủ metadata/danh tính theo Task 3, nên chưa tính hoàn thành nền tảng nộp bài.
+Dùng nguyên 42 ID/thao tác/expected ở mục 2.3 trên Chrome Windows, Firefox Windows và Chrome Android; không sao chép kết luận giữa các nền tảng. GUI-029 chỉ keyboard/textarea, GUI-042 chỉ hiển thị fixture H1/H2 sau reload. Cách phân loại giữ nguyên: GUI-016/019/020 Failed nếu cập nhật hợp lệ không hoàn thành; GUI-033/034/035 Blocked khi chưa tới nhánh cần kiểm.
+
+| Bộ | Nền tảng | Dữ liệu / phương thức | Trạng thái |
+| --- | --- | --- | --- |
+| P1 | Chrome 156.0.8078.80 / Windows build 10.0.26300 | Fixture P1; actual tại mục 2.3, Excel Execution P1 | Giữ nguyên kết quả và 23 ảnh đã chốt |
+| P2 | Firefox 153.0 / Windows build 10.0.26300 | Firefox do Playwright 1.62.1 quản lý, build 1538; fixture P2 riêng; cùng spec, headed, một worker | Đã thử đủ 42 mục, đối chiếu ảnh thật/DOM |
+| P3 | Google Chrome / Android thật hoặc cloud | Fixture P3; ghi model, Android/Chrome version và CSS viewport thực khi chạy | Đã lập kế hoạch, chưa thực thi |
+
+Điều kiện desktop: frontend `http://localhost:5176`, API `http://localhost:3000`; locale `vi-VN`, timezone `Asia/Ho_Chi_Minh`, zoom 100%, các viewport B01. Login và API thật; chỉ chèn delay GET 3 giây/GET 500 trong ca tương ứng. Không bypass validation bằng phone sai SRS hoặc mock success. Mỗi case reset riêng fixture của nền tảng, chạy nối tiếp; database được sao lưu trước startup vì backend tự DROP/seed, và khôi phục sau lượt chạy. Không sửa logic SUT.
+
+Chrome Android: chuẩn bị thiết bị có Chrome và ADB đã xác thực hoặc phiên cloud có local tunnel. Với USB, reverse cả port 3000 và 5176 đến máy SUT rồi mở localhost trên chính Chrome của thiết bị; xác minh request tới API thật. Có thể dùng adapter Playwright Android experimental hoặc kiểm thủ công nếu thao tác không được hỗ trợ. Chuẩn bị keyboard Bluetooth/USB hoặc adapter gửi được Tab/Shift+Tab/Enter/Space tới Android thật cho các mục keyboard. Ghi viewport nào thực sự tái hiện được; không lấy mobile viewport trên Windows thay nền tảng Android. Thực hiện đủ 42 ID/biến thể, Failed có Notes/ảnh, điều kiện không thực hiện được ghi Blocked.
+
+Nguồn cấu hình: [Playwright Browsers](https://playwright.dev/docs/browsers), [Android API](https://playwright.dev/docs/api/class-android); tiêu chí bằng chứng theo đề Task 3/§11.
+
+### 4.2. Tổng hợp actual theo nền tảng
+
+| Nền tảng | Mục cần kiểm | Đã thử | Passed | Failed | Blocked | Chưa chạy |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Chrome / Windows | 42 | 42 | 20 | 19 | 3 | 0 |
+| Firefox / Windows | 42 | 42 | 20 | 19 | 3 | 0 |
+| Chrome / Android | 42 | 0 | 0 | 0 | 0 | 42 |
+| Tổng lượt | 126 | 84 | 40 | 38 | 6 | 42 |
+
+Firefox có actual độc lập, cùng phân loại với Chrome trong 42 mục của lượt này. GUI-010/028 được kiểm lại từ focus EShop xác định; không nhầm `activeElement` còn ở control cuối khi focus đã ra thanh công cụ trình duyệt là lỗi trap của SUT. Raw và ảnh hai lần được giữ ngoài work. Các tiêu chí thị giác được AI xem ảnh Firefox thật; chưa thay verdict audit của sinh viên.
+
+Ảnh Firefox Failed nằm tại `screenshots/firefox-windows/`; 23 ảnh Chrome giữ nguyên vị trí/nội dung. Ảnh hiện là page screenshots cục bộ, chưa có đủ email sinh viên, tên/MSSV trong form và khung URL/browser/OS/device theo đề. Cần bổ sung bằng chứng cửa sổ/thiết bị thật hoặc phiên cloud với danh tính thật; chưa tuyên bố hoàn thành Task 3. Android chưa chạy, không suy kết quả từ hai nền tảng Windows.
+
+### 4.3. Actual Firefox Windows
+
+| ID | Kết quả | Actual / Notes | Ảnh Failed |
+| --- | --- | --- | --- |
+| GUI-001 | Passed | 1366×768: hai vùng hồ sơ/lịch sử tách biệt; không chồng control, footer không che nút. |  |
+| GUI-002 | Passed | Đã xem ba viewport 390×844, 768×1024, 1366×768. Bản 390 có nội dung bảng tràn ngang nhưng tiếp cận được sau cuộn; không bị cắt vĩnh viễn. |  |
+| GUI-003 | Passed | Chữ Việt có dấu, nhãn và dữ liệu đọc được; heading phân biệt body; không áp điều kiện font giống Chrome tuyệt đối. |  |
+| GUI-004 | Failed | Đường login trong checklist hiện Username/Sign In; Profile dùng nhãn Việt nhưng nội dung SUT chưa nhất quán tiếng Việt. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-004-failed-1.png) |
+| GUI-005 | Failed | Profile có 0 h1; hai tiêu đề phần đều là h2. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-005-failed-1.png) |
+| GUI-006 | Passed | Cập nhật xanh dương; Thoát/Hủy đơn đỏ, đọc được; không thực hiện Hủy đơn. |  |
+| GUI-007 | Passed | Các tổng 0 / 1234567 / 123456789 giữ đúng giá trị, có ₫ và dấu nhóm nghìn. |  |
+| GUI-008 | Passed | Ngày hiển thị 14/3/2026 và 5/11/2026 đúng nguồn, nhất quán vi-VN / Asia/Ho_Chi_Minh; không Invalid Date. |  |
+| GUI-009 | Passed | Đủ 5 nhãn Việt, nền badge phân biệt; text trạng thái đọc được. |  |
+| GUI-010 | Passed | Kiểm lại từ focus EShop: đủ 11 control khác nhau có focus nhìn thấy; email disabled vẫn đọc được. Màu/kiểu focus native Firefox khác Chrome, không chấm khớp tuyệt đối. |  |
+| GUI-011 | Passed | Bốn header yêu cầu đúng thứ tự; ID/ngày/tiền/status khớp cùng đơn P2; hàng/cột căn đúng. |  |
+| GUI-012 | Passed | Email/tên/phone/địa chỉ prefill đúng A của P2, không lấy B hoặc placeholder. |  |
+| GUI-013 | Failed | Email disabled, không đổi qua GUI; type thực tế text, không đạt yêu cầu type=email. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-013-failed-2.png) |
+| GUI-014 | Failed | Ba field tên/phone/địa chỉ thiếu accessible name liên kết label/aria; có nhãn nhìn thấy và placeholder nhưng không thay accessible name. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-014-failed-1.png), [Ảnh 2](screenshots/firefox-windows/P2-GUI-014-failed-2.png), [Ảnh 3](screenshots/firefox-windows/P2-GUI-014-failed-3.png) |
+| GUI-015 | Failed | Họ Tên khai báo required nhưng nhãn thiếu dấu *. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-015-failed-1.png) |
+| GUI-016 | Failed | Nhập dữ liệu hợp lệ gồm Nguyễn Văn Mẫu và phone 0912345678; validation phone từ chối trước PUT, không hoàn thành cập nhật tên. Chưa kiểm các bước sau lưu. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-016-failed-1.png) |
+| GUI-017 | Failed | Phone 9/12 số đầu 0 bị từ chối đúng; 10/11 số hợp lệ đầu 0 cũng bị từ chối, sai expected; không PUT ở các biến thể này. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-017-failed-2.png), [Ảnh 2](screenshots/firefox-windows/P2-GUI-017-failed-3.png) |
+| GUI-018 | Failed | 1912345678 được PUT và lưu, sai expected; 09a2345678, 09123-5678, +84912345678 bị từ chối, không lưu. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-018-failed-1.png) |
+| GUI-019 | Failed | Địa chỉ tiếng Việt hai dòng cùng phone 0912345678 hợp lệ bị validation phone chặn trước PUT; không hoàn thành cập nhật địa chỉ. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-019-failed-1.png) |
+| GUI-020 | Failed | Click Cập nhật với ba trường hợp lệ, phone 09123456789 bị validation từ chối trước PUT; không hoàn thành cập nhật hồ sơ bằng chuột. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-020-failed-1.png) |
+| GUI-021 | Failed | Chỉ có alert yêu cầu 9–10 số; không có lỗi inline phía trên submit, không hướng dẫn đúng quy tắc đầu 0 và 10–11 số. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-021-failed-1.png) |
+| GUI-022 | Passed | Từ Home, link tài khoản mở đúng /profile với form và lịch sử A/P2. |  |
+| GUI-023 | Failed | Loại ảnh hưởng hover: class/màu/aria của link tài khoản không đổi giữa Home/Profile/Home; thiếu active theo route. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-023-failed-1.png) |
+| GUI-024 | Passed | Logo về Home, giữ phiên A/P2 và hồ sơ baseline. |  |
+| GUI-025 | Failed | Giỏ ban đầu trống; thêm ba sản phẩm ×1 qua GUI thì cart có đúng ba dòng ×1, nhưng navbar Profile thiếu badge 3. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-025-failed-2.png) |
+| GUI-026 | Failed | Nhãn nút là Thoát, không phải Đăng xuất; click vẫn đưa navbar về trạng thái chưa login. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-026-failed-1.png) |
+| GUI-027 | Passed | Direct /profile và reload khôi phục đúng A/P2 và năm đơn; không 404/trắng trang. |  |
+| GUI-028 | Passed | Kiểm lại từ EShop: Tab tới đủ 11 control theo navbar → form → bảng; Shift+Tab đi ngược chính xác; không trap trong trang, email disabled được skip. |  |
+| GUI-029 | Passed | Enter mở đúng Home/Profile; Enter/Space kích hoạt Cập nhật qua validation; Enter textarea xuống dòng và không submit. Không kiểm lưu thành công. |  |
+| GUI-030 | Passed | Back/Forward đến đúng Profile/Home, giữ phiên A/P2 và baseline không đổi. |  |
+| GUI-031 | Passed | Không token/invalid token và Back sau logout không lộ form/đơn riêng; đường login và login recovery hoạt động. |  |
+| GUI-032 | Failed | Trong GET /users/me chậm 3 giây hiện Vui lòng đăng nhập, không chờ trung tính; sau response thật hiển thị A/P2. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-032-failed-1.png) |
+| GUI-033 | Blocked | Validation phone hợp lệ chặn trước PUT; chưa có response lưu thành công nên chưa tới nhánh feedback/thứ tự response và thông báo. |  |
+| GUI-034 | Blocked | Validation phone hợp lệ chặn trước PUT; chưa có lần lưu thành công để kiểm đồng bộ navbar/form và persistence sau lưu. |  |
+| GUI-035 | Blocked | Cấu hình PUT 500 và network-abort nhưng không có PUT vì validation phone chặn; chưa tới nhánh lỗi lưu hoặc recovery, giữ Blocked. |  |
+| GUI-036 | Passed | Sau đóng alert có thể Shift+Tab về phone, sửa và gửi lại bằng keyboard; không trap. Việc phone hợp lệ bị từ chối ghi ở GUI-017. |  |
+| GUI-037 | Failed | GET đơn đang chờ 3 giây đã hiện Bạn chưa có đơn hàng nào, thiếu loading; sau response thật chuyển sang năm đơn A/P2. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-037-failed-1.png) |
+| GUI-038 | Failed | A0/P2 có GET 200 và [] thật, message empty đúng nhưng không có icon/hình minh họa. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-038-failed-2.png) |
+| GUI-039 | Failed | GET đơn 500 có kiểm soát lại hiển thị empty, thiếu thông báo lỗi tải riêng; gỡ fault/reload lấy lại năm đơn thật. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-039-failed-1.png) |
+| GUI-040 | Passed | Cùng context, A logout → login B/P2 → Profile → Back/Forward: đúng profile và hai đơn B, không thấy dữ liệu A trong các frame đã thu. Số frame quan sát: 30. |  |
+| GUI-041 | Passed | Đơn P2 #960101 từ pending sang confirmed sau đổi fixture bên ngoài/reload; nhãn/màu mới đúng, các đơn khác không đổi; cuối case reset. |  |
+| GUI-042 | Failed | Fixture H1/H2 của P2: sau reload form giữ nguyên chuỗi chứa thẻ, nhưng navbar tạo b/em và hiện đậm/nghiêng; không có PUT nhập/lưu tên. | [Ảnh 1](screenshots/firefox-windows/P2-GUI-042-failed-2.png), [Ảnh 2](screenshots/firefox-windows/P2-GUI-042-failed-4.png) |
 
 ## 5. Agent Skills và demo
 
@@ -174,7 +242,7 @@ I use AI tools for the following tasks,
 - Đọc yêu cầu, SRS và slide; khảo sát thành phần/trạng thái của trang Profile.
 - Tạo nháp, rà trùng và biên tập checklist theo góp ý người dùng.
 - Tạo tài liệu và ghi nhật ký prompt/output.
-- Chuẩn bị fixture tổng hợp, viết/chạy Playwright trên Chrome, thu actual/ảnh lỗi và đối chiếu ảnh giao diện. Công cụ và dữ liệu test đặt ngoài thư mục nộp.
+- Chuẩn bị fixture tổng hợp, viết/chạy Playwright trên Chrome và Firefox Windows, thu actual/ảnh lỗi và đối chiếu ảnh giao diện; lập kế hoạch Chrome Android. Công cụ và dữ liệu test đặt ngoài thư mục nộp.
 
 Công cụ: OpenAI Codex. Prompt/output nguyên văn, tên công cụ và thời gian từng tương tác nằm trong prompt_log.md. Người dùng quyết định các mục cần sửa/bỏ và bổ sung ý tưởng GUI-042 về họ tên chứa HTML; AI đối chiếu SRS/code và biên tập mục kiểm tra. Chưa có verdict audit đầy đủ.
 
@@ -191,6 +259,8 @@ Công cụ: OpenAI Codex. Prompt/output nguyên văn, tên công cụ và thời
 | `để các file vừa tạo ở ngoài thư mục work, có thể bỏ vào một folder ở ngoài phục vụ việc test, cái này không yêu cầu nộp, khi báo cáo sẽ nêu rõ mình sử dụng gì, chỉ những yêu cầu nộp mới để vào work, viết và chạy playwright trên chrome đầy đủ, lưu actual và ảnh failed, ko commit<br>`; OpenAI Codex; 2026-11-09T00:43:27.010000+07:00 | 42 ca Chrome đã thử; 19 Passed, 15 Failed, 8 bị chặn; 18 ảnh Failed | Chưa điền | Actual GUI/API/SQLite và ảnh thật; không sửa SUT hoặc định nghĩa checklist | Chuyển công cụ/dữ liệu ra ngoài work; sửa test phân biệt hover với active navbar và kiểm thêm focus thứ 11; giữ actual hai lần, khôi phục database gốc. |
 | Sửa GUI-029/042 theo phạm vi keyboard và hiển thị fixture; Codex + Playwright; timestamp tại prompt_log.md | Test sửa và chạy lại Chrome: GUI-029 Passed, GUI-042 Failed với H1/H2; 2 ảnh lỗi mới | Chưa điền | Checklist mới của người dùng, actual keyboard/DOM và ảnh sau reload; không PUT tên | Bỏ điều kiện lưu thành công ở GUI-029; GUI-042 chỉ dùng tài khoản fixture dựng sẵn để kiểm form/navbar sau reload. |
 | Chốt Task 1 theo bằng chứng thực tế; Codex; timestamp tại prompt_log.md | 20 Passed, 19 Failed, 3 Blocked trên Chrome | Chưa điền | Actual GUI/API và ảnh đã thu; không chạy lại hoặc sửa SUT | Người dùng chốt GUI-016/019/020 Failed; giữ GUI-033/034/035 Blocked; giữ kết quả chạy lại GUI-029/042. |
+
+| Lập kế hoạch Task 3 và chạy Firefox cùng checklist, giữ Chrome; Codex + Playwright; timestamp tại prompt_log.md | Firefox: 20 Passed, 19 Failed, 3 Blocked; 23 ảnh Failed, Notes đủ 19 mục; kế hoạch Chrome Windows/Firefox Windows/Chrome Android | Chưa điền | Actual Firefox độc lập; đối chiếu 42 ID và ảnh/DOM; hash/P1 Execution bảo toàn | Tách fixture P2 và cấu hình browser; kiểm lại GUI-010/028 từ focus xác định; không thay kết quả Chrome, không giả Android đã chạy. |
 
 
 Chưa có verdict để tổng hợp tỷ lệ VALID/INVALID/INCOMPLETE. Kết luận audit 80–150 chữ và khai báo/chữ ký theo biểu mẫu chưa hoàn thiện.
