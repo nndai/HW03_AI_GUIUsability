@@ -361,3 +361,177 @@ Checklist hiện có **42 mục**. Mục mới vẫn **Chưa chạy**. Không co
 
 :codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" purpose="output"}
 ```
+
+## 12
+
+Tool: OpenAI Codex
+
+Thời gian: 09/11/2026 00:19:49 (UTC+07:00)
+
+### Prompt
+
+```text
+đọc checklist mới nhất, chuẩn bị dữ liệu thử , không sửa logic sut hay checklist đã chốt, đưa ra kế hoặc viết test bằng playwright để test hết các checklist
+
+```
+
+### Output
+
+```text
+Mình sẽ đọc bản checklist đã chốt, kiểm tra SUT và chuẩn bị dữ liệu thử riêng mà không sửa logic ứng dụng hoặc nội dung checklist. Sau đó mình sẽ lập kế hoạch Playwright, ánh xạ đủ 42 mục với dữ liệu, thao tác, bằng chứng và những phần cần kiểm tra thủ công.
+
+
+Có hai điểm cần tính vào kế hoạch: backend tự xóa và seed lại database mỗi lần khởi động; còn regex điện thoại trong code hiện tại không khớp khoảng hợp lệ của checklist. Mình sẽ chuẩn bị baseline SQLite riêng. Với các bài kiểm tra lưu hồ sơ, test phải giữ nguyên dữ liệu hợp lệ theo SRS và ghi blocker nếu không đến được bước cần kiểm; không đổi dữ liệu sang số sai SRS để ép đi tiếp.
+
+
+Tôi sẽ chuẩn bị dữ liệu giả lập trong cơ sở dữ liệu riêng và lập bảng kế hoạch cho đủ 42 mục. Các luồng lưu sẽ được ghi rõ điều kiện tiên quyết: code hiện tại có quy tắc điện thoại trái với SRS, nên không thể dùng dữ liệu sai SRS để ép các bước sau chạy tiếp.
+
+
+Bộ dữ liệu riêng đã tạo xong: 15 tài khoản giả lập, 21 đơn hàng và 3 sản phẩm để thử giỏ hàng. Kế hoạch sẽ ánh xạ đủ 42 mục, phân biệt phần Playwright kiểm tra được với phần cần người xem giao diện, và ghi cách xử lý các mục bị chặn mà không sửa SUT hay checklist.
+
+
+Kế hoạch đã đối chiếu đủ 42 ID với cả báo cáo và workbook. Dữ liệu thử cũng đã qua kiểm tra tính toàn vẹn. Tôi xác nhận nội dung SUT, database gốc và hai file checklist/báo cáo không thay đổi; chưa chạy kiểm thử giao diện hay ghi kết quả Passed/Failed.
+
+
+Đã đọc và đối chiếu đủ **42 mục checklist mới nhất**.
+
+- [Kế hoạch Playwright](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/playwright_plan.md): ánh xạ từng mục với dữ liệu, thao tác, assertion và phần cần xem thủ công.
+- [Dữ liệu thử](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/test_data.json): 15 tài khoản, 21 đơn hàng, 3 sản phẩm; có bản SQLite riêng.
+- [Script chuẩn bị/kiểm tra dữ liệu](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/prepare_test_data.py).
+
+Lưu ý: regex điện thoại hiện tại trái SRS, có thể chặn các luồng lưu; kế hoạch đã ghi cách báo blocker, không ép test chạy bằng dữ liệu sai.
+
+**Chưa viết/chạy suite Playwright.** SUT, database gốc và checklist giữ nguyên; không commit hoặc tạo PDF.
+```
+
+## 13
+
+Tool: OpenAI Codex
+
+Thời gian: 09/11/2026 00:43:27 (UTC+07:00)
+
+### Prompt
+
+```text
+để các file vừa tạo ở ngoài thư mục work, có thể bỏ vào một folder ở ngoài phục vụ việc test, cái này không yêu cầu nộp, khi báo cáo sẽ nêu rõ mình sử dụng gì, chỉ những yêu cầu nộp mới để vào work, viết và chạy playwright trên chrome đầy đủ, lưu actual và ảnh failed, ko commit
+
+```
+
+### Output
+
+```text
+Tôi sẽ chuyển bộ dữ liệu và công cụ test ra ngoài thư mục work, rồi viết và chạy đủ 42 mục trên Chrome. Tôi sẽ lưu actual và ảnh lỗi thật, ghi rõ mục nào bị chặn hoặc cần xem giao diện; không sửa SUT, checklist đã chốt hay tạo commit.
+
+
+SUT đã chạy được trên máy. Tôi đã chuyển công cụ test sang `HW3/profile-tests`, bên ngoài work, và sao lưu database gốc trước khi khởi động backend. Test sẽ dùng Chrome thật, đăng nhập và gọi API thật; chỉ các ca kiểm tra chậm, lỗi 500 và mất mạng mới can thiệp kết nối theo kế hoạch.
+
+
+Chrome đã xác nhận hai sai lệch về điện thoại: số hợp lệ bắt đầu bằng `0` bị từ chối, còn biến thể `1912345678` lại được lưu. Actual đang được ghi theo từng biến thể. Với các luồng chưa tới được request lưu, tôi ghi bị chặn và giữ nguyên dữ liệu hợp lệ theo SRS.
+
+
+Đã chạy cả 42 ca trên Chrome. Tôi đang rà ảnh và các kết luận trước khi đưa vào báo cáo; vừa sửa một lỗi trong test nhận diện navbar để không nhầm hiệu ứng rê chuột với dấu chọn trang. Actual của lần chạy đầu và lần kiểm lại đều được giữ, còn các mục bị chặn không tính Passed.
+
+
+Sau khi rà ảnh và kiểm lại navbar, kết quả Chrome là **19 Passed, 15 Failed, 8 mục bị chặn ở nhánh lưu**. Tôi đã ghi actual, Notes và ảnh Failed vào báo cáo/workbook; mã test, dữ liệu, ảnh chẩn đoán và log kỹ thuật nằm ngoài work. Ảnh hiện là ảnh nội dung trang thật, chưa đủ thông tin danh tính và khung trình duyệt để làm bằng chứng nộp Task 3.
+
+
+Đã viết và chạy đủ **42 ca trên Chrome thật**:
+
+- **19 Passed, 15 Failed, 8 bị chặn** do validation điện thoại trước PUT.
+- Đã lưu actual và **18 ảnh lỗi**.
+- Công cụ, dữ liệu và log kỹ thuật nằm ngoài work tại [profile-tests](C:/Users/daila/Desktop/HW3/profile-tests/README.md).
+- Đã cập nhật [báo cáo](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md) và [actual chi tiết](C:/Users/daila/Desktop/HW3/profile-tests/actuals.md).
+
+Đã khôi phục database gốc, giữ nguyên logic SUT và định nghĩa checklist. **Không commit.**
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
+
+## 14
+
+Tool: OpenAI Codex
+
+Thời gian: 09/11/2026 17:47:24 (UTC+07:00)
+
+### Prompt
+
+```text
+sửa gui-029 chỉ kiểm link và nút kích hoạt đúng bằng bàn phím, enter trong textarea xuống dòng, bỏ điều kiện lưu thành công, sửa gui-042 chỉ kiểm hiển thị an toàn họ tên chứa html trên form và navbar sau reload, dùng tài khoản thử có tên html chuẩn bị sẵn và ghi rõ đây là fixture, không kiểm bước nhập lưu, sửa hai checklist này và code test, và chạy lại test
+
+```
+
+### Output
+
+```text
+Tôi sẽ sửa đúng GUI-029 và GUI-042 trong báo cáo, workbook và code test, rồi chạy lại hai ca trên Chrome. GUI-042 sẽ ghi rõ dùng tài khoản fixture có tên HTML chuẩn bị sẵn, chỉ kiểm form/navbar sau reload và không kiểm nhập hoặc lưu.
+
+
+Lần chạy lại cho kết quả: **GUI-029 Passed**; **GUI-042 Failed** ở navbar với cả hai fixture H1/H2. Sau reload, ô họ tên giữ nguyên chuỗi chứa thẻ, nhưng navbar diễn giải `<b>` và `<em>` thành chữ đậm/nghiêng. Ca GUI-042 không thực hiện request nhập/lưu tên.
+
+
+Đã sửa checklist và code test, chạy lại hai ca trên Chrome:
+
+- **GUI-029 Passed:** link/nút kích hoạt bằng bàn phím, Enter trong textarea xuống dòng; không yêu cầu lưu thành công.
+- **GUI-042 Failed:** dùng fixture H1/H2 chuẩn bị sẵn, không nhập/lưu. Sau reload, form hiển thị nguyên văn nhưng navbar diễn giải thẻ thành chữ đậm/nghiêng.
+
+Đã cập nhật [báo cáo và ảnh lỗi](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md). Tổng hiện tại: **20 Passed, 16 Failed, 6 bị chặn**. Không sửa SUT, không commit.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
+
+## 15
+
+Tool: OpenAI Codex
+
+Thời gian: 09/11/2026 18:47:30 (UTC+07:00)
+
+### Prompt
+
+```text
+chốt kết quả task 1 theo bằng chứng thực tế, gui-016 gui-019 gui-020 ghi fail vì dữ liệu hợp lệ bị validation phone chặn nên không hoàn thành cập nhật, gui-033 gui-034 gui-035 giữ blocked và giải thích chưa tới nhánh cần kiểm, gui-029 và gui-042 dùng kết quả chạy lại theo phạm vi đã sửa, đồng bộ report excel và readme, không sửa sut và không commit
+
+```
+
+### Output
+
+```text
+Tôi sẽ chốt GUI-016/019/020 là Failed theo actual đã có, giữ GUI-033/034/035 là Blocked và giải thích nhánh chưa kiểm được. Tôi sẽ đồng bộ report, Excel và README, giữ kết quả chạy lại của GUI-029/042; không sửa SUT hoặc commit.
+
+
+Theo cách chốt này, tổng Task 1 là **20 Passed, 19 Failed, 3 Blocked**. Ba mục cập nhật được đánh Failed vì dữ liệu hợp lệ không thể hoàn thành thao tác; ba mục phản hồi/đồng bộ/lỗi lưu vẫn Blocked vì chưa tới nhánh cần kiểm. Tôi đang giữ nguyên định nghĩa checklist, timestamp và actual gốc, chỉ cập nhật phân loại cùng lý do.
+
+
+Đã chốt và đồng bộ report, Excel, README: **20 Passed, 19 Failed, 3 Blocked**.
+
+- GUI-016/019/020: **Failed**, vì validation phone chặn cập nhật với dữ liệu hợp lệ.
+- GUI-033/034/035: **Blocked**, có giải thích nhánh chưa kiểm được.
+- GUI-029: **Passed**; GUI-042: **Failed**, giữ kết quả chạy lại.
+
+Giữ nguyên định nghĩa checklist và bằng chứng gốc. Không sửa SUT, không commit.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
+
+## 16
+
+Tool: OpenAI Codex
+
+Thời gian: 09/11/2026 22:08:00 (UTC+07:00)
+
+### Prompt
+
+```text
+cập nhật link ảnh, tôi mới đưa vào screenshot
+
+```
+
+### Output
+
+```text
+Tôi sẽ kiểm tra thư mục `screenshot` và cập nhật các đường dẫn ảnh trong báo cáo, Excel cùng README cho đúng vị trí mới.
+
+
+Đã cập nhật đủ **23 đường dẫn ảnh** sang thư mục `screenshots/` trong report, Excel và README. Đã kiểm tra tất cả ảnh đều tồn tại; giữ nguyên kết quả test, không commit.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
