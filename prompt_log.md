@@ -577,3 +577,190 @@ Kết quả Firefox đã được ghi riêng với **19 mục Failed đều có 
 
 :codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
 ```
+
+## 18
+
+Tool: OpenAI Codex
+
+Thời gian: 09/11/2026 23:39:44 (UTC+07:00)
+
+### Prompt
+
+```text
+điện thoại android đã bật adb, xác minh chrome điện thoại mở được sut qua localhost, kết nối playwright android và chạy checklist, blocked, failed có notes, đồng bộ report excel readme từ kết quả thật và báo phần còn thiếu, không commit, chụp màn hình qua tab scrcpy tôi đã chạy, dùng computer use,
+
+```
+
+### Output
+
+```text
+Tôi sẽ kiểm tra kết nối ADB và Chrome trên điện thoại, xác minh SUT mở qua localhost, rồi kết nối Playwright Android để chạy checklist. Tôi sẽ dùng computer use để chụp cửa sổ scrcpy bạn đã mở, ghi Notes cho Failed/Blocked và đồng bộ kết quả thật vào report, Excel, README; không commit.
+
+
+Điện thoại được nhận là **Redmi Note 8 Pro, Android 11, Chrome 148.0.7778.180**. Tôi đã mở được SUT trên Chrome điện thoại tại `localhost:5176` qua cửa sổ scrcpy. Chrome Android hiện không tạo được context tách biệt, nên tôi sẽ dùng tab thử riêng qua kết nối ADB/CDP, giữ nguyên các tab cá nhân và kết quả hai nền tảng Windows.
+
+
+Đã xác minh Chrome điện thoại lấy được dữ liệu thật từ API qua localhost. Tôi đang nối bộ test với cơ chế chụp scrcpy: tại mỗi điểm cần bằng chứng, test sẽ chờ ảnh từ cửa sổ điện thoại rồi mới chạy tiếp. Ảnh không được thay bằng screenshot của Chrome Windows hay ảnh dựng lại.
+
+
+Một số ảnh đầu từ cửa sổ scrcpy bị đen, nên tôi đã dừng lượt đó và sẽ không dùng chúng làm bằng chứng. Tôi đang chỉnh lại cách đưa scrcpy ra trước khi chụp, đồng thời đặt lại viewport đầu mỗi ca để các ca đổi kích thước không ảnh hưởng ca sau; sau đó sẽ chạy lại.
+
+
+Lượt chạy lại đã qua nhóm form. Ảnh scrcpy đã ghi được hộp thoại thật trên điện thoại: số đầu `0` hợp lệ bị từ chối, còn `1912345678` được báo cập nhật thành công. Tôi tiếp tục nhóm điều hướng và trạng thái; các mục cần viewport lớn sẽ được rà riêng trước khi kết luận.
+
+
+Đã thử đủ 42 mục trên điện thoại. Tôi đang kiểm lại hai điểm của bộ test: chờ danh sách đơn tải thật trước khi kiểm header bảng, và chụp lại mục bị trễ ảnh. Ngoài ba nhánh lưu bị chặn, phần rà giao diện ở viewport 768/1366 trên màn hình điện thoại cần được ghi rõ giới hạn; tôi sẽ không tự đánh Passed nếu ảnh chưa chứng minh đủ.
+
+
+Đã kiểm lại bảng đơn và mục required, đồng thời chụp được cả phiên bản Chrome/Android qua scrcpy. Tôi sẽ ghi GUI-001/002 là Blocked: viewport lớn chỉ được áp qua CDP nhưng ảnh chưa cho phép rà đủ bố cục; riêng kích thước 390 còn có sai khác về viewport/scale thực tế. Ba nhánh GUI-033/034/035 cũng giữ Blocked vì chưa có PUT. Các lỗi còn lại sẽ lấy từ actual và ảnh thật, không sao chép kết quả Windows.
+
+
+Chrome trên điện thoại đã mở được SUT qua localhost. Tôi đã chạy đủ 42 mục trên Android: 18 Passed, 19 Failed, 5 Blocked, với ảnh chụp từ cửa sổ scrcpy. Tôi đang kiểm tra lần cuối việc đồng bộ báo cáo, Excel và README, đồng thời bảo đảm kết quả Chrome/Firefox trước đó được giữ nguyên.
+
+
+Đã đối chiếu xong: dữ liệu và ảnh Chrome/Firefox cũ được giữ nguyên; ảnh Android có đủ liên kết trong báo cáo và Excel. Phần còn thiếu là kiểm tra hiển thị Android ở GUI-001/002, các nhánh lưu GUI-033–035 đang bị validation chặn, và thông tin nhận diện sinh viên trong bằng chứng nộp.
+
+
+Đã xác minh Chrome trên Redmi Note 8 Pro mở SUT qua localhost và chạy đủ 42 mục bằng Playwright; chụp ảnh bằng Computer Use qua scrcpy.
+
+- **Android: 18 Passed, 19 Failed, 5 Blocked**. Failed/Blocked đều có Notes.
+- Đã đồng bộ [report.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md), Excel và README; giữ nguyên kết quả Chrome/Firefox Windows.
+- Còn thiếu: GUI-001/002 Android chưa đủ điều kiện kiểm viewport/zoom; GUI-033–035 chưa tới nhánh lưu; bằng chứng nộp còn thiếu danh tính sinh viên và metadata ảnh Windows.
+
+Không sửa logic SUT, đã khôi phục DB gốc. Tôi không stage hoặc commit.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
+
+## 19
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 00:34:03 (UTC+07:00)
+
+### Prompt
+
+```text
+chạy chụp lại tất cả các ảnh bằng adb, ko chụp bằng screenshot, làm nhanh theo những gì đã làm
+
+```
+
+### Output
+
+```text
+Tôi sẽ chạy lại các trạng thái đã kiểm tra và lấy ảnh trực tiếp từ điện thoại bằng ADB, rồi cập nhật liên kết ảnh trong báo cáo và Excel. Tôi sẽ giữ nguyên checklist, không sửa SUT và không commit.
+
+
+Ảnh ADB đầu tiên đã lấy được đúng màn hình vật lý 1080×2340, gồm cả thanh địa chỉ Chrome và giao diện điện thoại. Lượt chạy đang tái hiện các trạng thái cũ, kể cả hộp thoại lỗi, để thay toàn bộ ảnh Android đã đưa vào báo cáo.
+
+
+Đã chạy qua 28/42 mục; các kết quả hiện tại khớp lượt trước. Tôi đang hoàn tất phần còn lại và kiểm tra ảnh hộp thoại, sau đó thay ảnh Android cũ bằng PNG từ ADB và đồng bộ liên kết.
+
+
+Đã tới nhóm cuối. GUI-029 vẫn Passed; GUI-033/034 vẫn Blocked vì bị validation chặn trước bước lưu. Ảnh đang được lấy trực tiếp bằng ADB, không dùng ảnh scrcpy hoặc ảnh chụp trang của Playwright.
+
+
+Đã chạy xong đủ 42 mục; kết quả vẫn là **18 Passed, 19 Failed, 5 Blocked**. Tôi đang cập nhật bộ ảnh ADB và liên kết trong báo cáo/Excel, đồng thời giữ ảnh cũ ở ngoài thư mục nộp.
+
+
+Đã chạy lại đủ 42 mục và chụp trực tiếp bằng **ADB**:
+
+- Thu 71 ảnh PNG nguyên trạng 1080×2340; thay toàn bộ 30 ảnh Android trong hồ sơ nộp.
+- Đồng bộ liên kết và nguồn ảnh trong report, Excel, README.
+- Kết quả giữ nguyên: **18 Passed, 19 Failed, 5 Blocked**.
+
+Giữ nguyên Chrome/Firefox, không sửa SUT; đã khôi phục DB gốc, không commit.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
+
+## 20
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 00:56:30 (UTC+07:00)
+
+### Prompt
+
+```text
+cố gắng test lại gui-001 vs gui-002 
+
+```
+
+### Output
+
+```text
+Tôi sẽ kiểm lại GUI-001 và GUI-002 trên Chrome Android, thử thiết lập đúng viewport/zoom và chụp bằng ADB. Tôi chỉ cập nhật kết quả nếu bằng chứng mới đủ để kết luận.
+
+
+Chrome trên điện thoại hiện đã đóng nên kết nối kiểm thử chưa hoạt động. Tôi đang chuẩn bị cách đặt lại viewport và zoom để tiếp tục ngay khi Chrome mở lại.
+
+Cơ chế kiểm duyệt tự động đã chặn lệnh mở Chrome qua ADB, nên tôi cần bạn mở lại ứng dụng trên điện thoại.
+
+```
+
+## 21
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 00:58:33 (UTC+07:00)
+
+### Prompt
+
+```text
+<send_user_message_question_reply>
+[{"questionItemId":"[\"request_user_input_async\",\"call_04d49e3b728c4da78d959c2107a70fdf\",0]","question":"Chrome trên điện thoại hiện đã đóng. Bạn mở lại Chrome và giữ màn hình sáng giúp tôi để tiếp tục GUI-001/002 nhé?","answer":"Đã mở lại Chrome"}]
+</send_user_message_question_reply>
+
+```
+
+### Output
+
+```text
+Đã kết nối lại được Chrome. Cách đặt viewport qua Playwright báo kích thước lớn nhưng ảnh điện thoại vẫn chỉ thấy một phần trang. Tôi sẽ thử đổi tạm kích thước hiển thị của thiết bị, kiểm tra kích thước thực và zoom, rồi khôi phục cấu hình ban đầu.
+
+
+Đã đạt viewport thực 1366×768, 390×844 và 768×1024 ở zoom 100% trên Chrome Android. Ở chiều rộng 390, bảng tràn ngang nhưng các cột và nút vẫn tiếp cận được sau cuộn. Tôi đang kiểm tra lại ảnh cuối form/footer trước khi chốt hai kết quả.
+
+
+Hai mục đã có đủ bằng chứng để chuyển sang **Passed**: GUI-001 không bị chồng lấp ở 1366×768; GUI-002 tiếp cận được toàn bộ trường, nút và các cột dữ liệu tại cả ba viewport. Cấu hình hiển thị điện thoại đã được khôi phục. Tôi sẽ đồng bộ báo cáo, Excel và README.
+
+
+Đã kiểm lại trên Chrome Android, chụp bằng ADB:
+
+- **GUI-001: Passed** — bố cục 1366×768 không chồng lấp, footer không che nội dung/nút.
+- **GUI-002: Passed** — đủ ba viewport ở zoom 100%; các trường, nút và cột dữ liệu đều tiếp cận được sau cuộn.
+
+Đã đồng bộ report, Excel, README. Android hiện **20 Passed, 19 Failed, 3 Blocked**. Đã khôi phục cấu hình điện thoại và DB; không sửa SUT, không commit.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
+
+## 22
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 01:57:04 (UTC+07:00)
+
+### Prompt
+
+```text
+chỉnh lại link các ảnh screenshot, tôi đã thay đổi thư mục
+
+```
+
+### Output
+
+```text
+Tôi sẽ dò lại vị trí ảnh và sửa các liên kết trong báo cáo, Excel và README theo cấu trúc thư mục mới.
+
+
+Tôi tìm thấy 23 ảnh Chrome Windows đã chuyển vào `screenshots/chrome-windows/`. Liên kết trong báo cáo đã được sửa; tôi đang đồng bộ Excel và kiểm tra toàn bộ liên kết ảnh.
+
+
+Đã sửa liên kết ảnh theo thư mục mới trong report, Excel và README, gồm 23 ảnh tại `screenshots/chrome-windows/`.
+
+Đã kiểm tra toàn bộ liên kết đều tồn tại. Giữ nguyên ảnh và kết quả kiểm thử; không commit.
+
+:codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
+```
