@@ -1,5 +1,7 @@
 # HW03 - GUI & Usability
 
+**Nguyễn Ngọc Đại — MSSV 23120226 — Khóa 2023**
+
 | Tệp | Nội dung |
 | --- | --- |
 | [report.md](report.md) | Báo cáo chính, checklist 42 mục, kết quả 7 phiên usability Task 2 và AI Audit |
@@ -46,8 +48,10 @@ Nộp kèm [skill GUI và usability](gui-usability-skill/SKILL.md). Skill nhận
 
 | STT | Tiêu chí | Điểm tối đa | Tự chấm |
 | --- | --- | ---: | --- |
-| 1 | Task 1 - GUI checklist | 30 | |
-| 2 | Task 2 - Usability evaluation | 40 | |
-| 3 | Task 3 - Cross-browser / cross-platform | 20 | |
-| 4 | Agent Skills | 10 | |
-| | Tổng | 100 | |
+| 1 | Task 1 - GUI checklist | 30 | 27 |
+| 2 | Task 2 - Usability evaluation | 40 | 30 |
+| 3 | Task 3 - Cross-browser / cross-platform | 20 | 14 |
+| 4 | Agent Skills | 10 | 9 |
+| | Tổng | 100 | 80 |
+
+Điểm tự đánh giá dựa trên nội dung và bằng chứng hiện có; trừ điểm cho metadata nền tảng, thông tin phiên và consent chưa đủ xác nhận.
