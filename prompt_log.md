@@ -794,3 +794,110 @@ Phần Task 2 đã có đầy đủ các mục chuẩn bị và mẫu báo cáo 
 
 Các phần cần dữ liệu thật từ pilot và 7 người được để trống. README và khai báo AI đã cập nhật; Task 1/3 và Excel giữ nguyên. Không commit.
 ```
+
+## 24
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 22:44:41 (UTC+07:00)
+
+### Prompt
+
+```text
+tôi đã hoàn thiện task2, bạn hãy xem còn thiều gì ko, các issue cũng đã có trên github tại link [https://github.com/nndai/HW03_AI_GUIUsability/issues](https://github.com/nndai/HW03_AI_GUIUsability/issues), xem còn thiếu gì cập nhật luôn cho xong task 1,2,3 theo đúng yêu cầu đề, log prompt này vào prompt log
+
+```
+
+### Output
+
+```text
+Tôi sẽ kiểm tra yêu cầu đề, đối chiếu phần đã làm và các issue trên GitHub, bổ sung những phần còn thiếu cho task 1–3 và ghi yêu cầu này vào prompt log.
+
+
+Task 2 đã có dữ liệu 7 người, video và điểm SUS; báo cáo chính vẫn đang ghi “chưa thực hiện”, nên tôi sẽ đồng bộ phần này. GitHub hiện trả về 404 khi truy cập, vì vậy tôi chưa xác minh được nội dung issue. Task 3 vẫn thiếu thông tin danh tính và khung trình duyệt/URL trên một số ảnh; tôi sẽ giữ rõ các phần thiếu thay vì đánh dấu hoàn tất.
+
+
+Đã cập nhật [báo cáo chính](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md), README và ghi prompt này vào prompt log. Đã tích hợp kết quả 7 phiên Task 2, kiểm lại SUS trung bình **30,71/100** và các liên kết ảnh.
+
+Chưa thể chốt hoàn thành task 1–3 vì:
+
+- **Task 1:** GitHub trả 404, chưa đối chiếu được issue và ảnh bug; còn 3 mục Blocked.
+- **Task 2:** cần ngày/giờ phiên, xác nhận người tham gia ngoài lớp và bằng chứng consent; video chưa được kiểm chứng nội dung.
+- **Task 3:** ảnh còn thiếu email sinh viên và khung URL/browser/OS theo đề.
+- AI Critique và verdict audit của sinh viên chưa hoàn thiện.
+
+Không commit, không thay đổi kết quả test hoặc tạo bằng chứng giả.
+```
+
+## 25
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 22:48:40 (UTC+07:00)
+
+### Prompt
+
+```text
+link đến folder ảnh Failed Android luôn, check lại link github
+
+```
+
+### Output
+
+```text
+Tôi sẽ thêm liên kết trực tiếp đến thư mục ảnh Failed Android và kiểm tra lại trang GitHub.
+
+
+GitHub đã truy cập được: có 22 issue, gồm 19 Bug và 3 Blocked, khớp các mục checklist. Tôi đang kiểm tra liên kết ảnh đính kèm và cập nhật báo cáo để bỏ thông tin 404 trước đó.
+
+
+Đã thêm link thư mục [Failed Android](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/screenshots/chrome-android/) vào README.
+
+GitHub đã truy cập được: **22 issue = 19 Bug + 3 Blocked**. Đã cập nhật báo cáo, liên kết issue và bỏ thông tin 404 cũ. Có 4/23 liên kết ảnh trả lỗi 503 tạm thời khi kiểm tra.
+
+Đã ghi prompt log, không commit.
+```
+
+## 26
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 22:55:20 (UTC+07:00)
+
+### Prompt
+
+```text
+tạo Bug_Report.md chứa các link github issues, link nó vào file report chính,
+
+```
+
+### Output
+
+```text
+Tôi sẽ tạo `Bug_Report.md` chứa các liên kết GitHub Issues và thêm liên kết tới file này trong báo cáo chính.
+
+
+Đã tạo [Bug_Report.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/Bug_Report.md) với 22 liên kết issue: 19 Bug và 3 Blocked.
+
+Đã thêm liên kết vào báo cáo chính và README, cập nhật prompt log. Không commit.
+```
+
+## 27
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 22:57:05 (UTC+07:00)
+
+### Prompt
+
+```text
+report ko chứa các bugreport, chỉ chứa một link dẫn đến file Bug_Report.md, file Bug_Report.md này chứa dữ liệu chi tiết về các bug, làm lại
+
+```
+
+### Output
+
+```text
+Tôi sẽ chuyển toàn bộ chi tiết bug sang `Bug_Report.md`, để mục bug report trong báo cáo chính chỉ còn một liên kết.
+
+```

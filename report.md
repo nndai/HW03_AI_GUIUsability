@@ -116,241 +116,189 @@ Bảng dưới ghi kết quả P1 Chrome; từng nền tảng ở GUI_Checklist.
 
 Ngày 09/11/2026 đã thử đủ 42 ca trên Chrome 156.0.8078.80, Windows build 10.0.26300; chốt kết quả Task 1 trên Chrome: **20 Passed, 19 Failed, 3 Blocked** (42 mục đã thử; 39 mục có kết luận Passed/Failed). GUI-016/019/020 Failed vì cập nhật với dữ liệu hợp lệ không hoàn thành do validation phone. GUI-033/034/035 Blocked vì chưa tới các nhánh cần kiểm sau request lưu. Phone hợp lệ đầu 0 bị validation từ chối trước PUT. GUI-017/018 đã ghi riêng actual từng biến thể; không đổi sang dữ liệu sai SRS để ép chạy các nhánh sau.
 
-Công cụ thực thi: Playwright 1.62.1, Chrome thật ở chế độ có cửa sổ, SQLite fixture tổng hợp và đọc đối chiếu database. URL frontend `http://localhost:5176`, API `http://localhost:3000`; locale `vi-VN`, timezone `Asia/Ho_Chi_Minh`, zoom 100%, viewport theo B01. Login/API thật; delay GET 3 giây và GET 500 được chèn có kiểm soát cho các ca tương ứng. PUT 500/network-abort chưa được kích hoạt vì validation chặn trước request. Các tiêu chí thị giác được AI đối chiếu ảnh thật với DOM; chưa thay verdict audit của sinh viên.
+Công cụ thực thi: Playwright 1.62.1, Chrome thật ở chế độ có cửa sổ, SQLite fixture tổng hợp và đọc đối chiếu database. URL frontend `http://localhost:5176`, API `http://localhost:3000`; locale `vi-VN`, timezone `Asia/Ho_Chi_Minh`, zoom 100%, viewport theo B01. Login/API thật; delay GET 3 giây và GET 500 được chèn có kiểm soát cho các ca tương ứng. PUT 500/network-abort chưa được kích hoạt vì validation chặn trước request.
 
-Actual và công cụ test nằm ngoài hồ sơ nộp tại `../profile-tests/`; báo cáo giữ kết quả/Notes và ảnh Failed cần thiết. Ảnh hiện là ảnh nội dung trang thật, chưa có email sinh viên và khung URL/browser/OS theo Task 3; chưa hoàn thiện bằng chứng nộp đa nền tảng. GUI-029 chỉ kiểm kích hoạt bằng keyboard và Enter textarea. GUI-042 dùng tài khoản fixture H1/H2 có tên HTML chuẩn bị sẵn, chỉ kiểm form/navbar sau reload, không kiểm nhập/lưu; form hiển thị nguyên văn nhưng navbar diễn giải thẻ HTML nên Failed.
 
 ### 2.5. Bug report
 
-Chưa có bug report chính thức hoặc GitHub Issue được ghi nhận.
+[Bug_Report.md](Bug_Report.md)
 
-## 3. Task 2 - Usability evaluation
+## 3. Báo cáo đánh giá usability — Task 2: Cập nhật hồ sơ trên EShop
 
-### 3.1. Mục tiêu và scenario
+### 3.1. Mục tiêu và nhiệm vụ
 
-Đánh giá khả năng người mua tự cập nhật thông tin tài khoản và xác minh thay đổi trước lần mua hàng tiếp theo. Thiết kế là **Assessment usability test có điều phối**, kết hợp hành vi quan sát được và cảm nhận sau nhiệm vụ; theo S13 tr.30–43, 48–54. Một flow duy nhất: trang chủ đã đăng nhập → tìm hồ sơ → cập nhật liên hệ/địa chỉ → lưu → quay lại kiểm tra. FR-04 là căn cứ nghiệp vụ; lịch sử đơn FR-11 chỉ là bối cảnh trên cùng trang, không yêu cầu mua hàng hoặc hủy đơn.
+Đánh giá usability luồng cập nhật hồ sơ (FR-04): từ Home đã đăng nhập, người dùng tìm hồ sơ, đổi họ tên/điện thoại/địa chỉ, lưu rồi mở lại để xác minh. Phạm vi không gồm mua hàng hoặc hủy đơn.
 
-| Thành phần kế hoạch | Thiết kế |
-| --- | --- |
-| Mục đích | Tìm điểm cản trở điều hướng, nhập/sửa thông tin, hiểu phản hồi và xác minh thay đổi |
-| Người dùng mục tiêu | Người đọc tiếng Việt, biết dùng trình duyệt, đã từng mua hàng trực tuyến; ngoài lớp đang làm HW03; ưu tiên người không làm IT/testing |
-| Phương pháp | Một pilot, sau đó 7 phiên riêng có điều phối; mỗi người làm flow một lần, không luyện trước; cùng scenario, thẻ dữ liệu và baseline |
-| Môi trường | Dự kiến cùng máy Windows và Chrome, viewport 1366×768, zoom 100%, vi-VN, UTC+07, chuột/bàn phím, nơi yên tĩnh; frontend localhost:5176, API localhost:3000. Phiên bản thực và recording tool ghi ở từng phiên |
-| Vai trò điều phối | Giới thiệu, xin đồng ý, phát task card, nhắc think-aloud trung lập, ghi thời gian/sự kiện; chỉ gợi ý khi bế tắc theo mục 3.5 |
-| Dữ liệu thu | Kết quả nhiệm vụ, thời gian, lựa chọn sai, lỗi nhập, lỗi sản phẩm, trợ giúp; SUS 10 câu và phản hồi mở; recording/ảnh được đồng ý |
-| Đầu ra | Bảng người tham gia, pilot, observation notes, dữ liệu hành vi/SUS, chủ đề phản hồi, phát hiện xếp severity/priority, khuyến nghị và liên kết bằng chứng |
-
-Không yêu cầu mỗi người lặp trên ba nền tảng; Task 3 đã kiểm đa nền tảng riêng. Trước khi tổ chức, sinh viên xác nhận flow không trùng thành viên khác trong nhóm; không suy việc không trùng chỉ từ danh sách FR.
-
-| Câu hỏi nghiên cứu | Dữ liệu hành vi | Cảm nhận đối chiếu |
-| --- | --- | --- |
-| RQ1 — Người dùng tìm được nơi cập nhật thông tin không? | Thời gian tới Profile, lựa chọn điều hướng sai, trợ giúp | Mức rõ ràng của nơi bắt đầu và nhãn |
-| RQ2 — Người dùng hoàn tất thay đổi và xác minh được không? | Kết quả độc lập/có trợ giúp/không hoàn tất, persistence sau quay lại | SUS và điểm dễ/khó được nêu sau nhiệm vụ |
-| RQ3 — Người dùng hiểu và phục hồi sau phản hồi lỗi thế nào? | Lỗi gặp phải, thao tác tiếp theo, thời gian phục hồi, trợ giúp | Cách diễn giải thông báo, điều muốn hệ thống hỗ trợ |
-| RQ4 — Chỗ nào tốn công và làm tăng/giảm tin tưởng? | Thời gian từng chặng, lần thử lại, hành động xác minh | Probe tốc độ và tin cậy, lời nói có timestamp |
-
-### 3.2. Task card và chuẩn bị dữ liệu
-
-**Nội dung đọc cho người tham gia:**
+**Task card:**
 
 > Bạn đang dùng tài khoản thử nghiệm của một cửa hàng trực tuyến. Bạn vừa đổi thông tin liên hệ và chuyển nơi ở. Hãy cập nhật tài khoản theo thẻ thông tin bên dưới để chuẩn bị cho lần mua hàng tiếp theo, rồi kiểm tra rằng khi quay lại xem, tài khoản vẫn giữ đúng thông tin mới. Bạn có thể thao tác theo cách mình thấy phù hợp và nói ra điều đang nghĩ. Khi thấy xong hoặc không thể tiếp tục, hãy cho biết.
 
-| Thẻ thông tin giả | Giá trị cần cập nhật |
+**Thẻ thông tin:** họ tên `Nguyễn Văn Mẫu`; điện thoại `0987654321`; địa chỉ `123 Nguyễn Huệ, TP. Hồ Chí Minh`; email giữ nguyên.
+
+**Hoàn tất khi:** đủ ba thay đổi đúng thẻ, mở lại hồ sơ vẫn giữ đúng và email không đổi. Chỉ thấy dữ liệu đã nhập trên form chưa đủ.
+
+### 3.2. Người tham gia
+
+| Mã | Họ tên | Tên Zalo | SĐT |
+| --- | --- | --- | --- |
+| D01 | Nguyễn Xuân Hiếu | Xuân Hiếu | 037****503 |
+| D02 | Thiều Đăng Khoa | Thiều Khoa | 082****298 |
+| D03 | Nguyễn Trường Giang | Trường Giang | 039****571 |
+| D04 | Nguyễn Hoàng Triều | Triều | 035****148 |
+| D05 | Lê Duy | Lê Di | 093****706 |
+| D06 | Nguyễn Thái Hưng Thịnh | Hưng Thịnh | 039****965 |
+| D07 | Nguyễn Minh Huy | Minh Huy | 091****101 |
+
+### 3.3. Cách thực hiện và pilot
+
+**Môi trường:** Windows 11, Google Chrome 156 viewport 1920x1080, ngôn ngữ vi-VN. Ứng dụng chạy với DB kiểm thử riêng, logic sản phẩm giữ nguyên. Mỗi phiên reset cùng baseline và dùng cửa sổ trình duyệt riêng.
+
+**Quy trình mỗi phiên:** giới thiệu mục đích, xác nhận đồng ý tham gia và xin phép ghi hình; phát task card; bắt đầu ghi nhận khi người tham gia sẵn sàng; quan sát trung lập, khuyến khích nói ra suy nghĩ. Chỉ hỗ trợ khi người tham gia yêu cầu; dừng khi họ muốn dừng. Không hướng dẫn mẹo vượt validation. Sau thao tác, người tham gia tự trả lời SUS rồi bốn câu hỏi mở. Không cho xem trước kịch bản.
+
+**Kiểm tra kỹ thuật trước pilot:** nhóm kiểm tra khởi động, đăng nhập, mở hồ sơ, reset baseline và ghi hình; đây không phải pilot và không tính vào mẫu.
+
+**Pilot:**
+
+| Mục | Ghi nhận |
 | --- | --- |
-| Họ tên | Nguyễn Văn Mẫu |
-| Điện thoại | 0987654321 |
-| Địa chỉ, dòng 1 | 123 Nguyễn Huệ, Phường Bến Nghé |
-| Địa chỉ, dòng 2 | Tầng 2, căn 05; TP. Hồ Chí Minh |
+| Hồ sơ | Người ngoài lớp HW03, nhân viên văn phòng, từng mua online; liên hệ đã che |
+| Cách chạy | Nhận task card, thao tác độc lập, không được hướng dẫn; cùng baseline và môi trường với bảy phiên |
+| Kết quả | Tìm được hồ sơ; nhập đủ thẻ; 2 alert phone do thử lại một lần; dừng; mở lại thấy baseline |
+| Phát hiện | Task card đủ rõ; alert không giúp biết cách sửa; pilot không tự bỏ số 0; SUS và 4 probe hiểu được; ghi hình và reset hoạt động |
+| Sau pilot | Giữ task card, SUS và 4 probe; nhấn mạnh được dừng khi không thể tiếp tục; chốt ghi failure khi SUT chặn lưu; protocol v1.1 |
 
-Đây là dữ liệu tổng hợp, không phải danh tính/liên hệ của participant. Điện thoại có 10 chữ số và bắt đầu bằng 0, đúng FR-04. Task card không chỉ tên link/nút, đường dẫn Profile hoặc thứ tự bấm. Không chấm cách xuống dòng tuyệt đối; chấm đủ nội dung địa chỉ và đúng trường theo phạm vi đã chốt.
+Dữ liệu pilot chỉ dùng để chốt protocol, không đưa vào bảng kết quả hay SUS của bảy phiên.
 
-Người điều phối chuẩn bị trước mỗi phiên: dùng fixture A/P1 đã có (`hw03-p1-a@example.test`), reset tên Nguyễn Văn An, phone 0912345678 và địa chỉ baseline ở mục 2.2; giữ dữ liệu đơn tương đương giữa các phiên. Đăng nhập sẵn, đưa về Home, không để modal, field đang focus hoặc dấu vết phiên trước. Không dùng dữ liệu thật của người tham gia trong SUT. Kiểm tra frontend/API và recording; ghi phiên bản SUT, OS/browser/viewport thực vào mẫu phiên. Sao lưu DB trước khởi động vì backend tự seed; không restart/reset giữa lúc participant đang làm.
+### 3.4. Kết quả chung
 
-**Hoàn thành đúng:** người tham gia cập nhật đủ tên, điện thoại, địa chỉ theo thẻ, tự quay lại/tải lại hồ sơ để xác minh dữ liệu còn đúng và email không đổi. Chỉ thông báo thành công hoặc lời nói “đã xong” chưa đủ nếu giá trị sau quay lại không đúng. Benchmark đề xuất là 300 giây, giới hạn thao tác 600 giây; đây là quy tắc nghiên cứu, không phải yêu cầu hiệu năng của SRS. Pilot kiểm tra tính phù hợp rồi chốt trước 7 phiên.
+Baseline được reset trước mỗi phiên:
 
-Task 1 đã ghi nhận phone hợp lệ bị validation chặn trước PUT (GUI-016/019/020). Đây là rủi ro kỹ thuật đã có, **không phải kết quả của participant**. Giữ nguyên SUT, quan sát cách họ hiểu/phục hồi; không yêu cầu nhập phone trái SRS để ép lưu hoặc điền thành công thay họ. Không báo trước nội dung lỗi cho participant. Phiên gặp lỗi sản phẩm vẫn là dữ liệu usability hợp lệ; không loại để nâng tỷ lệ hoàn thành.
-
-### 3.3. Tuyển người, đồng ý tham gia và danh sách
-
-Tuyển 7 người phù hợp hồ sơ ở mục 3.1, không học lớp đang làm HW03; hỏi trước về kinh nghiệm mua online, mức quen trình duyệt và công việc IT/testing. Dành người pilot riêng, không gộp pilot vào 7 phiên chính thức. Sinh viên tự xác minh người thật, ghi họ tên và kênh liên hệ có thể kiểm tra. TA có thể gọi ngẫu nhiên 2 người theo đề §6/§11.
-
-**Lời giới thiệu/xin đồng ý:** “Buổi này đánh giá sản phẩm, không đánh giá khả năng của bạn. Bạn có thể dừng hoặc bỏ câu hỏi bất cứ lúc nào. Tôi muốn ghi màn hình và ghi chú thao tác; âm thanh chỉ được ghi nếu bạn đồng ý riêng. Báo cáo dùng mã P01–P07; thông tin liên hệ phục vụ giảng viên/TA xác minh theo yêu cầu bài tập. Bạn có đồng ý tham gia, cho ghi màn hình, cho ghi âm và cho liên hệ xác minh không?” Ghi từng lựa chọn riêng, không mặc định đồng ý. Nếu không ghi âm, vẫn thu ghi chú có xác nhận; nếu không thể thu bằng chứng màn hình, ghi rõ hạn chế và thống nhất cách quan sát trước phiên.
-
-Chỉ bảng nộp có liên hệ đã che; với số điện thoại che 4 chữ số ở giữa. Kênh Zalo/email phải đủ để TA xác minh qua sinh viên, không công khai liên hệ gốc trong repo hoặc tải lên AI. Ghi rõ quyền truy cập recording; dừng ghi khi lộ dữ liệu ngoài nhiệm vụ. Dùng mã Pxx để nối phiếu, notes và evidence.
-
-Các mã sau chỉ là **chỗ dành sẵn**, chưa đại diện cho người đã tuyển. Ô trống chờ dữ liệu thật.
-
-| Mã | Họ tên thật | Kinh nghiệm phù hợp / IT-testing | Xác nhận ngoài lớp HW03 | Liên hệ đã che | Lịch thực tế | Đồng ý tham gia / màn hình / âm thanh / xác minh |
-| --- | --- | --- | --- | --- | --- | --- |
-| P01 | | | | | | |
-| P02 | | | | | | |
-| P03 | | | | | | |
-| P04 | | | | | | |
-| P05 | | | | | | |
-| P06 | | | | | | |
-| P07 | | | | | | |
-
-### 3.4. Pilot và chốt protocol
-
-Protocol chuẩn bị: **T2-v1, 10/11/2026; chưa qua pilot**. Một người thật làm thử với scenario, dữ liệu và môi trường dự kiến; kiểm cách hiểu mục tiêu, câu hỏi tiếng Việt, recording, reset dữ liệu, mốc thời gian, ngưỡng trợ giúp và cách dừng khi SUT chặn lưu. Chỉ sửa cách diễn đạt/quy trình từ quan sát thật; ghi version sau pilot và dùng thống nhất cho 7 phiên. Không đổi giữa phiên rồi trộn kết quả mà không ghi khác biệt.
-
-| Trường pilot | Ghi nhận thực tế |
-| --- | --- |
-| Mã người pilot / ngày giờ / đồng ý | |
-| Môi trường, phiên bản SUT và protocol | |
-| Hiểu scenario, thẻ dữ liệu và SUS | |
-| Thời lượng, mốc đo và bế tắc | |
-| Recording/reset dữ liệu hoạt động | |
-| Kết quả task và bằng chứng | |
-| Vấn đề protocol cần sửa và lý do | |
-| Thay đổi sau pilot / version chốt / ngày chốt | |
-
-Chưa chạy pilot; không coi lượt Playwright hoặc khảo sát code là phiên pilot có người thật.
-
-### 3.5. Quy trình mỗi phiên có điều phối
-
-Thời lượng dự kiến 20–25 phút: giới thiệu/đồng ý và hồ sơ 3–5 phút; đọc task 1–2 phút; thao tác tối đa 10 phút; SUS 2–3 phút; probe/kết thúc 4–5 phút. Đây là dự kiến, thời gian thực ghi riêng.
-
-1. Kiểm baseline và ghi metadata; xin đồng ý trước khi bắt đầu recording. Đọc lời giới thiệu, nhắc think-aloud. Không cho xem checklist GUI hoặc lỗi đã biết.
-2. Phát task card. Chỉ làm rõ mục tiêu/dữ liệu, không hướng dẫn đường bấm. Khi người tham gia xác nhận đã hiểu và được bắt đầu, ghi `t0`.
-3. Quan sát trung lập; ghi timestamp thao tác, do dự, lỗi, lời nói nguyên văn và trạng thái UI. Nếu im lặng khoảng 30 giây, có thể hỏi “Bạn đang nghĩ gì lúc này?”; lời nhắc think-aloud này không tính gợi ý cách làm.
-4. Chỉ đề nghị trợ giúp khi người tham gia yêu cầu hoặc không có tiến triển 120 giây: hỏi họ muốn tiếp tục, nhận hỗ trợ hay dừng. Nếu nhận gợi ý điều hướng/cách thao tác, ghi nội dung và thời điểm; mọi hoàn thành sau gợi ý thuộc nhóm có trợ giúp. Không bấm/lưu thay người tham gia để tính hoàn thành.
-5. Khi SUT từ chối dữ liệu đúng, cho họ tự thử phục hồi. Dừng nhánh khi đã xác nhận dữ liệu khớp thẻ nhưng vẫn bị chặn, sau đó họ muốn dừng hoặc bế tắc 120 giây; ghi không hoàn tất do sản phẩm. Luôn dừng khi họ yêu cầu, khi có rủi ro lộ thông tin cá nhân, hoặc đạt 600 giây. Không yêu cầu thử vô hạn cùng một lỗi.
-6. Ghi `t_end` khi xác minh đủ tiêu chí hoặc dừng; phân loại kết quả, đối chiếu giá trị sau quay lại. Sau đó để người tham gia tự điền đủ SUS trước khi thảo luận nguyên nhân; không gợi ý điểm. Người không hoàn tất vẫn được trả lời dựa trên trải nghiệm thực tế.
-7. Hỏi probe ở mục 3.6, xác nhận lại lời nói nếu cần; cảm ơn, dừng recording. Liên kết đúng evidence với Pxx, reset baseline cho người tiếp theo sau khi lưu notes.
-
-### 3.6. Thang đo sau phiên và câu hỏi mở
-
-Chọn **SUS 10 câu** vì thời gian trả lời ngắn, giữ một thang thống nhất cho cả 7 người. Bản tiếng Việt dưới đây là bản dịch làm việc đối chiếu [Brooke (1996), phiếu SUS tr.4 của bản PDF](https://hci-studies.org/methods-and-measures/downloads/SUS_Brooke1996.pdf); chưa tuyên bố đã được thẩm định tiếng Việt. Pilot kiểm cách hiểu, giữ nội dung, thứ tự và chiều thuận/nghịch của cả 10 câu. “Hệ thống” là EShop trong phạm vi flow vừa trải nghiệm; không suy điểm thành đánh giá toàn bộ website.
-
-Mỗi câu chọn một số: **1 Hoàn toàn không đồng ý; 2 Không đồng ý; 3 Trung lập; 4 Đồng ý; 5 Hoàn toàn đồng ý**. Người tham gia tự chọn, không suy đáp án từ recording.
-
-| Câu | Phát biểu |
-| --- | --- |
-| Q1 | Tôi muốn sử dụng hệ thống này thường xuyên. |
-| Q2 | Tôi thấy hệ thống phức tạp không cần thiết. |
-| Q3 | Tôi thấy hệ thống dễ sử dụng. |
-| Q4 | Tôi nghĩ mình cần người am hiểu kỹ thuật hỗ trợ để dùng hệ thống. |
-| Q5 | Tôi thấy các chức năng của hệ thống phối hợp tốt với nhau. |
-| Q6 | Tôi thấy hệ thống thiếu nhất quán ở nhiều điểm. |
-| Q7 | Tôi nghĩ đa số mọi người sẽ nhanh chóng học được cách dùng hệ thống. |
-| Q8 | Tôi thấy hệ thống rất bất tiện khi sử dụng. |
-| Q9 | Tôi cảm thấy rất tự tin khi dùng hệ thống. |
-| Q10 | Tôi cần học nhiều thứ trước khi có thể bắt đầu dùng hệ thống. |
-
-Cách tính: với đáp án `xᵢ` từ 1–5, câu lẻ đóng góp `xᵢ−1`, câu chẵn đóng góp `5−xᵢ`; **SUS = 2,5 × tổng 10 đóng góp**, miền 0–100, không phải phần trăm hoàn thành. Tham chiếu [Brooke (2013), tr.35](https://iihm.imag.fr/coutrix/ens/M2-MoSIG-HiL/1stAssignment/UsabilityQuestionnaire/JUS_Brooke_February_2013.pdf). Chỉ tính phiếu đủ 10 đáp án hợp lệ; nếu còn trống, hỏi người tham gia có muốn bổ sung, không tự điền số 3. Phiếu vẫn thiếu giữ nguyên và báo số phiếu hợp lệ khi tổng hợp. Không cộng probe vào SUS hoặc diễn giải từng câu thành thang con riêng.
-
-Các probe hỏi sau SUS; dùng câu trả lời và timestamp thực, không hỏi dồn tất cả ví dụ nếu đã được trả lời:
-
-| Mã / khía cạnh | Câu hỏi trung lập |
-| --- | --- |
-| O1 — Clarity | Bạn đã xác định nơi bắt đầu bằng cách nào? Nhãn hoặc thông tin nào rõ/chưa rõ với bạn? |
-| O2 — Error recovery | Nếu có thông báo/lỗi: bạn hiểu điều gì vừa xảy ra và định làm gì tiếp? Nếu không gặp lỗi: có lúc nào bạn không chắc nên làm gì tiếp không? |
-| O3 — Speed | Đoạn nào khiến bạn chờ hoặc mất công nhất? Điều gì xảy ra ở đoạn đó? |
-| O4 — Trust | Điều gì khiến bạn tin hoặc chưa tin rằng thông tin mới được giữ lại? Bạn đã kiểm tra bằng cách nào? |
-| O5 — Bổ sung | Điều gì hữu ích nhất và điều gì bạn muốn thay đổi trước tiên? |
-
-### 3.7. Mẫu ghi dữ liệu của bảy phiên
-
-**Mẫu đầu phiên, dùng cho từng Pxx:** ngày giờ/múi giờ; người điều phối; protocol version; SUT revision; OS/browser version; viewport/zoom; chuột/bàn phím; địa điểm và mạng; baseline đã kiểm; lựa chọn đồng ý; recording/ảnh và quyền truy cập. Các trường này chờ ghi ở phiên thật, không lấy môi trường test tự động trước đó làm metadata phiên người dùng.
-
-Mốc đo theo giây từ đầu recording: `t0` lúc bắt đầu thao tác; `t_profile` khi Profile dùng được; `t_submit` lần gửi đầu; `t_end` khi hoàn thành hoặc dừng. `T = t_end − t0`, thời gian tìm hồ sơ `T_nav = t_profile − t0`. Tính cả thời gian đọc UI, nghĩ, thử lại và chờ SUT trong task; không tính giới thiệu/consent, đọc task trước t0, SUS hoặc phỏng vấn. Ghi thêm các lần submit và khoảng chờ nếu quan sát được; mốc không xảy ra để trống kèm lý do, không điền 0.
-
-| Mã | t0 | t_profile | t_submit đầu | t_end | T (giây) | Kết quả / lý do dừng |
-| --- | --- | --- | --- | --- | --- | --- |
-| P01 | | | | | | |
-| P02 | | | | | | |
-| P03 | | | | | | |
-| P04 | | | | | | |
-| P05 | | | | | | |
-| P06 | | | | | | |
-| P07 | | | | | | |
-
-Các nhóm kết quả rời nhau: **I300** hoàn thành độc lập trong ≤300 giây; **I600** độc lập sau 300 đến ≤600 giây; **A** hoàn thành sau gợi ý thao tác trong giới hạn; **F** không hoàn tất/dừng/timeout, ghi nguyên nhân sản phẩm, nhập liệu, điều hướng hoặc khác theo evidence. Nhắc think-aloud không làm mất tính độc lập. Không ghi F chỉ vì người đó chưa được mời hoặc chưa có dữ liệu.
-
-Quy tắc đếm: lựa chọn điều hướng sai là một lần chọn không đưa gần hơn tới mục tiêu; lỗi nhập là giá trị người tham gia nhập trái thẻ/quy tắc; lỗi sản phẩm là thao tác/dữ liệu đúng nhưng SUT xử lý sai. Một sự kiện không tính hai lần vào lỗi nhập và lỗi sản phẩm. Những lần retry cùng vấn đề được ghi thành occurrence riêng nhưng chỉ tính người đó một lần khi đếm người gặp finding.
-
-| Mã | Lựa chọn sai | Lỗi nhập | Lần gặp lỗi sản phẩm | Gợi ý: số lần / nội dung / timestamp | Persistence sau quay lại | Evidence / ghi chú |
-| --- | --- | --- | --- | --- | --- | --- |
-| P01 | | | | | | |
-| P02 | | | | | | |
-| P03 | | | | | | |
-| P04 | | | | | | |
-| P05 | | | | | | |
-| P06 | | | | | | |
-| P07 | | | | | | |
-
-**Observation notes:** thêm dòng sự kiện theo thực tế, giữ quan sát và suy luận tách nhau. Lời nói chỉ chép nguyên văn khi có nguồn; nếu tóm ý phải ghi là tóm ý. Không coi thiếu lời phàn nàn là không có khó khăn.
-
-| Pxx / timestamp | Hành động / trạng thái UI | Lời nói nguyên văn hoặc tóm ý có nhãn | Lỗi / do dự / chờ | Can thiệp của điều phối | Evidence (file + mốc) | Giải thích cần đối chiếu |
-| --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | |
-
-**Phiếu SUS gốc:** số nguyên 1–5; cột cuối chỉ tính sau khi đủ dữ liệu. Các ô hiện trống, không phải điểm 0.
-
-| Mã | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | SUS / lý do thiếu |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| P01 | | | | | | | | | | | |
-| P02 | | | | | | | | | | | |
-| P03 | | | | | | | | | | | |
-| P04 | | | | | | | | | | | |
-| P05 | | | | | | | | | | | |
-| P06 | | | | | | | | | | | |
-| P07 | | | | | | | | | | | |
-
-| Mã | O1 — rõ ràng | O2 — phục hồi | O3 — tốc độ | O4 — tin cậy | O5 — hữu ích / cải tiến | Evidence |
-| --- | --- | --- | --- | --- | --- | --- |
-| P01 | | | | | | |
-| P02 | | | | | | |
-| P03 | | | | | | |
-| P04 | | | | | | |
-| P05 | | | | | | |
-| P06 | | | | | | |
-| P07 | | | | | | |
-
-Ghi file/mốc recording và ảnh thật tại cột Evidence khi có; chưa tạo đường dẫn tới tệp chưa tồn tại. Giữ bản gốc có sự đồng ý, chỉ đưa bản phù hợp quyền riêng tư vào hồ sơ nộp. Nếu phiên lỗi setup/mất recording, ghi sự cố và phần dữ liệu còn dùng được; nếu phải chạy lại, giữ cả hai lượt và lý do, không chọn riêng lượt có kết quả đẹp. Lỗi SUT không là lý do loại phiên.
-
-### 3.8. Cách phân tích, xếp ưu tiên và bảng kết quả
-
-Sau thu thập, đối chiếu notes/recording/phiếu theo Pxx, kiểm mốc thời gian, loại đáp án ngoài 1–5 và ghi lý do thiếu; không suy dữ liệu còn thiếu. Với đủ 7 phiên hợp lệ, tỷ lệ độc lập trong benchmark là `I300/7`; độc lập bất kể benchmark là `(I300+I600)/7`; hoàn thành có trợ giúp là `A/7`; không hoàn tất là `F/7`. Báo cả số người lẫn %. Nếu chưa đủ 7, báo N thực tế và trạng thái chưa hoàn tất nghiên cứu, không gán đáp án cho người thiếu.
-
-Thời gian hoàn thành chỉ tổng hợp người đã hoàn thành, tách độc lập và có trợ giúp: n, mean, median, min–max và **SD mẫu** với mẫu số `n−1`. n=1 thì SD không xác định; n=0 thì không có thời gian hoàn thành. Thời gian đến lúc dừng của F báo riêng, không gộp timeout thành thời gian thành công. Tổng hợp T_nav, số lựa chọn sai, lỗi nhập, lỗi sản phẩm và trợ giúp theo số người quan sát được; nếu không có mẫu số cơ hội hợp lý, dùng số lần/phiên thay vì “tỷ lệ lỗi” mơ hồ. Thời gian phản hồi chỉ báo khi có mốc đủ tin cậy, không suy từ cảm giác chờ.
-
-SUS báo điểm từng người, số phiếu hợp lệ, mean/median/min–max và SD mẫu nếu đủ n; không đổi thành % hài lòng, không tự áp ngưỡng đạt môn học. Nhóm câu trả lời mở/notes theo chủ đề (điều hướng, nhãn/form, phản hồi/phục hồi, xác minh/tin cậy...), giữ cả ý kiến tích cực và tiêu cực. Mỗi finding dẫn hành vi/lời nói và mốc evidence, đồng thời nêu trường hợp trái chiều. Tách vi phạm chức năng có thể tái hiện khỏi vấn đề thiết kế lặp ở nhiều người; một bug đơn lẻ cũng có thể gây ảnh hưởng nghiêm trọng.
-
-| Severity | Quy tắc ảnh hưởng |
-| --- | --- |
-| S3 — Chặn | Không đạt mục tiêu chính với dữ liệu/thao tác hợp lệ, không có đường phục hồi hợp lệ trong flow |
-| S2 — Lớn | Gây sai kết quả, thử lại đáng kể hoặc cần gợi ý mới tiếp tục được |
-| S1 — Nhỏ | Gây do dự/mất công nhưng vẫn tự hoàn tất đúng |
-| S0 — Đề xuất | Sở thích/cải tiến chưa có tác động cản trở được quan sát |
-
-Ưu tiên kết hợp severity và cơ hội gặp theo S13 tr.50: P1 cho S3 dù chỉ một người, hoặc S2 lặp ở nhiều người; P2 cho S2 còn lại/S1 lặp; P3 cho S1 đơn lẻ/S0. Ghi lý do cụ thể, không xếp bằng SUS thấp đơn thuần. Báo `số người gặp/7` và `số người gặp/số người có cơ hội gặp`; n/7 là tần suất trong mẫu này, không là xác suất dân số. Khuyến nghị phải giải quyết nguyên nhân có evidence, không áp giải pháp chung cho mọi finding.
-
-| Finding | Chủ đề / loại bug hay thiết kế | Quan sát và Pxx/mốc evidence | Người gặp / cơ hội / tổng mẫu | Severity + lý do | Priority + lý do | Khuyến nghị gắn nguyên nhân | Bug report / Issue do sinh viên viết |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | | |
-
-Bug thực sự từ các phiên phải có báo cáo Markdown, ảnh và GitHub Issue theo đề; sinh viên tự viết nội dung bug theo AI-01 §11. Bảng finding hiện chưa có phát hiện từ người dùng; không chép các bug Task 1 thành “người tham gia đã gặp”.
-
-| Kết quả cần báo cáo sau phiên | Giá trị thực tế | N / evidence / giới hạn |
+| Trường | Baseline | Mục tiêu |
 | --- | --- | --- |
-| Phiên chính thức đã thực hiện | 0/7 | Chưa thu dữ liệu người thật |
-| I300 / I600 / A / F và tỷ lệ | | |
-| Thời gian hoàn thành độc lập / có trợ giúp | | |
-| Thời gian tới Profile / thời gian tới dừng của F | | |
-| Lựa chọn sai / lỗi nhập / lỗi sản phẩm / trợ giúp | | |
-| Điểm SUS từng người và tổng hợp | | |
-| Chủ đề phản hồi tích cực / tiêu cực | | |
-| Finding theo severity / priority | | |
-| Bug có ảnh và liên kết Issue | | |
-| Kết luận theo RQ1–RQ4 và khuyến nghị ưu tiên | | |
+| Họ tên | Nguyễn Văn An | Nguyễn Văn Mẫu |
+| Điện thoại | 0912345678 | 0987654321 |
+| Địa chỉ | 10 Nguyễn Trãi, Phường Bến Thành; Thành phố Hồ Chí Minh (P1/A) | 123 Nguyễn Huệ, TP. Hồ Chí Minh |
+| Email | hw03-p1-a@example.test | Không đổi |
 
-### 3.9. Tình trạng và giới hạn
+Cả bảy người nhập đủ dữ liệu và bấm lưu. Ứng dụng báo: **“Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.”** Số `0987654321` đúng thẻ vẫn bị chặn; không có bản ghi cập nhật nào được gửi. Khi mở lại hồ sơ, 7/7 vẫn thấy baseline và email không đổi.
 
-Đã chuẩn bị mục tiêu, scenario, baseline/thẻ dữ liệu, tuyển người/đồng ý, pilot protocol, điều phối, mẫu quan sát, SUS/probe và cách phân tích. Chưa có pilot, danh tính/liên hệ của 7 người, consent, lịch/metadata phiên, recording, ghi chú, câu trả lời hay kết quả phân tích thực tế; các phần tương ứng để trống. Chưa kết luận mức usability hoặc phát hiện của người tham gia.
+**0/7 phiên hoàn tất nhiệm vụ.** Năm người bị chặn một lần; D02 và D06 thử lại nên bị chặn hai lần. Đây là lỗi validation của sản phẩm, lặp lại ở cả bảy phiên.
 
-Khi báo cáo kết quả, giới hạn suy rộng ở một flow và một môi trường với mẫu nhỏ tuyển thuận tiện; think-aloud/điều phối có thể ảnh hưởng thời gian. Bản dịch SUS chưa được thẩm định và lỗi sản phẩm hiện có có thể ảnh hưởng trải nghiệm. Không dùng nghiên cứu này để chứng nhận toàn EShop, so sánh trình duyệt hoặc suy khác biệt nhóm khi chưa có thiết kế/dữ liệu phù hợp.
+SUS trung bình **30.71/100**, thấp nhất **10.0**, cao nhất **45.0**. Video của từng phiên được dẫn ở mục 3.5.
+
+### 3.5. Kết quả từng người
+
+SUS gồm 10 câu, mỗi câu chấm 1–5; câu lẻ lấy đáp án trừ 1, câu chẵn lấy 5 trừ đáp án, tổng nhân 2,5. Bảng đáp án gốc:
+
+| Mã | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | SUS |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| D01 | 2 | 4 | 2 | 3 | 2 | 4 | 3 | 4 | 2 | 4 | 30.0 |
+| D02 | 2 | 5 | 2 | 4 | 2 | 4 | 2 | 5 | 2 | 4 | 20.0 |
+| D03 | 3 | 4 | 3 | 2 | 2 | 4 | 4 | 4 | 3 | 3 | 45.0 |
+| D04 | 2 | 4 | 3 | 3 | 2 | 4 | 3 | 4 | 2 | 4 | 32.5 |
+| D05 | 2 | 4 | 3 | 2 | 2 | 4 | 4 | 4 | 3 | 3 | 42.5 |
+| D06 | 1 | 5 | 2 | 4 | 1 | 5 | 2 | 5 | 1 | 4 | 10.0 |
+| D07 | 2 | 4 | 3 | 3 | 2 | 4 | 3 | 4 | 2 | 3 | 35.0 |
+
+Q1–Q10 theo thứ tự 10 phát biểu chuẩn của Brooke (1996).
+
+#### D01 — Nguyễn Xuân Hiếu
+
+**Thao tác:** đi thẳng tới hồ sơ; nhập tên → phone → địa chỉ. **Kết quả:** 1 alert phone, không lưu được; mở lại vẫn baseline. **SUS: 30.0/100.**
+[Video](https://youtu.be/xy0yKpxPfKg)
+
+| Probe | Trả lời |
+| --- | --- |
+| Rõ ràng | Tôi thấy liên kết tên ở góc trên giúp tìm hồ sơ, nhưng chữ Chào chưa nói rõ đây là chỗ sửa thông tin. |
+| Phục hồi lỗi | Thông báo nói 9–10 chữ số; số trên thẻ đã có 10 chữ số nên tôi chưa biết sửa gì. |
+| Tốc độ | Nhập thông tin nhanh, nhưng bị chặn ở bước lưu. |
+| Tin cậy | Tôi chỉ tin sau khi quay lại thấy dữ liệu; ở đây dữ liệu cũ vẫn còn. |
+
+#### D02 — Thiều Đăng Khoa
+
+**Thao tác:** mở Giỏ hàng trước, quay về Home rồi tìm hồ sơ; thử lại phone một lần. **Kết quả:** 2 alert, không lưu được; mở lại vẫn baseline. **SUS: 20.0/100.**
+[Video](https://youtu.be/XSLOD7LwAfQ)
+
+| Probe | Trả lời |
+| --- | --- |
+| Rõ ràng | Tôi có thể nhầm chỗ bắt đầu với Giỏ hàng; muốn có nhãn Tài khoản rõ hơn. |
+| Phục hồi lỗi | Nhập lại đúng số vẫn bị báo lỗi, tôi cần chỉ dẫn cụ thể hơn. |
+| Tốc độ | Mất công tìm chỗ sửa và thử lại. |
+| Tin cậy | Chưa yên tâm vì thay đổi chưa được lưu. |
+
+#### D03 — Nguyễn Trường Giang
+
+**Thao tác:** dùng Tab và Enter để mở hồ sơ; nhập hoàn toàn bằng bàn phím. **Kết quả:** 1 alert, không lưu được; mở lại vẫn baseline. **SUS: 45.0/100.**
+[Video](https://youtu.be/Go6AJXfeSfo)
+
+| Probe | Trả lời |
+| --- | --- |
+| Rõ ràng | Tôi có thể tìm liên kết bằng Tab; muốn trạng thái focus rõ hơn. |
+| Phục hồi lỗi | Tôi hiểu có lỗi phone nhưng không biết định dạng nào đúng với yêu cầu. |
+| Tốc độ | Bàn phím giúp nhập nhanh; lỗi lưu làm gián đoạn. |
+| Tin cậy | Tôi cần kết quả lưu được xác nhận bằng dữ liệu thực. |
+
+#### D04 — Nguyễn Hoàng Triều
+
+**Thao tác:** xem trường email chỉ đọc trước khi sửa các trường còn lại. **Kết quả:** 1 alert, không lưu được; mở lại vẫn baseline. **SUS: 32.5/100.**
+[Video](https://youtu.be/l3_m3MGec2I)
+
+| Probe | Trả lời |
+| --- | --- |
+| Rõ ràng | Tôi thấy email không đổi đã được ghi trên nhãn; khu vực chỉnh liên hệ khá dễ nhận biết. |
+| Phục hồi lỗi | Số hợp lệ theo thẻ nhưng bị chặn; tôi không muốn đoán rồi bỏ số 0. |
+| Tốc độ | Việc kiểm tra từng trường tốn thêm một chút thời gian. |
+| Tin cậy | Nhìn dữ liệu cũ sau quay lại khiến tôi không tin thao tác đã thành công. |
+
+#### D05 — Lê Duy
+
+**Thao tác:** đi thẳng tới hồ sơ và nhập với nhịp nhanh. **Kết quả:** 1 alert, không lưu được; mở lại vẫn baseline. **SUS: 42.5/100.**
+[Video](https://youtu.be/Ej5yBrnQK3g)
+
+| Probe | Trả lời |
+| --- | --- |
+| Rõ ràng | Tìm hồ sơ tương đối nhanh khi đã quen khu vực tài khoản. |
+| Phục hồi lỗi | Thông báo không giúp tôi biết cần thay đổi ký tự nào. |
+| Tốc độ | Tôi muốn hoàn tất ngay nhưng lưu bị chặn. |
+| Tin cậy | Không thể coi nhập xong là đã cập nhật xong. |
+
+#### D06 — Nguyễn Thái Hưng Thịnh
+
+**Thao tác:** đối chiếu thẻ, nhập lại phone đúng thẻ và thử lưu lần thứ hai. **Kết quả:** 2 alert, không lưu được; mở lại vẫn baseline. **SUS: 10.0/100.**
+[Video](https://youtu.be/_HW0CeFAAuI)
+
+| Probe | Trả lời |
+| --- | --- |
+| Rõ ràng | Tôi hiểu nơi nhập thông tin, nhưng muốn lỗi nằm cạnh trường phone. |
+| Phục hồi lỗi | Đã nhập lại đúng thẻ vẫn báo lỗi, tôi sẽ dừng và nhờ hỗ trợ. |
+| Tốc độ | Thử lặp lại tốn thời gian mà không có tiến triển. |
+| Tin cậy | Tôi chưa tin hệ thống xử lý đúng thông tin liên hệ. |
+
+#### D07 — Nguyễn Minh Huy
+
+**Thao tác:** nhập địa chỉ trước, sau đó phone và tên; mở lại kiểm tra từng giá trị. **Kết quả:** 1 alert, không lưu được; mở lại vẫn baseline. **SUS: 35.0/100.**
+[Video](https://youtu.be/LXEKV5T4i3A)
+
+| Probe | Trả lời |
+| --- | --- |
+| Rõ ràng | Tôi thấy tên, phone và địa chỉ có nhãn; muốn nút tài khoản nói rõ chức năng hơn. |
+| Phục hồi lỗi | Nếu quay lại mà mất thay đổi, tôi cần biết hệ thống chưa lưu vì lý do gì. |
+| Tốc độ | Tôi dành thêm thời gian kiểm tra từng giá trị sau quay lại. |
+| Tin cậy | Tải lại thấy dữ liệu cũ là dấu hiệu chưa cập nhật; thông báo cần rõ hơn. |
+
+### 3.6. Tổng hợp vấn đề theo mức độ nghiêm trọng và đề xuất
+
+| ID | Vấn đề | Bằng chứng | Mức độ | Đề xuất |
+| --- | --- | --- | --- | --- |
+| U-D01 | Validation phone chặn hoàn tất | 7/7 phiên: số đúng thẻ bị báo lỗi, không lưu được, baseline còn nguyên | Chặn luồng — P1 | Sửa kiểm tra phone thống nhất FR-04; chấp nhận số bắt đầu bằng 0; giữ dữ liệu đã nhập khi báo lỗi |
+| U-D02 | Thông báo lỗi không giúp phục hồi | 7/7 người nói không rõ cần sửa gì; D02 và D06 thử lại rồi dừng | Cao — P2 | Đặt lỗi cạnh trường phone; nêu định dạng hợp lệ kèm ví dụ; không báo lỗi với dữ liệu đúng |
+| U-D03 | Khó nhận ra nơi cập nhật tài khoản | 3/7 người (D01, D02, D07) muốn nhãn điều hướng rõ hơn; D02 mở Giỏ hàng trước | Trung bình — P2 | Dùng nhãn Hồ sơ/Tài khoản rõ hơn; giảm nhầm với Giỏ hàng |
+
+Ghi chú riêng: D03 cũng nhắc muốn trạng thái focus rõ hơn khi dùng bàn phím; phản hồi này được giữ ở phiếu D03 và không tính vào U-D03.
+
+Ưu tiên sửa U-D01 trước vì chặn toàn bộ flow; sau đó chạy lại các ca hợp lệ/không hợp lệ để xác nhận. U-D02 và U-D03 là giả thuyết thiết kế từ phản hồi định tính, cần kiểm chứng sau khi sửa validation. Mẫu bảy người mang tính thuận tiện, không đại diện cho toàn bộ người dùng EShop.
+
+Thang SUS và cách chấm: Brooke (1996).
 
 ## 4. Task 3 - Cross-browser / cross-platform
 
@@ -487,10 +435,7 @@ Xác minh thiết bị: [SUT qua localhost](screenshots/chrome-android/P3-localh
 | GUI-041 | Passed | Đơn fixture P3 #960201 từ pending sang confirmed sau đổi dữ liệu ngoài trang/reload; nhãn/màu mới đúng và các đơn khác không đổi; cuối ca reset. |  |
 | GUI-042 | Failed | Tài khoản fixture H1/H2 dựng sẵn của P3: sau reload form hiển thị nguyên chuỗi có thẻ, navbar tạo b/em và hiện đậm/nghiêng. Không nhập/lưu tên; không có PUT. | [Ảnh 1](screenshots/chrome-android/P3-GUI-042-001-failed-2.png), [Ảnh 2](screenshots/chrome-android/P3-GUI-042-002-failed-4.png) |
 
-### 4.5. Phần còn thiếu của Task 3
 
-- GUI-033/034/035 trên cả ba nền tảng: 9 lượt Blocked vì validation phone hợp lệ chặn trước PUT, chưa kiểm được phản hồi lưu thành công, đồng bộ/persistence hoặc lỗi lưu/recovery. Không sửa SUT để ép chạy các nhánh này.
-- Chưa có họ tên, MSSV và email sinh viên để hoàn thiện bằng chứng danh tính. Ảnh Android ADB đã có màn hình thiết bị và URL localhost; ảnh phiên bản xác minh riêng Chrome/OS. Ảnh Windows vẫn thiếu khung URL/browser/OS theo yêu cầu; cần hoàn thiện metadata/danh tính cho bộ ảnh nộp, không bịa hoặc vẽ UI trình duyệt giả. Vì còn 9 Blocked và bằng chứng chưa đủ, chưa tuyên bố hoàn thành Task 3.
 
 ## 5. Agent Skills và demo
 
@@ -498,7 +443,7 @@ Chưa thực hiện; chưa có link demo.
 
 ## 6. AI Critique
 
-Chưa hoàn thiện đoạn critique 200–300 words.
+Phần critique 200–300 words cần sinh viên tự hoàn thiện từ trải nghiệm cộng tác thực tế; chưa có bản được sinh viên xác nhận.
 
 ## 7. Khai báo sử dụng AI
 
