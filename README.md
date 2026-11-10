@@ -5,6 +5,9 @@
 | Tệp | Nội dung |
 | --- | --- |
 | [report.md](report.md) | Báo cáo chính, checklist 42 mục, kết quả 7 phiên usability Task 2 và AI Audit |
+| [report.pdf](report.pdf) | Bản PDF báo cáo chính |
+| [AI_Critique_and_Audit.pdf](AI_Critique_and_Audit.pdf) | Bản PDF AI Critique và AI Audit |
+| [git_commit_log.txt](git_commit_log.txt) | Git log xuất bằng `git log --graph --all --stat` |
 | [Bug_Report.md](Bug_Report.md) | Chi tiết 19 issue Bug và 3 issue Blocked, kèm liên kết GitHub |
 | [GUI_Checklist.xlsx](GUI_Checklist.xlsx) | Checklist, thực thi theo nền tảng và test summary |
 | [AI_Critique_and_Audit.md](AI_Critique_and_Audit.md) | AI Critique và AI Audit theo AI-02 |

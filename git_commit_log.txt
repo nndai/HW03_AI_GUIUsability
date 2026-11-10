@@ -1,0 +1,457 @@
+* commit 2942374eb7d19099ed938547ee7d5ce5cf69465c
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Wed Nov 11 00:43:29 2026 +0700
+| 
+|     docs: update AI audit report, disclosure, and privacy checklist with participant consent and video links
+| 
+|  AI_Critique_and_Audit.md |  25 ++++++++++++-------------
+|  AI_Disclosure.md         |   6 +++---
+|  AI_Privacy_Checklist.md  |   8 ++++----
+|  GUI_Checklist.xlsx       | Bin 33652 -> 33503 bytes
+|  README.md                |  18 +++++++++---------
+|  report.md                |   6 ++++--
+|  6 files changed, 32 insertions(+), 31 deletions(-)
+| 
+* commit 3bc1d08957e7866c50793dc117e9c0cfe2a0037d
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Wed Nov 11 00:30:38 2026 +0700
+| 
+|     docs: add AI audit report, disclosure, and privacy checklist for HW03
+| 
+|  AI_Critique_and_Audit.md | 92 ++++++++++++++++++++++++++++++++++++++++++++++
+|  AI_Disclosure.md         | 89 ++++++++++++++++++++++++++++++++++++++++++++
+|  AI_Privacy_Checklist.md  | 57 ++++++++++++++++++++++++++++
+|  README.md                | 14 ++++---
+|  report.md                | 45 +----------------------
+|  5 files changed, 249 insertions(+), 48 deletions(-)
+| 
+* commit 59a7e71c4764eb848b03917fde455fd3a5250cbc
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Wed Nov 11 00:09:10 2026 +0700
+| 
+|     docs: update README and report with skill
+| 
+|  README.md     | 12 +++++++++++-
+|  prompt_log.md | 24 ++++++++++++++++++++++++
+|  report.md     | 18 ++++++++++++++++--
+|  3 files changed, 51 insertions(+), 3 deletions(-)
+| 
+* commit 21718c847cb9fea1c0c5d2ff54d1b2cb953d0339
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Tue Nov 10 23:39:13 2026 +0700
+| 
+|     docs: add SKILL.md for GUI usability checklist and usability analysis
+| 
+|  gui-usability-skill/SKILL.md | 152 +++++++++++++++++++++++++++++++++++++++++
+|  1 file changed, 152 insertions(+)
+| 
+* commit cd785191be36a6956faaa6139be0dd443cea90bd
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Tue Nov 10 23:04:30 2026 +0700
+| 
+|     docs: finalize Task 2 usability report
+| 
+|  Bug_Report.md | 370 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|  README.md     |  15 +--
+|  prompt_log.md | 107 ++++++++++++++++
+|  report.md     | 307 +++++++++++++++++++---------------------------
+|  4 files changed, 611 insertions(+), 188 deletions(-)
+| 
+* commit d0d779a02e586bf2d5c29d38f9562340c30d837d
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Tue Nov 10 15:03:05 2026 +0700
+| 
+|     docs: update report with detailed descriptions for Task 2
+| 
+|  README.md     |   5 +-
+|  prompt_log.md |  30 ++++++++
+|  report.md     | 233 ++++++++++++++++++++++++++++++++++++++++++++++++++++----
+|  3 files changed, 254 insertions(+), 14 deletions(-)
+| 
+* commit 64a26e592dff27b258e28e225436dcd910d97d99
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Tue Nov 10 02:11:53 2026 +0700
+| 
+|     test: record GUI checklist results across Chrome, Firefox and Android
+| 
+|  GUI_Checklist.xlsx                                | Bin 29685 -> 33652 bytes
+|  README.md                                         |  11 +-
+|  prompt_log.md                                     | 187 ++++++++++++++++++++
+|  report.md                                         | 115 +++++++++---
+|  screenshots/P1-GUI-004-failed-1.png               | Bin 42469 -> 0 bytes
+|  screenshots/P1-GUI-005-failed-1.png               | Bin 52718 -> 0 bytes
+|  screenshots/P1-GUI-013-failed-2.png               | Bin 52653 -> 0 bytes
+|  screenshots/P1-GUI-014-failed-1.png               | Bin 52718 -> 0 bytes
+|  screenshots/P1-GUI-014-failed-2.png               | Bin 52718 -> 0 bytes
+|  screenshots/P1-GUI-014-failed-3.png               | Bin 52718 -> 0 bytes
+|  screenshots/P1-GUI-015-failed-1.png               | Bin 52718 -> 0 bytes
+|  screenshots/P1-GUI-016-failed-validation.png      | Bin 53287 -> 0 bytes
+|  screenshots/P1-GUI-017-failed-2.png               | Bin 52653 -> 0 bytes
+|  screenshots/P1-GUI-017-failed-3.png               | Bin 52750 -> 0 bytes
+|  screenshots/P1-GUI-018-failed-1.png               | Bin 52625 -> 0 bytes
+|  screenshots/P1-GUI-019-failed-validation.png      | Bin 53287 -> 0 bytes
+|  screenshots/P1-GUI-020-failed-validation.png      | Bin 50519 -> 0 bytes
+|  screenshots/P1-GUI-021-failed-1.png               | Bin 52562 -> 0 bytes
+|  screenshots/P1-GUI-023-failed-1.png               | Bin 81679 -> 0 bytes
+|  screenshots/P1-GUI-025-failed-2.png               | Bin 52718 -> 0 bytes
+|  screenshots/P1-GUI-026-failed-1.png               | Bin 52718 -> 0 bytes
+|  screenshots/P1-GUI-032-failed-1.png               | Bin 12236 -> 0 bytes
+|  screenshots/P1-GUI-037-failed-1.png               | Bin 33109 -> 0 bytes
+|  screenshots/P1-GUI-038-failed-2.png               | Bin 33336 -> 0 bytes
+|  screenshots/P1-GUI-039-failed-1.png               | Bin 33109 -> 0 bytes
+|  screenshots/P1-GUI-042-failed-2.png               | Bin 32987 -> 0 bytes
+|  screenshots/P1-GUI-042-failed-4.png               | Bin 32953 -> 0 bytes
+|  .../chrome-android/P3-GUI-004-001-failed-1.png    | Bin 0 -> 144095 bytes
+|  .../chrome-android/P3-GUI-005-001-failed-1.png    | Bin 0 -> 208405 bytes
+|  .../chrome-android/P3-GUI-013-001-failed-2.png    | Bin 0 -> 208822 bytes
+|  .../chrome-android/P3-GUI-014-001-failed-1.png    | Bin 0 -> 208586 bytes
+|  .../chrome-android/P3-GUI-015-001-failed-1.png    | Bin 0 -> 208631 bytes
+|  .../chrome-android/P3-GUI-016-001-dialog-1.png    | Bin 0 -> 227707 bytes
+|  .../chrome-android/P3-GUI-016-002-failed-1.png    | Bin 0 -> 221393 bytes
+|  .../chrome-android/P3-GUI-017-002-dialog-2.png    | Bin 0 -> 223072 bytes
+|  .../chrome-android/P3-GUI-017-003-failed-2.png    | Bin 0 -> 209159 bytes
+|  .../chrome-android/P3-GUI-017-004-dialog-3.png    | Bin 0 -> 226367 bytes
+|  .../chrome-android/P3-GUI-017-005-failed-3.png    | Bin 0 -> 209382 bytes
+|  .../chrome-android/P3-GUI-018-001-dialog-1.png    | Bin 0 -> 214312 bytes
+|  .../chrome-android/P3-GUI-018-002-failed-1.png    | Bin 0 -> 208051 bytes
+|  .../chrome-android/P3-GUI-019-001-dialog-1.png    | Bin 0 -> 199447 bytes
+|  .../chrome-android/P3-GUI-019-002-failed-1.png    | Bin 0 -> 208620 bytes
+|  .../chrome-android/P3-GUI-020-001-dialog-1.png    | Bin 0 -> 312261 bytes
+|  .../chrome-android/P3-GUI-020-002-failed-1.png    | Bin 0 -> 198861 bytes
+|  .../chrome-android/P3-GUI-021-001-dialog-1.png    | Bin 0 -> 219039 bytes
+|  .../chrome-android/P3-GUI-021-002-failed-1.png    | Bin 0 -> 208332 bytes
+|  .../chrome-android/P3-GUI-023-001-failed-1.png    | Bin 0 -> 185268 bytes
+|  .../chrome-android/P3-GUI-025-001-failed-2.png    | Bin 0 -> 208774 bytes
+|  .../chrome-android/P3-GUI-026-001-failed-1.png    | Bin 0 -> 208522 bytes
+|  .../chrome-android/P3-GUI-032-001-failed-1.png    | Bin 0 -> 119234 bytes
+|  .../chrome-android/P3-GUI-037-001-failed-1.png    | Bin 0 -> 205449 bytes
+|  .../chrome-android/P3-GUI-038-001-failed-2.png    | Bin 0 -> 208273 bytes
+|  .../chrome-android/P3-GUI-039-001-failed-1.png    | Bin 0 -> 205578 bytes
+|  .../chrome-android/P3-GUI-042-001-failed-2.png    | Bin 0 -> 204669 bytes
+|  .../chrome-android/P3-GUI-042-002-failed-4.png    | Bin 0 -> 205058 bytes
+|  .../chrome-android/P3-chrome-version-adb.png      | Bin 0 -> 403151 bytes
+|  screenshots/chrome-android/P3-localhost-adb.png   | Bin 0 -> 178218 bytes
+|  .../chrome-windows/P1-GUI-004-failed-1.png        | Bin 0 -> 37269 bytes
+|  .../chrome-windows/P1-GUI-005-failed-1.png        | Bin 0 -> 103788 bytes
+|  .../chrome-windows/P1-GUI-013-failed-2.png        | Bin 0 -> 73087 bytes
+|  .../chrome-windows/P1-GUI-014-failed-1.png        | Bin 0 -> 73145 bytes
+|  .../chrome-windows/P1-GUI-014-failed-2.png        | Bin 0 -> 73145 bytes
+|  .../chrome-windows/P1-GUI-014-failed-3.png        | Bin 0 -> 73145 bytes
+|  .../chrome-windows/P1-GUI-015-failed-1.png        | Bin 0 -> 73145 bytes
+|  .../P1-GUI-016-failed-validation.png              | Bin 0 -> 73798 bytes
+|  .../chrome-windows/P1-GUI-017-failed-2.png        | Bin 0 -> 73087 bytes
+|  .../chrome-windows/P1-GUI-017-failed-3.png        | Bin 0 -> 73183 bytes
+|  .../chrome-windows/P1-GUI-018-failed-1.png        | Bin 0 -> 73019 bytes
+|  .../P1-GUI-019-failed-validation.png              | Bin 0 -> 73798 bytes
+|  .../P1-GUI-020-failed-validation.png              | Bin 0 -> 71018 bytes
+|  .../chrome-windows/P1-GUI-021-failed-1.png        | Bin 0 -> 72995 bytes
+|  .../chrome-windows/P1-GUI-023-failed-1.png        | Bin 0 -> 103974 bytes
+|  .../chrome-windows/P1-GUI-025-failed-2.png        | Bin 0 -> 73145 bytes
+|  .../chrome-windows/P1-GUI-026-failed-1.png        | Bin 0 -> 73145 bytes
+|  .../chrome-windows/P1-GUI-032-failed-1.png        | Bin 0 -> 30032 bytes
+|  .../chrome-windows/P1-GUI-037-failed-1.png        | Bin 0 -> 51528 bytes
+|  .../chrome-windows/P1-GUI-038-failed-2.png        | Bin 0 -> 51743 bytes
+|  .../chrome-windows/P1-GUI-039-failed-1.png        | Bin 0 -> 51528 bytes
+|  .../chrome-windows/P1-GUI-042-failed-2.png        | Bin 0 -> 51476 bytes
+|  .../chrome-windows/P1-GUI-042-failed-4.png        | Bin 0 -> 51329 bytes
+|  .../firefox-windows/P2-GUI-004-failed-1.png       | Bin 20174 -> 35569 bytes
+|  .../firefox-windows/P2-GUI-005-failed-1.png       | Bin 50798 -> 66201 bytes
+|  .../firefox-windows/P2-GUI-013-failed-2.png       | Bin 50690 -> 66109 bytes
+|  .../firefox-windows/P2-GUI-014-failed-1.png       | Bin 50798 -> 66201 bytes
+|  .../firefox-windows/P2-GUI-014-failed-2.png       | Bin 50798 -> 66201 bytes
+|  .../firefox-windows/P2-GUI-014-failed-3.png       | Bin 50798 -> 66201 bytes
+|  .../firefox-windows/P2-GUI-015-failed-1.png       | Bin 50798 -> 66201 bytes
+|  .../firefox-windows/P2-GUI-016-failed-1.png       | Bin 51133 -> 66629 bytes
+|  .../firefox-windows/P2-GUI-017-failed-2.png       | Bin 50690 -> 66109 bytes
+|  .../firefox-windows/P2-GUI-017-failed-3.png       | Bin 50749 -> 66212 bytes
+|  .../firefox-windows/P2-GUI-018-failed-1.png       | Bin 50646 -> 65978 bytes
+|  .../firefox-windows/P2-GUI-019-failed-1.png       | Bin 51133 -> 66629 bytes
+|  .../firefox-windows/P2-GUI-020-failed-1.png       | Bin 48688 -> 64110 bytes
+|  .../firefox-windows/P2-GUI-021-failed-1.png       | Bin 50626 -> 66018 bytes
+|  .../firefox-windows/P2-GUI-023-failed-1.png       | Bin 96628 -> 95514 bytes
+|  .../firefox-windows/P2-GUI-025-failed-2.png       | Bin 50798 -> 66201 bytes
+|  .../firefox-windows/P2-GUI-026-failed-1.png       | Bin 50798 -> 66201 bytes
+|  .../firefox-windows/P2-GUI-032-failed-1.png       | Bin 11751 -> 29186 bytes
+|  .../firefox-windows/P2-GUI-037-failed-1.png       | Bin 34894 -> 48313 bytes
+|  .../firefox-windows/P2-GUI-038-failed-2.png       | Bin 35147 -> 48348 bytes
+|  .../firefox-windows/P2-GUI-039-failed-1.png       | Bin 34894 -> 48313 bytes
+|  .../firefox-windows/P2-GUI-042-failed-2.png       | Bin 35225 -> 48258 bytes
+|  .../firefox-windows/P2-GUI-042-failed-4.png       | Bin 34822 -> 48163 bytes
+|  103 files changed, 282 insertions(+), 31 deletions(-)
+| 
+* commit 8dc3facad73b7c895bb923447a570a5a86af61d8
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Mon Nov 9 23:53:06 2026 +0700
+| 
+|     docs: update README and report with detailed cross-browser testing results; add new screenshots for failed tests
+| 
+|  GUI_Checklist.xlsx                                | Bin 26279 -> 29685 bytes
+|  README.md                                         |  12 ++-
+|  prompt_log.md                                     |  42 ++++++++++
+|  report.md                                         |  84 ++++++++++++++++++--
+|  .../firefox-windows/P2-GUI-004-failed-1.png       | Bin 0 -> 20174 bytes
+|  .../firefox-windows/P2-GUI-005-failed-1.png       | Bin 0 -> 50798 bytes
+|  .../firefox-windows/P2-GUI-013-failed-2.png       | Bin 0 -> 50690 bytes
+|  .../firefox-windows/P2-GUI-014-failed-1.png       | Bin 0 -> 50798 bytes
+|  .../firefox-windows/P2-GUI-014-failed-2.png       | Bin 0 -> 50798 bytes
+|  .../firefox-windows/P2-GUI-014-failed-3.png       | Bin 0 -> 50798 bytes
+|  .../firefox-windows/P2-GUI-015-failed-1.png       | Bin 0 -> 50798 bytes
+|  .../firefox-windows/P2-GUI-016-failed-1.png       | Bin 0 -> 51133 bytes
+|  .../firefox-windows/P2-GUI-017-failed-2.png       | Bin 0 -> 50690 bytes
+|  .../firefox-windows/P2-GUI-017-failed-3.png       | Bin 0 -> 50749 bytes
+|  .../firefox-windows/P2-GUI-018-failed-1.png       | Bin 0 -> 50646 bytes
+|  .../firefox-windows/P2-GUI-019-failed-1.png       | Bin 0 -> 51133 bytes
+|  .../firefox-windows/P2-GUI-020-failed-1.png       | Bin 0 -> 48688 bytes
+|  .../firefox-windows/P2-GUI-021-failed-1.png       | Bin 0 -> 50626 bytes
+|  .../firefox-windows/P2-GUI-023-failed-1.png       | Bin 0 -> 96628 bytes
+|  .../firefox-windows/P2-GUI-025-failed-2.png       | Bin 0 -> 50798 bytes
+|  .../firefox-windows/P2-GUI-026-failed-1.png       | Bin 0 -> 50798 bytes
+|  .../firefox-windows/P2-GUI-032-failed-1.png       | Bin 0 -> 11751 bytes
+|  .../firefox-windows/P2-GUI-037-failed-1.png       | Bin 0 -> 34894 bytes
+|  .../firefox-windows/P2-GUI-038-failed-2.png       | Bin 0 -> 35147 bytes
+|  .../firefox-windows/P2-GUI-039-failed-1.png       | Bin 0 -> 34894 bytes
+|  .../firefox-windows/P2-GUI-042-failed-2.png       | Bin 0 -> 35225 bytes
+|  .../firefox-windows/P2-GUI-042-failed-4.png       | Bin 0 -> 34822 bytes
+|  27 files changed, 127 insertions(+), 11 deletions(-)
+| 
+* commit ab692c5942840f1d744c5183eb8c4baf18ec9228
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Mon Nov 9 22:16:56 2026 +0700
+| 
+|     docs: add multiple failed validation screenshots for GUI testing
+| 
+|  GUI_Checklist.xlsx                           | Bin 21229 -> 26279 bytes
+|  README.md                                    |  10 +-
+|  prompt_log.md                                | 174 +++++++++++++++++++++++++
+|  report.md                                    | 108 ++++++++-------
+|  screenshots/P1-GUI-004-failed-1.png          | Bin 0 -> 42469 bytes
+|  screenshots/P1-GUI-005-failed-1.png          | Bin 0 -> 52718 bytes
+|  screenshots/P1-GUI-013-failed-2.png          | Bin 0 -> 52653 bytes
+|  screenshots/P1-GUI-014-failed-1.png          | Bin 0 -> 52718 bytes
+|  screenshots/P1-GUI-014-failed-2.png          | Bin 0 -> 52718 bytes
+|  screenshots/P1-GUI-014-failed-3.png          | Bin 0 -> 52718 bytes
+|  screenshots/P1-GUI-015-failed-1.png          | Bin 0 -> 52718 bytes
+|  screenshots/P1-GUI-016-failed-validation.png | Bin 0 -> 53287 bytes
+|  screenshots/P1-GUI-017-failed-2.png          | Bin 0 -> 52653 bytes
+|  screenshots/P1-GUI-017-failed-3.png          | Bin 0 -> 52750 bytes
+|  screenshots/P1-GUI-018-failed-1.png          | Bin 0 -> 52625 bytes
+|  screenshots/P1-GUI-019-failed-validation.png | Bin 0 -> 53287 bytes
+|  screenshots/P1-GUI-020-failed-validation.png | Bin 0 -> 50519 bytes
+|  screenshots/P1-GUI-021-failed-1.png          | Bin 0 -> 52562 bytes
+|  screenshots/P1-GUI-023-failed-1.png          | Bin 0 -> 81679 bytes
+|  screenshots/P1-GUI-025-failed-2.png          | Bin 0 -> 52718 bytes
+|  screenshots/P1-GUI-026-failed-1.png          | Bin 0 -> 52718 bytes
+|  screenshots/P1-GUI-032-failed-1.png          | Bin 0 -> 12236 bytes
+|  screenshots/P1-GUI-037-failed-1.png          | Bin 0 -> 33109 bytes
+|  screenshots/P1-GUI-038-failed-2.png          | Bin 0 -> 33336 bytes
+|  screenshots/P1-GUI-039-failed-1.png          | Bin 0 -> 33109 bytes
+|  screenshots/P1-GUI-042-failed-2.png          | Bin 0 -> 32987 bytes
+|  screenshots/P1-GUI-042-failed-4.png          | Bin 0 -> 32953 bytes
+|  27 files changed, 240 insertions(+), 52 deletions(-)
+| 
+* commit b0f28542dcabec613ffb721d93c7039e2149f955
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Mon Nov 9 00:18:26 2026 +0700
+| 
+|     docs: update checklist to include GUI-042 for HTML safety display and revise report accordingly
+| 
+|  AGENTS.md          |   2 +-
+|  GUI_Checklist.xlsx | Bin 20782 -> 21229 bytes
+|  README.md          |   4 ++--
+|  prompt_log.md      |  36 ++++++++++++++++++++++++++++++++++++
+|  report.md          |  27 ++++++++++++++++++---------
+|  5 files changed, 57 insertions(+), 12 deletions(-)
+| 
+* commit 9b920b69478a3e9641b1e03c3c5adb388de0e904
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 23:15:30 2026 +0700
+| 
+|     refactor: report structure
+| 
+|  AGENTS.md                               |  17 +-
+|  Bao_cao.md                              | 131 ---------------
+|  Bao_cao.pdf                             | Bin 92346 -> 0 bytes
+|  GUI_Checklist.xlsx                      | Bin 0 -> 20782 bytes
+|  README.md                               |  44 ++---
+|  README.pdf                              | Bin 84123 -> 0 bytes
+|  ai_audit.md                             |  40 -----
+|  ai_audit.pdf                            | Bin 85070 -> 0 bytes
+|  checklist/GUI_Checklist.pdf             | Bin 106198 -> 0 bytes
+|  checklist/GUI_Checklist.xlsx            | Bin 20848 -> 0 bytes
+|  evidence/survey/README.md               |  12 --
+|  evidence/survey/profile-empty.jpg       | Bin 39675 -> 0 bytes
+|  evidence/survey/profile-orders.jpg      | Bin 64625 -> 0 bytes
+|  phu_luc/AI_Review.md                    | 268 ------------------------------
+|  phu_luc/AI_Review.pdf                   | Bin 115876 -> 0 bytes
+|  prompt_log.md                           |  51 ++++++
+|  checklist/GUI_Checklist.md => report.md | 175 +++++++++++++------
+|  17 files changed, 193 insertions(+), 545 deletions(-)
+| 
+* commit 453a246f11d70bc82a8d44203b4420b60365756b
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 20:19:05 2026 +0700
+| 
+|     docs: finalize 41-item checklist and organize submission reports
+| 
+|  AGENTS.md                                         |  19 +-
+|  Bao_cao.md                                        | 131 ++++
+|  Bao_cao.pdf                                       | Bin 0 -> 92346 bytes
+|  README.md                                         |  79 +--
+|  README.pdf                                        | Bin 0 -> 84123 bytes
+|  ai_audit.md                                       |  43 +-
+|  ai_audit.pdf                                      | Bin 0 -> 85070 bytes
+|  .../HW03-01a1ba88 => checklist}/GUI_Checklist.md  | 172 +++--
+|  checklist/GUI_Checklist.pdf                       | Bin 0 -> 106198 bytes
+|  checklist/GUI_Checklist.xlsx                      | Bin 0 -> 20848 bytes
+|  docs/chat_logging.md                              |  27 -
+|  docs/checklist_review.md                          | 127 ----
+|  docs/profile_inventory.md                         | 178 -----
+|  docs/requirements.md                              |  34 -
+|  evidence/survey/README.md                         |   4 +-
+|  output/pdf/GUI_Checklist.pdf                      | Bin 108357 -> 0 bytes
+|  outputs/HW03-01a1ba88/GUI_Checklist.xlsx          | Bin 21332 -> 0 bytes
+|  phu_luc/AI_Review.md                              | 268 ++++++++
+|  phu_luc/AI_Review.pdf                             | Bin 0 -> 115876 bytes
+|  prompt_log.md                                     |  37 +
+|  scripts/build_checklist.mjs                       | 126 ----
+|  scripts/build_checklist_pdf.py                    |  76 ---
+|  scripts/checklist_data.json                       | 712 --------------------
+|  scripts/export_chat_log.py                        | 140 ----
+|  scripts/export_git_log.py                         |  21 -
+|  scripts/prepare_checklist.py                      | 280 --------
+|  scripts/seed_survey_data.py                       |  24 -
+|  scripts/survey-vite.mjs                           |  20 -
+|  scripts/verify_checklist.py                       |  76 ---
+|  29 files changed, 596 insertions(+), 1998 deletions(-)
+| 
+* commit e86882b1cae99ad04edd82dcc5cd162f3c199439
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 19:04:16 2026 +0700
+| 
+|     docs: apply user review to checklist v1.1 and remove GUI-034
+| 
+|  README.md                                |   6 +--
+|  ai_audit.md                              |   2 +
+|  docs/checklist_review.md                 |  27 +++++++++---
+|  output/pdf/GUI_Checklist.pdf             | Bin 109677 -> 108357 bytes
+|  outputs/HW03-01a1ba88/GUI_Checklist.md   |  30 +++++++-------
+|  outputs/HW03-01a1ba88/GUI_Checklist.xlsx | Bin 21677 -> 21332 bytes
+|  prompt_log.md                            |  38 +++++++++++++++++
+|  scripts/build_checklist.mjs              |  48 +++++++++++-----------
+|  scripts/build_checklist_pdf.py           |   2 +-
+|  scripts/checklist_data.json              |  48 ++++++++--------------
+|  scripts/prepare_checklist.py             |  64 ++++++++++++++++++-----------
+|  scripts/verify_checklist.py              |  23 +++++++----
+|  12 files changed, 175 insertions(+), 113 deletions(-)
+| 
+* commit 9b945bab19610a0cd1cde96f2ee231f15665eac8
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 18:07:44 2026 +0700
+| 
+|     docs: create unified 44-item GUI checklist with Excel and PDF
+| 
+|  README.md                                |   8 +-
+|  ai_audit.md                              |   1 +
+|  output/pdf/GUI_Checklist.pdf             | Bin 0 -> 109677 bytes
+|  outputs/HW03-01a1ba88/GUI_Checklist.md   | 121 +++++
+|  outputs/HW03-01a1ba88/GUI_Checklist.xlsx | Bin 0 -> 21677 bytes
+|  prompt_log.md                            |  66 +++
+|  scripts/build_checklist.mjs              | 126 +++++
+|  scripts/build_checklist_pdf.py           |  76 +++
+|  scripts/checklist_data.json              | 728 +++++++++++++++++++++++++++++
+|  scripts/prepare_checklist.py             | 262 +++++++++++
+|  scripts/verify_checklist.py              |  69 +++
+|  11 files changed, 1455 insertions(+), 2 deletions(-)
+| 
+* commit 201c204bf9cb7bd38f50c2d5f3b9232ff7a0814d
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 18:07:43 2026 +0700
+| 
+|     docs: review draft checklist coverage and trace 52 source items
+| 
+|  docs/checklist_review.md  | 112 ++++++++++++++++++++++++++++++++++++++++++++
+|  docs/profile_inventory.md | 112 ++++++++++++++++++++++----------------------
+|  2 files changed, 168 insertions(+), 56 deletions(-)
+| 
+* commit 2ff75dc5b2e5d7c08fd0851263112a28e0a62e30
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 17:18:05 2026 +0700
+| 
+|     docs: map Profile components and states to IA-01 through IA-04
+| 
+|  README.md                 |   3 +-
+|  ai_audit.md               |   1 +
+|  docs/profile_inventory.md | 178 ++++++++++++++++++++++++++++++++++++++++++++
+|  prompt_log.md             |  39 ++++++++++
+|  4 files changed, 220 insertions(+), 1 deletion(-)
+| 
+* commit c19d0da48d190cea350ff9f9415cfc7227472aaa
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 17:18:05 2026 +0700
+| 
+|     chore: prepare isolated SUT survey runtime and capture Profile states
+| 
+|  evidence/survey/README.md          |  12 ++++++++++++
+|  evidence/survey/profile-empty.jpg  | Bin 0 -> 39675 bytes
+|  evidence/survey/profile-orders.jpg | Bin 0 -> 64625 bytes
+|  scripts/seed_survey_data.py        |  24 ++++++++++++++++++++++++
+|  scripts/survey-vite.mjs            |  20 ++++++++++++++++++++
+|  5 files changed, 56 insertions(+)
+| 
+* commit b9959540ef4ba165db2d8659b506718ea78be451
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 17:00:35 2026 +0700
+| 
+|     chore: flatten AI logs and defer Git log export until submission
+| 
+|  .gitignore                           |  1 -
+|  AGENTS.md                            |  6 ++---
+|  README.md                            |  8 +++----
+|  ai/messages.jsonl                    | 10 ---------
+|  ai/ai_audit.md => ai_audit.md        |  6 ++---
+|  ai/README.md => docs/chat_logging.md |  9 ++++----
+|  git_commit_log.txt                   |  7 ------
+|  ai/prompt_log.md => prompt_log.md    | 40 ++++++++++++++++++++++++++++++++++
+|  scripts/export_chat_log.py           | 16 ++++++--------
+|  9 files changed, 61 insertions(+), 42 deletions(-)
+| 
+* commit 16107386b5777a2f6c989b88bca29e51ea28fd19
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 16:59:07 2026 +0700
+| 
+|     docs: simplify prompt log to numbered prompts and verbatim outputs
+| 
+|  AGENTS.md                  |  1 +
+|  ai/README.md               |  6 ++--
+|  ai/messages.jsonl          |  3 ++
+|  ai/prompt_log.md           | 67 ++++++++++++++------------------------------
+|  git_commit_log.txt         |  3 +-
+|  scripts/export_chat_log.py | 25 ++++++++---------
+|  6 files changed, 42 insertions(+), 63 deletions(-)
+| 
+* commit 12f5a4d5802d2819b375a8debd73affabfec8ef3
+| Author: dai <daihaha123zz@gmail.com>
+| Date:   Sun Nov 8 16:47:55 2026 +0700
+| 
+|     chore: add verbatim timestamped chat logging and AI audit scaffold
+| 
+|  ai/README.md               |  26 ++++++++
+|  ai/ai_audit.md             |  31 +++++++++
+|  ai/messages.jsonl          |   7 +++
+|  ai/prompt_log.md           |  81 ++++++++++++++++++++++++
+|  git_commit_log.txt         |   6 ++
+|  scripts/export_chat_log.py | 145 +++++++++++++++++++++++++++++++++++++++++++
+|  scripts/export_git_log.py  |  21 +++++++
+|  7 files changed, 317 insertions(+)
+| 
+* commit fb147cf3a0d5da92132c0b14c5e17c838bd7a130
+  Author: dai <daihaha123zz@gmail.com>
+  Date:   Sun Nov 8 16:47:34 2026 +0700
+  
+      docs: record HW03 requirements and existing Profile scope
+  
+   .gitignore           |  9 +++++++++
+   AGENTS.md            | 10 ++++++++++
+   README.md            | 42 ++++++++++++++++++++++++++++++++++++++++++
+   docs/requirements.md | 34 ++++++++++++++++++++++++++++++++++
+   4 files changed, 95 insertions(+)
