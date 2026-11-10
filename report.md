@@ -439,13 +439,27 @@ Xác minh thiết bị: [SUT qua localhost](screenshots/chrome-android/P3-localh
 
 ## 5. Agent Skills và demo
 
-Chưa thực hiện; chưa có link demo.
+### 5.1. Skill nộp kèm
+
+[GUI và usability — SKILL.md](gui-usability-skill/SKILL.md) là bộ hướng dẫn tự chứa, có thể tái sử dụng cho màn hình hoặc flow khác. Đầu vào gồm phạm vi màn hình/flow, SRS hoặc yêu cầu sản phẩm, source SUT nếu có, địa chỉ ứng dụng, nền tảng và thư mục output được phép.
+
+Quy trình gồm xác định phạm vi và căn cứ, thiết kế và review checklist theo IA-01–04, thực thi với bằng chứng, phân loại Passed/Failed/Blocked, kiểm thử nhiều nền tảng và tổng hợp báo cáo. Phần usability hướng dẫn pilot, quan sát người thật, chấm SUS từ đáp án và tổng hợp findings; không thay thế người tham gia hoặc tạo dữ liệu khảo sát.
+
+### 5.2. Video demo
+
+[Xem video demo Agent Skill](https://youtu.be/mtbgSK8GzcU).
+
+Phạm vi demo: trang `/profile`, gồm form cập nhật hồ sơ FR-04 và lịch sử đơn hàng FR-11. Video demo được dẫn riêng với bảy video phiên usability tại mục 3.5; kết quả demo không thay thế dữ liệu kiểm thử hoặc khảo sát đã báo cáo.
 
 ## 6. AI Critique
 
-Phần critique 200–300 words cần sinh viên tự hoàn thiện từ trải nghiệm cộng tác thực tế; chưa có bản được sinh viên xác nhận.
+[AI Critique và Audit theo mẫu AI-02](AI_Critique_and_Audit.md).
+
+Bản nháp critique ở file liên kết, cần sinh viên rà soát và xác nhận.
 
 ## 7. Khai báo sử dụng AI
+
+[AI Disclosure](AI_Disclosure.md) · [AI Privacy Checklist](AI_Privacy_Checklist.md).
 
 I use AI tools for the following tasks,
 

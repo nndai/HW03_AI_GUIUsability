@@ -900,4 +900,28 @@ report ko chứa các bugreport, chỉ chứa một link dẫn đến file Bug_R
 ```text
 Tôi sẽ chuyển toàn bộ chi tiết bug sang `Bug_Report.md`, để mục bug report trong báo cáo chính chỉ còn một liên kết.
 
+
+Đã chuyển toàn bộ chi tiết bug, ảnh và liên kết GitHub sang [Bug_Report.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/Bug_Report.md).
+
+Mục Bug report trong `report.md` chỉ còn một liên kết tới file này. Đã cập nhật README và prompt log, không commit.
+```
+
+## 28
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 23:08:54 (UTC+07:00)
+
+### Prompt
+
+```text
+AI_Critique_and_Audit.md, AI_Disclosure.md, AI_Privacy_Checklist.md, tạo cho tôi các file này theo chuẩn template
+
+```
+
+### Output
+
+```text
+Tôi sẽ đọc các template AI và nội dung báo cáo hiện có để tạo ba file đúng mẫu. Những mục cần bạn tự đánh giá hoặc ký xác nhận sẽ được để rõ để bạn hoàn thiện.
+
 ```
