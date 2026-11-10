@@ -17,7 +17,7 @@
 | **Môn học:** | CS423 / CSC13003 – Kiểm chứng Phần mềm |
 | **Mã bài tập:** | HW03-AI |
 | **Tên bài tập:** | GUI & Usability — EShop |
-| **Cấp độ AI (1–5):** | Sử dụng AI hỗ trợ thiết kế, thực thi và biên tập; không thay thế dữ liệu người thật |
+| **Bloom-AI theo đề §8:** | G9.3 (Analyse), G9.4 (Collaborate) |
 | **Ngày:** | 11/11/2026 |
 | **Họ tên sinh viên:** | NGUYỄN NGỌC ĐẠI |
 | **MSSV:** | 23120226 |
@@ -53,7 +53,7 @@ Nhật ký đầy đủ: [prompt_log.md](prompt_log.md).
 
 ### **4\. Phần cụ thể AI đóng góp:**
 
-AI sinh/biên tập checklist, script thực thi, Notes, kế hoạch usability, cấu trúc báo cáo, bản nháp critique và các biểu mẫu này; tính lại SUS từ đáp án được cung cấp; sao chép bug report đã có trên GitHub sang Bug_Report.md. Người dùng phát hiện ý tưởng GUI-042, quyết định phạm vi và cung cấp hồ sơ Task 2. Không xác nhận AI đã xem nội dung các video.
+AI sinh/biên tập checklist, script thực thi, Notes, kế hoạch usability, cấu trúc báo cáo, critique và các biểu mẫu này; tính lại SUS từ đáp án được cung cấp; sao chép bug report đã có trên GitHub sang Bug_Report.md. Người dùng phát hiện ý tưởng GUI-042, quyết định phạm vi và cung cấp hồ sơ Task 2. Sinh viên xác nhận hồ sơ phiên, consent và liên kết video đầy đủ; AI tổng hợp từ dữ liệu được cung cấp.
 
 ### **5\. Cách tôi rà soát / chỉnh sửa / xác minh đầu ra AI:**
 
@@ -61,7 +61,7 @@ Căn cứ có trong hồ sơ: SRS FR-04/FR-11/FR-21–24/SEC-04, slide S13, kế
 
 ### **6\. Trích dẫn (nếu môn yêu cầu):**
 
-[1] OpenAI, “Codex,” công cụ AI dùng trong HW03; ngày/giờ và nội dung tương tác tại [prompt_log.md](prompt_log.md). Phiên bản mô hình chưa được sinh viên xác nhận.
+[1] OpenAI, “Codex,” công cụ AI dùng trong HW03; ngày/giờ và nội dung tương tác tại [prompt_log.md](prompt_log.md).
 
 ## **3\. Cam đoan Trung thực**
 

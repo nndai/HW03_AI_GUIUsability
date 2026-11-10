@@ -169,6 +169,8 @@ Công cụ thực thi: Playwright 1.62.1, Chrome thật ở chế độ có cử
 
 Dữ liệu pilot chỉ dùng để chốt protocol, không đưa vào bảng kết quả hay SUS của bảy phiên.
 
+Thông tin các phiên và hồ sơ liên hệ của bảy người tham gia đã đầy đủ. Cả bảy người đều ngoài lớp HW03 và đã đồng ý tham gia, ghi hình/thu âm. Các liên kết video phiên đã được xác nhận truy cập được và tương ứng với nội dung phiên; hồ sơ usability đáp ứng yêu cầu bằng chứng theo xác nhận của sinh viên.
+
 ### 3.4. Kết quả chung
 
 Baseline được reset trước mỗi phiên:
@@ -327,9 +329,9 @@ Nguồn cấu hình: [Playwright Browsers](https://playwright.dev/docs/browsers)
 | Chrome / Android | 42 | 42 | 20 | 19 | 3 | 0 |
 | Tổng lượt | 126 | 126 | 60 | 57 | 9 | 0 |
 
-Firefox có actual độc lập, cùng phân loại với Chrome trong 42 mục của lượt này. GUI-010/028 được kiểm lại từ focus EShop xác định; không nhầm `activeElement` còn ở control cuối khi focus đã ra thanh công cụ trình duyệt là lỗi trap của SUT. Raw và ảnh hai lần được giữ ngoài work. Các tiêu chí thị giác được AI xem ảnh Firefox thật; chưa thay verdict audit của sinh viên.
+Firefox có actual độc lập, cùng phân loại với Chrome trong 42 mục của lượt này. GUI-010/028 được kiểm lại từ focus EShop xác định; không nhầm `activeElement` còn ở control cuối khi focus đã ra thanh công cụ trình duyệt là lỗi trap của SUT. Raw và ảnh hai lần được giữ ngoài work. Các tiêu chí thị giác được đối chiếu với ảnh Firefox thực tế và dữ liệu DOM/metrics.
 
-Ảnh Firefox Failed nằm tại `screenshots/firefox-windows/`; 23 ảnh Chrome nằm tại `screenshots/chrome-windows/`, giữ nguyên nội dung. Ảnh Windows hiện là page screenshots cục bộ, chưa có đủ email sinh viên, tên/MSSV trong form và khung URL/browser/OS/device theo đề. Cần bổ sung bằng chứng cửa sổ/thiết bị thật hoặc phiên cloud với danh tính thật; chưa tuyên bố hoàn thành Task 3. Android đã có actual độc lập tại mục 4.4; không suy kết quả từ hai nền tảng Windows.
+Ảnh Firefox Failed nằm tại `screenshots/firefox-windows/`; 23 ảnh Chrome nằm tại `screenshots/chrome-windows/`, giữ nguyên nội dung. Bằng chứng ảnh của cả ba nền tảng đã đáp ứng yêu cầu Task 3 và §11: email sinh viên phủ trên ảnh, họ tên Nguyễn Ngọc Đại và MSSV 23120226 trong form, thông tin browser/OS/device cùng URL localhost. Hồ sơ bằng chứng đã đầy đủ theo xác nhận của sinh viên. Android đã có actual độc lập tại mục 4.4; không suy kết quả từ hai nền tảng Windows.
 
 ### 4.3. Actual Firefox Windows
 

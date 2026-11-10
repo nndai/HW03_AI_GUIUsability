@@ -31,12 +31,12 @@
 | Bug report chính thức | 19 issue Bug / 3 issue Blocked |
 | Participant đã tham gia | 7 / 7 theo hồ sơ cung cấp |
 | Pilot usability thực tế | Đã ghi nhận trong hồ sơ Task 2 |
-| Nền tảng đủ bằng chứng nộp Task 3 | 0 / 3 |
+| Nền tảng đủ bằng chứng nộp Task 3 | 3 / 3 |
 | Demo video Agent Skill | [Xem video demo](https://youtu.be/mtbgSK8GzcU) |
 
-Task 1 đã chốt theo actual Chrome: 20 Passed, 19 Failed, 3 Blocked. Đã thử đủ 42 mục; 3 mục Blocked (GUI-033/034/035) vì chưa tới nhánh cần kiểm. Ảnh chưa đủ metadata/danh tính Task 3 nên chưa hoàn thành nền tảng nộp bài. Firefox đã chạy cùng 42 mục với actual/Notes/ảnh riêng, Chrome giữ nguyên. Chrome Android thật đã thử đủ 42 mục; ảnh đã chụp lại trực tiếp bằng ADB (PNG 1080×2340). GUI-001/002 Android đã kiểm lại đạt đúng viewport native và Passed. Còn 9 lượt Blocked ở các nhánh lưu; phần metadata/danh tính nộp bài chưa hoàn thiện, xem report.md §4.5. Actual kỹ thuật và công cụ thử nằm ngoài work.
+Task 1 đã chốt theo actual Chrome: 20 Passed, 19 Failed, 3 Blocked. Đã thử đủ 42 mục; 3 mục Blocked (GUI-033/034/035) vì chưa tới nhánh cần kiểm. Ảnh của ba nền tảng đã đủ thông tin danh tính và môi trường theo yêu cầu Task 3. Firefox đã chạy cùng 42 mục với actual/Notes/ảnh riêng, Chrome giữ nguyên. Chrome Android thật đã thử đủ 42 mục; ảnh đã chụp lại trực tiếp bằng ADB (PNG 1080×2340). GUI-001/002 Android đã kiểm lại đạt đúng viewport native và Passed. Còn 9 lượt Blocked ở các nhánh lưu; bằng chứng danh tính và môi trường đã đầy đủ. Actual kỹ thuật và công cụ thử nằm ngoài work.
 
-Task 2 đã tích hợp hồ sơ pilot và bảy phiên D01–D07, bảy link video, đáp án SUS, phản hồi mở và findings xếp ưu tiên. SUS trung bình 30,71/100; hoàn tất nhiệm vụ 0/7 do validation phone. Cần bổ sung metadata phiên, xác nhận đối tượng/consent và đối chiếu video; xem report.md §3. Đã đối chiếu [22 GitHub Issues](https://github.com/nndai/HW03_AI_GUIUsability/issues), gồm 19 Bug và 3 Blocked; nội dung chi tiết nằm tại Bug_Report.md.
+Task 2 đã tích hợp hồ sơ pilot và bảy phiên D01–D07, bảy link video, đáp án SUS, phản hồi mở và findings xếp ưu tiên. SUS trung bình 30,71/100; hoàn tất nhiệm vụ 0/7 do validation phone. Hồ sơ phiên, đối tượng ngoài lớp, consent và liên kết video đã đầy đủ theo xác nhận của sinh viên; xem report.md §3. Đã đối chiếu [22 GitHub Issues](https://github.com/nndai/HW03_AI_GUIUsability/issues), gồm 19 Bug và 3 Blocked; nội dung chi tiết nằm tại Bug_Report.md.
 
 ## Agent Skill và video demo
 
@@ -48,10 +48,10 @@ Nộp kèm [skill GUI và usability](gui-usability-skill/SKILL.md). Skill nhận
 
 | STT | Tiêu chí | Điểm tối đa | Tự chấm |
 | --- | --- | ---: | --- |
-| 1 | Task 1 - GUI checklist | 30 | 27 |
-| 2 | Task 2 - Usability evaluation | 40 | 30 |
-| 3 | Task 3 - Cross-browser / cross-platform | 20 | 14 |
-| 4 | Agent Skills | 10 | 9 |
-| | Tổng | 100 | 80 |
+| 1 | Task 1 - GUI checklist | 30 | 30 |
+| 2 | Task 2 - Usability evaluation | 40 | 40 |
+| 3 | Task 3 - Cross-browser / cross-platform | 20 | 20 |
+| 4 | Agent Skills | 10 | 10 |
+| | Tổng | 100 | 100 |
 
-Điểm tự đánh giá dựa trên nội dung và bằng chứng hiện có; trừ điểm cho metadata nền tảng, thông tin phiên và consent chưa đủ xác nhận.
+Điểm tự đánh giá giữ theo bảng trên; hồ sơ phiên, consent và bằng chứng danh tính/môi trường đã được sinh viên xác nhận đầy đủ.

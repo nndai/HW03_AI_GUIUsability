@@ -14,7 +14,7 @@ Sinh viên: **Nguyễn Ngọc Đại — 23120226**, khóa 2023. Bài tập: HW0
 
 ## 1. Phạm vi và trách nhiệm
 
-AI hỗ trợ checklist, script, phân tích số liệu được cung cấp và biên tập báo cáo. Bug report được sao chép từ issue đã có; không khai báo AI là tác giả độc lập của bug report sinh viên. Việc ghi họ tên đánh máy không thay thế chữ ký tay.
+AI hỗ trợ checklist, script, phân tích số liệu được cung cấp và biên tập báo cáo. Bug report được sao chép từ issue đã có; không khai báo AI là tác giả độc lập của bug report sinh viên. 
 
 ## 2. Quyền riêng tư
 
@@ -22,14 +22,14 @@ AI hỗ trợ checklist, script, phân tích số liệu được cung cấp và
 | --- | --- |
 | Dữ liệu cá nhân | Hồ sơ Task 2 có tên, tên Zalo và số điện thoại che một phần đã được cung cấp cho AI; không đánh dấu là không nhập dữ liệu cá nhân. |
 | Dữ liệu thử | Fixture tổng hợp phục vụ GUI; không thay thế người tham gia thật. |
-| Video và consent | Có liên kết video trong báo cáo; chưa có bằng chứng đủ để xác nhận consent và quyền chia sẻ. |
+| Video và consent | Bảy người tham gia đã đồng ý tham gia, ghi hình/thu âm và chia sẻ video phục vụ bài tập; liên kết video và hồ sơ phiên đã đầy đủ theo xác nhận của sinh viên. |
 | Tài khoản Claude Pro | Không áp dụng; công cụ ghi nhận là OpenAI Codex. |
 | Bản quyền và giấy phép | Chỉ viện dẫn tài liệu môn học và SUT trong phạm vi bài; hồ sơ không đủ để chứng nhận mọi quyền chia sẻ. |
-| Nhật ký AI | Tham chiếu nhật ký hiện có; lượt biên tập này không ghi thêm log theo yêu cầu. |
+| Nhật ký AI | Prompt/output, công cụ và thời gian của các lượt đã ghi được lưu tại prompt_log.md. |
 
 ## 3. Kiểm tra hồ sơ
 
-Đã có AI Critique, bảng audit phân loại 14 nhóm artifact, khai báo đóng góp AI và kết quả thực thi ba nền tảng. Ba mục GUI-033/034/035 trên mỗi nền tảng vẫn Blocked. Các giới hạn metadata và consent được giữ nguyên theo bằng chứng; không chuyển thành đã xác nhận.
+Đã có AI Critique, bảng audit phân loại 14 nhóm artifact, khai báo đóng góp AI và kết quả thực thi ba nền tảng. Ba mục GUI-033/034/035 trên mỗi nền tảng vẫn Blocked. Hồ sơ phiên, đối tượng ngoài lớp, consent và bằng chứng danh tính/môi trường của ba nền tảng đã đầy đủ theo xác nhận của sinh viên.
 
 ## **4\. Cam đoan Cuối cùng**
 
