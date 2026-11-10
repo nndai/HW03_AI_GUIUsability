@@ -764,3 +764,33 @@ Tôi tìm thấy 23 ảnh Chrome Windows đã chuyển vào `screenshots/chrome-
 
 :codex-file-citation{path="C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/GUI_Checklist.xlsx" artifact_kind="workbook" purpose="output"}
 ```
+
+## 23
+
+Tool: OpenAI Codex
+
+Thời gian: 10/11/2026 11:43:54 (UTC+07:00)
+
+### Prompt
+
+```text
+đọc đề task 2 và các tài liệu liên quan, làm task2, báo cáo gồm đầy đủ các phần theo yêu cầu, ngoại trừ phần điền vào khi trao đổi thật tế với 7 người, không commit
+
+```
+
+### Output
+
+```text
+Tôi sẽ đọc yêu cầu Task 2 và các tài liệu liên quan, rồi hoàn thiện các phần có thể chuẩn bị trước trong báo cáo. Những phần cần dữ liệu trao đổi thực tế với 7 người sẽ để trống đúng chỗ, không tạo kết quả giả và không commit.
+
+
+Đề yêu cầu cả dữ liệu hành vi lẫn cảm nhận sau nhiệm vụ, nên chỉ có bảng SUS là chưa đủ. Tôi sẽ bổ sung protocol điều phối, thẻ nhiệm vụ, mẫu ghi quan sát, cách đo và khung phân tích. Lỗi validation điện thoại đã biết sẽ được ghi là rủi ro của SUT, không quy thành lỗi người tham gia hay giả định trước kết quả của họ.
+
+
+Phần Task 2 đã có đầy đủ các mục chuẩn bị và mẫu báo cáo trong `report.md`, gồm cả cách tính SUS và phân loại hoàn thành độc lập, có trợ giúp, không hoàn tất. Các bảng người tham gia, pilot, quan sát, câu trả lời và findings đang để trống để điền từ phiên thật. Tôi đang rà lại tính nhất quán với đề và README.
+
+
+Đã hoàn thiện phần chuẩn bị Task 2 trong [report.md](C:/Users/daila/Desktop/HW3/2026.HW03.GUI_Usability_work/report.md): mục tiêu, scenario, dữ liệu thử, protocol, SUS/probe, mẫu quan sát và phương pháp phân tích/severity.
+
+Các phần cần dữ liệu thật từ pilot và 7 người được để trống. README và khai báo AI đã cập nhật; Task 1/3 và Excel giữ nguyên. Không commit.
+```
